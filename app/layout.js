@@ -23,16 +23,16 @@ export const metadata = {
   description:
     "Exquisite bespoke jewelry and premium gemstones crafted to perfection in Sri Lanka. Discover our collections or create your own masterpiece.",
   openGraph: {
-    title: "Jewel Exchange | Bespoke Jewelry & Gemstones",
-    description: "Exquisite bespoke jewelry and premium gemstones crafted to perfection in Sri Lanka.",
+    title: "Jewel Exchange | Bespoke Jewelry & Gemstones - Sri Lanka",
+    description: "Exquisite bespoke jewelry, rare Ceylon sapphires, and handcrafted fine jewelry atelier in Colombo, Sri Lanka.",
     url: "https://jewelexchange.lk",
     siteName: "Jewel Exchange",
     images: [
       {
-        url: "/images/banners/banner%202.png", // fallback image
+        url: "/opengraph-image.png",
         width: 1200,
         height: 630,
-        alt: "Jewel Exchange Jewelry",
+        alt: "Jewel Exchange - Bespoke Jewelry & Gemstones",
       },
     ],
     locale: "en_US",
@@ -40,9 +40,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Jewel Exchange | Bespoke Jewelry & Gemstones",
-    description: "Exquisite bespoke jewelry and premium gemstones crafted to perfection in Sri Lanka.",
-    images: ["/images/banners/banner%202.png"],
+    title: "Jewel Exchange | Bespoke Jewelry & Gemstones - Sri Lanka",
+    description: "Exquisite bespoke jewelry, rare Ceylon sapphires, and handcrafted fine jewelry atelier in Colombo, Sri Lanka.",
+    images: ["/opengraph-image.png"],
   },
 };
 

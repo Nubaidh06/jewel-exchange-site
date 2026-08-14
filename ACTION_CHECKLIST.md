@@ -12,9 +12,6 @@ This checklist tracks the 19 standard best-practice items for the Jewel Exchange
 - [ ] **Item 4: Case Studies / Bespoke Story Highlights**
   - Enhance the `/bespoke` past creations portfolio with client story tags and design briefs.
 
-- [ ] **Item 5: Dedicated Social Share Card (OpenGraph / Twitter)**
-  - Verify and configure a dedicated 1200x630px social card preview for WhatsApp, iMessage, and social link sharing.
-
 - [ ] **Item 6: Dedicated Thank You Page (`/thank-you`)**
   - Create a dedicated luxury confirmation page for ad conversion tracking.
 
@@ -25,6 +22,7 @@ This checklist tracks the 19 standard best-practice items for the Jewel Exchange
 
 ## 2. Completed Items (Verified in Codebase)
 
+- [x] **13. Dedicated Social Share Card (OpenGraph / Twitter):** Configured dedicated 1200x630px social card (`opengraph-image.png`) with title, description, and Twitter large summary card for WhatsApp, iMessage, and social media sharing previews.
 - [x] **17. Local Business Schema (JSON-LD Local SEO):** Structured `JewelryStore` / `LocalBusiness` schema integrated in `layout.js` with Colombo address (`514A, R.A. De Mel Mawatha`), opening hours (Mon-Sat 10AM-6PM), geo coordinates (`6.8996, 79.8553`), phone, email, and catalog offerings.
 - [x] **7. 5 FAQs (Frequently Asked Questions):** Interactive luxury accordion with animated plus/minus icons, gold highlights, direct WhatsApp concierge CTA, and embedded `FAQPage` JSON-LD schema on homepage.
 - [x] **1. Custom 404 Page:** Implemented at `app/not-found.js` with return-to-catalog action.
