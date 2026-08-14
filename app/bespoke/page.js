@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import FAQAccordion from '../components/FAQAccordion';
 import './page.css';
 
 export const metadata = {
@@ -78,34 +79,8 @@ export default function BespokePage() {
         </div>
       </section>
 
-      {/* ── Booking CTA Section ── */}
-      <section className="bespoke-cta-section" id="booking">
-        <div className="bespoke-cta-section__bg reveal">
-          <Image
-            src="/images/models_and_shots/15.png"
-            alt="Book a bespoke consultation"
-            fill
-            style={{ objectFit: 'cover' }}
-          />
-          <div className="bespoke-cta-section__overlay" />
-        </div>
-        <div className="container bespoke-cta-section__content reveal reveal-delay-1">
-          <span className="bespoke-cta-section__label">Get Started</span>
-          <h2 className="bespoke-cta-section__title">Ready to Begin?</h2>
-          <div className="ornament">
-            <span className="ornament__diamond" style={{ background: 'var(--color-gold-light)' }} />
-          </div>
-          <p className="bespoke-cta-section__text">
-            We invite you to sit down with our design experts in a private consultation. Together, we will sketch, refine, and plan the creation of your perfect bespoke piece.
-          </p>
-          <Link href="/booking" className="btn btn--white">
-            Book a Consultation <span className="btn-arrow">→</span>
-          </Link>
-        </div>
-      </section>
-
       {/* ── Past Bespoke Creations Gallery ── */}
-      <section className="section bg-alt">
+      <section className="section">
         <div className="container">
           <span className="section-label reveal" style={{ textAlign: 'center', display: 'block' }}>Portfolio</span>
           <h2 className="section-title reveal">Past Bespoke Creations</h2>
@@ -130,6 +105,38 @@ export default function BespokePage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ── Bespoke FAQ Section ── */}
+      <FAQAccordion
+        title="Bespoke & Craftsmanship FAQs"
+        subtitle="Clear answers to common questions about custom design timelines, stone certifications, and our atelier's guarantees."
+      />
+
+      {/* ── Booking CTA Section ── */}
+      <section className="bespoke-cta-section" id="booking">
+        <div className="bespoke-cta-section__bg reveal">
+          <Image
+            src="/images/models_and_shots/15.png"
+            alt="Book a bespoke consultation"
+            fill
+            style={{ objectFit: 'cover' }}
+          />
+          <div className="bespoke-cta-section__overlay" />
+        </div>
+        <div className="container bespoke-cta-section__content reveal reveal-delay-1">
+          <span className="bespoke-cta-section__label">Get Started</span>
+          <h2 className="bespoke-cta-section__title">Ready to Begin?</h2>
+          <div className="ornament">
+            <span className="ornament__diamond" style={{ background: 'var(--color-gold-light)' }} />
+          </div>
+          <p className="bespoke-cta-section__text">
+            We invite you to sit down with our design experts in a private consultation. Together, we will sketch, refine, and plan the creation of your perfect bespoke piece.
+          </p>
+          <Link href="/booking" className="btn btn--white">
+            Book a Consultation <span className="btn-arrow">→</span>
+          </Link>
         </div>
       </section>
     </div>

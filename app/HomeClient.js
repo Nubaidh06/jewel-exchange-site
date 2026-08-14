@@ -3,6 +3,7 @@ import { useRef, useEffect, useCallback } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { JEWELRY_ITEMS } from "../lib/data";
+import FAQAccordion from "./components/FAQAccordion";
 import "./page.css";
 
 export default function HomeClient({ featuredProducts = [] }) {
@@ -259,6 +260,12 @@ export default function HomeClient({ featuredProducts = [] }) {
           </div>
         </div>
       </section>
+
+      {/* ======== FAQ SECTION ======== */}
+      <FAQAccordion
+        title="Frequently Asked Questions"
+        subtitle="Clear answers about our bespoke craftsmanship, certified gemstones, international insured shipping, and lifetime care."
+      />
     </div>
   );
 }
