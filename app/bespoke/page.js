@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import FAQAccordion from '../components/FAQAccordion';
 import './page.css';
 
 export const metadata = {
@@ -107,12 +106,6 @@ export default function BespokePage() {
           </div>
         </div>
       </section>
-
-      {/* ── Bespoke FAQ Section ── */}
-      <FAQAccordion
-        title="Bespoke & Craftsmanship FAQs"
-        subtitle="Clear answers to common questions about custom design timelines, stone certifications, and our atelier's guarantees."
-      />
 
       {/* ── Booking CTA Section ── */}
       <section className="bespoke-cta-section" id="booking">
