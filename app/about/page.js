@@ -192,7 +192,8 @@ export default function AboutPage() {
       </section>
 
       {/* ── Client Testimonials / Words of Distinction ── */}
-      <section className="about-testimonials section bg-alt">
+      <section className="about-testimonials section">
+        <div className="about-testimonials__glow"></div>
         <div className="container">
           <div className="about-testimonials__header reveal">
             <span className="section-label" style={{ display: 'block', textAlign: 'center', marginBottom: '1rem' }}>Patron Stories</span>
