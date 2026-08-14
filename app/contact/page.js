@@ -116,6 +116,7 @@ export default function ContactPage() {
                 className="form contact-form"
               >
                 <input type="hidden" name="_subject" value="New Contact Inquiry - Jewel Exchange" />
+                <input type="hidden" name="_next" value="https://jewelexchange.lk/thank-you?type=contact" />
                 <div className="form-row">
                   <div className="form-group">
                     <label htmlFor="contact-name" className="form-label">Full Name</label>
