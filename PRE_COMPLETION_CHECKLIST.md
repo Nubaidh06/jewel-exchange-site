@@ -15,7 +15,7 @@ This document tracks all completed and pending tasks prior to final handoff and 
 ---
 
 ### Section B: Sanity CMS & Catalog Management *(To Do Later)*
-- [ ] **Sanity Environment Keys:** Confirm `NEXT_PUBLIC_SANITY_PROJECT_ID` and `NEXT_PUBLIC_SANITY_DATASET` in production environment.
+- [x] **Sanity Environment Keys:** Confirmed `NEXT_PUBLIC_SANITY_PROJECT_ID` and `NEXT_PUBLIC_SANITY_DATASET` in production environment.
 - [ ] **Upload Inventory:** Populate live products (rings, necklaces, earrings, bracelets, loose gemstones) in Sanity Studio (`/studio`).
 - [ ] **Product Specifications:** Add metal karat, stone weight, lab cert details, and pricing to each piece.
 - [ ] **Featured Flag:** Toggle `featured: true` on 4–8 flagship pieces for the homepage curated carousel.
@@ -56,10 +56,10 @@ This document tracks all completed and pending tasks prior to final handoff and 
 
 ---
 
-### Section G: Performance & Deployment Validation *(To Do Later)*
-- [ ] **Production Build Test:** Run `npm run build` locally to verify 0 errors or warnings.
+### Section G: Performance & Deployment Validation
+- [x] **Production Build Test:** Ran `npm run build` locally — passed with 0 errors (18/18 routes compiled).
 - [ ] **Mobile Device Smoke Test:** Verify on physical iOS (Safari) and Android (Chrome) devices.
-- [ ] **Custom 404 Page:** Verify `/not-found` displays cleanly if a user types a broken URL.
+- [x] **Custom 404 Page:** Verified `/not-found` displays cleanly and routes back to the catalog.
 
 ---
 
