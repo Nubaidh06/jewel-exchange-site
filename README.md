@@ -1,6 +1,10 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Jewel Exchange Web Platform
 
-## Getting Started
+Next.js 16 App Router · Sanity CMS · Responsive Luxury E-Commerce & Atelier
+
+## Deployment
+Automated production deployment configured via Vercel on push to `main`.
+
 
 First, run the development server:
 
