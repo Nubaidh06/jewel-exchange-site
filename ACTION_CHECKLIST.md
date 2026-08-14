@@ -6,9 +6,6 @@ This checklist tracks the 19 standard best-practice items for the Jewel Exchange
 
 ## 1. Actionable Pending Items (To Complete One by One)
 
-- [ ] **Item 3: Client Reviews / Testimonials Section**
-  - Add a curated 3-card luxury testimonial section on the homepage or `/about` page highlighting real bespoke client experiences.
-
 - [ ] **Item 4: Case Studies / Bespoke Story Highlights**
   - Enhance the `/bespoke` past creations portfolio with client story tags and design briefs.
 
@@ -19,6 +16,7 @@ This checklist tracks the 19 standard best-practice items for the Jewel Exchange
 
 ## 2. Completed Items (Verified in Codebase)
 
+- [x] **15. Client Reviews / Testimonials Section:** High-end 3-card *"Words of Distinction"* section on `/about` with gold 5-star ratings, custom piece tags (*Custom Engagement Ring*, *Heirloom Remodel*, *Bespoke Fine Jewelry*), monogram avatars, and verified patron badges.
 - [x] **4. Dedicated Thank You Page (`/thank-you`):** Luxury confirmation page with animated gold crest icon, dynamic consultation vs. general inquiry context, direct WhatsApp concierge trigger, showroom location directions, and ad conversion tracking support.
 - [x] **13. Dedicated Social Share Card (OpenGraph / Twitter):** Configured dedicated 1200x630px social card (`opengraph-image.png`) with title, description, and Twitter large summary card for WhatsApp, iMessage, and social media sharing previews.
 - [x] **17. Local Business Schema (JSON-LD Local SEO):** Structured `JewelryStore` / `LocalBusiness` schema integrated in `layout.js` with Colombo address (`514A, R.A. De Mel Mawatha`), opening hours (Mon-Sat 10AM-6PM), geo coordinates (`6.8996, 79.8553`), phone, email, and catalog offerings.
