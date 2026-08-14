@@ -122,42 +122,48 @@ export default function BookingPage() {
       <section className="booking-form-section">
         <div className="container">
           <div className="booking-form-layout">
-            {/* Left - Context */}
-            <div className="booking-form-intro reveal">
-              <span className="section-label">Schedule Your Visit</span>
-              <h2 className="booking-form-intro__title">Reserve Your <br />Private Appointment</h2>
-              <p className="booking-form-intro__text">
-                Every visit to Jewel Exchange is a curated experience. Select your preferred date and time, and our team will prepare a personalized selection for your arrival.
-              </p>
+            {/* Left - Context Container */}
+            <div className="booking-intro-wrapper reveal">
+              <div className="booking-intro-card">
+                <div className="booking-intro-card__accent-bar" />
+                <span className="section-label">Schedule Your Visit</span>
+                <h2 className="booking-form-intro__title">Reserve Your <br />Private Appointment</h2>
+                <div className="ornament" style={{ margin: "var(--space-xs) 0 var(--space-md)", maxWidth: "100px" }}>
+                  <span className="ornament__diamond" />
+                </div>
+                <p className="booking-form-intro__text">
+                  Every visit to Jewel Exchange is a curated experience. Select your preferred date and time, and our team will prepare a personalized selection for your arrival.
+                </p>
 
-              <div className="booking-types">
-                <div className="booking-type">
-                  <h4 className="booking-type__title">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                    Showroom Visit
-                  </h4>
-                  <p className="booking-type__desc">Browse our latest jewelry and gemstone collections in person.</p>
-                </div>
-                <div className="booking-type">
-                  <h4 className="booking-type__title">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-                    Bespoke Consultation
-                  </h4>
-                  <p className="booking-type__desc">Discuss your custom design ideas with our artisans and designers.</p>
-                </div>
-                <div className="booking-type">
-                  <h4 className="booking-type__title">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M6 3h12l4 6-10 13L2 9z"/></svg>
-                    Gemstone Sourcing
-                  </h4>
-                  <p className="booking-type__desc">View and select rare Ceylon gemstones with expert guidance.</p>
-                </div>
-                <div className="booking-type">
-                  <h4 className="booking-type__title">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-                    Virtual Meeting
-                  </h4>
-                  <p className="booking-type__desc">Connect with us remotely via Zoom or Google Meet from anywhere.</p>
+                <div className="booking-types">
+                  <div className="booking-type">
+                    <h4 className="booking-type__title">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                      Showroom Visit
+                    </h4>
+                    <p className="booking-type__desc">Browse our latest jewelry and gemstone collections in person.</p>
+                  </div>
+                  <div className="booking-type">
+                    <h4 className="booking-type__title">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                      Bespoke Consultation
+                    </h4>
+                    <p className="booking-type__desc">Discuss your custom design ideas with our artisans and designers.</p>
+                  </div>
+                  <div className="booking-type">
+                    <h4 className="booking-type__title">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M6 3h12l4 6-10 13L2 9z"/></svg>
+                      Gemstone Sourcing
+                    </h4>
+                    <p className="booking-type__desc">View and select rare Ceylon gemstones with expert guidance.</p>
+                  </div>
+                  <div className="booking-type">
+                    <h4 className="booking-type__title">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                      Virtual Meeting
+                    </h4>
+                    <p className="booking-type__desc">Connect with us remotely via Zoom or Google Meet from anywhere.</p>
+                  </div>
                 </div>
               </div>
             </div>
