@@ -29,9 +29,9 @@ This document tracks all completed and pending tasks prior to final handoff and 
 ---
 
 ### Section D: SEO, Assets & Interactive Polish
-- [ ] **Favicon & Touch Icons:** Confirm high-res gold jewel icon appears in browser tabs and mobile home screen bookmarks.
-- [ ] **Social Share (OG) Preview:** Verify preview card image and title when sharing the URL on WhatsApp/iMessage/social media.
-- [ ] **Printable Ring Sizing PDF:** Verify the downloadable sizing guide PDF in `/public` is the final branded version.
+- [x] **Favicon & Touch Icons:** High-res gold jewel icon configured in browser tabs and mobile bookmarks (`/icon.png`).
+- [x] **Social Share (OG) Preview:** Dedicated 1200x630px OpenGraph and Twitter card (`/opengraph-image.png`) active for WhatsApp/iMessage previews.
+- [x] **Printable Ring Sizing PDF:** Verify the downloadable sizing guide PDF in `/public` is the final branded version.
 - [ ] **Wishlist Inquiry Cart:** Test adding items, clearing, and dispatching a consolidated multi-item inquiry to WhatsApp.
 - [ ] **Mobile Device Smoke Test:** Final verification on physical iOS (Safari) and Android (Chrome) devices.
 

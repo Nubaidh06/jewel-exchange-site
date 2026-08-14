@@ -191,82 +191,71 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ── Signature Section Divider ── */}
-      <div className="section-divider-ornament">
-        <div className="container">
-          <div className="ornament ornament--wide">
-            <span className="ornament__diamond" />
-          </div>
-        </div>
-      </div>
-
       {/* ── Client Testimonials / Words of Distinction ── */}
-      <section className="about-testimonials">
-        <div className="about-testimonials__glow"></div>
+      <section className="about-testimonials section">
         <div className="container">
-          <div className="about-testimonials__header reveal">
-            <span className="section-label" style={{ display: 'block', textAlign: 'center', marginBottom: '0.75rem' }}>Patron Milestones</span>
-            <h2 className="section-title">Words of Distinction</h2>
-            <p className="section-subtitle">
-              Reflections from clients who entrusted their most meaningful milestones to our atelier.
-            </p>
-          </div>
+          <div className="testimonials-wrapper reveal">
+            <div className="testimonials-wrapper__accent-bar" />
 
-          <div className="testimonials-showcase reveal reveal-delay-1">
-            {/* Left: Featured Spotlight Story */}
-            <div className="testimonial-spotlight">
-              <div className="testimonial-spotlight__badge">
-                <span className="testimonial-spotlight__stars">★★★★★</span>
-                <span className="testimonial-spotlight__tag">Featured Commission · Royal Blue Sapphire</span>
+            <div className="about-testimonials__header">
+              <span className="section-label" style={{ display: 'block', textAlign: 'center', marginBottom: '0.75rem' }}>Patron Stories</span>
+              <h2 className="section-title">Words of Distinction</h2>
+              <div className="ornament">
+                <span className="ornament__diamond" />
               </div>
-
-              <div className="testimonial-spotlight__quote-mark">&ldquo;</div>
-
-              <blockquote className="testimonial-spotlight__text">
-                Working with Jewel Exchange to design my fiancé&apos;s sapphire engagement ring was an unforgettable experience. From examining unheated Ceylon sapphires under magnification to the final setting, the craftsmanship was beyond anything we imagined.
-              </blockquote>
-
-              <div className="testimonial-spotlight__author">
-                <div className="testimonial-spotlight__avatar">EM</div>
-                <div>
-                  <h3 className="testimonial-spotlight__name">Elena &amp; Marcus R.</h3>
-                  <p className="testimonial-spotlight__meta">London &amp; Colombo · <span className="text-gold">Verified Patron</span></p>
-                </div>
-              </div>
+              <p className="section-subtitle">
+                Reflections from clients who entrusted their most meaningful milestones to our atelier.
+              </p>
             </div>
 
-            {/* Right: Stacked Patron Highlights */}
-            <div className="testimonial-stacked">
-              <div className="testimonial-mini-card reveal reveal-delay-2">
-                <div className="testimonial-mini-card__top">
-                  <span className="testimonial-mini-card__stars">★★★★★</span>
-                  <span className="testimonial-mini-card__tag">Heirloom Remodel</span>
+            <div className="testimonials-grid">
+              <div className="testimonial-card">
+                <div className="testimonial-card__header">
+                  <div className="testimonial-card__stars">★★★★★</div>
+                  <span className="testimonial-card__tag">Custom Engagement Ring</span>
                 </div>
-                <blockquote className="testimonial-mini-card__text">
-                  &ldquo;I brought in my grandmother&apos;s vintage emerald ring for remodeling. The atelier preserved its sentimental soul while creating a timeless, modern setting. It is now my favorite treasure.&rdquo;
+                <blockquote className="testimonial-card__quote">
+                  &ldquo;Working with Jewel Exchange to design my fiancé&apos;s sapphire engagement ring was an unforgettable experience. From examining unheated Ceylon sapphires under magnification to the final setting, the craftsmanship was beyond anything we imagined.&rdquo;
                 </blockquote>
-                <div className="testimonial-mini-card__author">
-                  <div className="testimonial-mini-card__avatar">SD</div>
-                  <div>
-                    <h4 className="testimonial-mini-card__name">Samantha D.</h4>
-                    <p className="testimonial-mini-card__meta">Colombo · <span className="text-gold">Verified Patron</span></p>
+                <div className="testimonial-card__author">
+                  <div className="testimonial-card__avatar">EM</div>
+                  <div className="testimonial-card__info">
+                    <h4 className="testimonial-card__name">Elena &amp; Marcus R.</h4>
+                    <p className="testimonial-card__location">London &amp; Colombo · <span className="testimonial-card__verified">✓ Verified Patron</span></p>
                   </div>
                 </div>
               </div>
 
-              <div className="testimonial-mini-card reveal reveal-delay-3">
-                <div className="testimonial-mini-card__top">
-                  <span className="testimonial-mini-card__stars">★★★★★</span>
-                  <span className="testimonial-mini-card__tag">International Bespoke</span>
+              <div className="testimonial-card testimonial-card--featured">
+                <div className="testimonial-card__header">
+                  <div className="testimonial-card__stars">★★★★★</div>
+                  <span className="testimonial-card__tag">Heirloom Remodel</span>
                 </div>
-                <blockquote className="testimonial-mini-card__text">
-                  &ldquo;Commissioning fine jewelry remotely was effortless. Jewel Exchange guided me with 3D CAD renders, video stone reveals, and secure insured delivery right to Dubai.&rdquo;
+                <blockquote className="testimonial-card__quote">
+                  &ldquo;I brought in my grandmother&apos;s vintage emerald ring for remodeling. The atelier treated the piece with immense respect, preserving its sentimental heritage while giving it a timeless, modern setting. It is now my favorite treasure.&rdquo;
                 </blockquote>
-                <div className="testimonial-mini-card__author">
-                  <div className="testimonial-mini-card__avatar">TA</div>
-                  <div>
-                    <h4 className="testimonial-mini-card__name">Tariq A.</h4>
-                    <p className="testimonial-mini-card__meta">Dubai, UAE · <span className="text-gold">Verified Patron</span></p>
+                <div className="testimonial-card__author">
+                  <div className="testimonial-card__avatar">SD</div>
+                  <div className="testimonial-card__info">
+                    <h4 className="testimonial-card__name">Samantha D.</h4>
+                    <p className="testimonial-card__location">Colombo · <span className="testimonial-card__verified">✓ Verified Patron</span></p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="testimonial-card">
+                <div className="testimonial-card__header">
+                  <div className="testimonial-card__stars">★★★★★</div>
+                  <span className="testimonial-card__tag">Bespoke Fine Jewelry</span>
+                </div>
+                <blockquote className="testimonial-card__quote">
+                  &ldquo;Living overseas, I was initially nervous about commissioning fine jewelry remotely. Jewel Exchange made the process completely effortless with 3D renders, video updates, and fully insured delivery right to my door in Dubai.&rdquo;
+                </blockquote>
+                <div className="testimonial-card__author">
+                  <div className="testimonial-card__avatar">TA</div>
+                  <div className="testimonial-card__info">
+                    <h4 className="testimonial-card__name">Tariq A.</h4>
+                    <p className="testimonial-card__location">Dubai, UAE · <span className="testimonial-card__verified">✓ Verified Patron</span></p>
                   </div>
                 </div>
               </div>
