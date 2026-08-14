@@ -4,18 +4,9 @@ This document tracks all completed and pending tasks prior to final handoff and 
 
 ---
 
-## 1. Master Task Tracking
+## 1. Remaining Tasks to Complete
 
-### Section A: Forms & Lead Capture
-- [x] **Contact Form:** Live Formspree endpoint (`https://formspree.io/f/xwvrebqo`) connected with custom subject line (`New Contact Inquiry - Jewel Exchange`).
-- [x] **Booking / Consultation Form:** Connected with asynchronous AJAX submission, live Formspree endpoint, and in-page luxury confirmation view.
-- [x] **WhatsApp Direct Routing:** Phone number (`+94773534538`) and pre-filled luxury messages verified across product pages, inquiry cart, and mobile sticky bar.
-- [x] **Social & Map Links:** Instagram (`@jewelexchange_sl`), Google Maps flagship location, and phone call triggers (`+94 11 250 5020`).
-
----
-
-### Section B: Sanity CMS & Catalog Management *(To Do Later)*
-- [x] **Sanity Environment Keys:** Confirmed `NEXT_PUBLIC_SANITY_PROJECT_ID` and `NEXT_PUBLIC_SANITY_DATASET` in production environment.
+### Section A: Sanity CMS & Catalog Management
 - [ ] **Upload Inventory:** Populate live products (rings, necklaces, earrings, bracelets, loose gemstones) in Sanity Studio (`/studio`).
 - [ ] **Product Specifications:** Add metal karat, stone weight, lab cert details, and pricing to each piece.
 - [ ] **Featured Flag:** Toggle `featured: true` on 4–8 flagship pieces for the homepage curated carousel.
@@ -23,14 +14,13 @@ This document tracks all completed and pending tasks prior to final handoff and 
 
 ---
 
-### Section C: Content, Typography & Copywriting *(To Do Later)*
-- [x] **Em Dash Cleanup:** Replaced all em dashes (`—`) with standard hyphens (`-`) across copy, metadata, and alt tags.
+### Section B: Content, Typography & Copywriting
 - [ ] **Final Text & Story Tweaks:** Final read of About page heritage copy, Bespoke process steps, and FAQs.
 - [ ] **Final Photography Swaps:** Replace any remaining placeholder model/craftsmanship photos with finalized brand assets.
 
 ---
 
-### Section D: Legal & Policy Pages *(To Do Later)*
+### Section C: Legal & Policy Pages
 - [ ] **Shipping & Delivery Policy ([/shipping](file:///Users/nubaidhahamed/Desktop/JEWEL-EXCHANGE/website/app/shipping/page.js)):** Confirm courier partners (FedEx/DHL Express), transit times, and international duties.
 - [ ] **Refunds & Exchanges Policy ([/refunds](file:///Users/nubaidhahamed/Desktop/JEWEL-EXCHANGE/website/app/refunds/page.js)):** Confirm 14-day exchange terms and bespoke order exclusions.
 - [ ] **Terms & Conditions ([/terms](file:///Users/nubaidhahamed/Desktop/JEWEL-EXCHANGE/website/app/terms/page.js)):** Review standard terms of service.
@@ -38,28 +28,12 @@ This document tracks all completed and pending tasks prior to final handoff and 
 
 ---
 
-### Section E: SEO, Domain & Search Indexing
-- [x] **Production Domain Set:** Configured `https://jewelexchange.lk` in metadata, OpenGraph, sitemap, and robots.
-- [x] **Dynamic XML Sitemap:** Generated at `/sitemap.xml` with static and dynamic catalog routes.
-- [x] **Search Engine Robots:** Configured `/robots.txt` with `/studio` protected from crawling.
+### Section D: SEO, Assets & Interactive Polish
 - [ ] **Favicon & Touch Icons:** Confirm high-res gold jewel icon appears in browser tabs and mobile home screen bookmarks.
 - [ ] **Social Share (OG) Preview:** Verify preview card image and title when sharing the URL on WhatsApp/iMessage/social media.
-
----
-
-### Section F: Interactive Tools & UI Polish
-- [x] **Mobile Product Slider:** Responsive 1:1 uncropped aspect ratio with swipe snapping and indicator dots.
-- [x] **Desktop Product Gallery:** Split layout with left vertical thumbnail track and uncropped main image.
-- [x] **Contact Showroom Card:** Elevated atelier container with icons, hours, amenities, and directions.
 - [ ] **Printable Ring Sizing PDF:** Verify the downloadable sizing guide PDF in `/public` is the final branded version.
 - [ ] **Wishlist Inquiry Cart:** Test adding items, clearing, and dispatching a consolidated multi-item inquiry to WhatsApp.
-
----
-
-### Section G: Performance & Deployment Validation
-- [x] **Production Build Test:** Ran `npm run build` locally — passed with 0 errors (18/18 routes compiled).
-- [ ] **Mobile Device Smoke Test:** Verify on physical iOS (Safari) and Android (Chrome) devices.
-- [x] **Custom 404 Page:** Verified `/not-found` displays cleanly and routes back to the catalog.
+- [ ] **Mobile Device Smoke Test:** Final verification on physical iOS (Safari) and Android (Chrome) devices.
 
 ---
 
