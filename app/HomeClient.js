@@ -36,7 +36,7 @@ export default function HomeClient({ featuredProducts = [] }) {
         <div className="hero__bg">
           <Image
             src="/images/banners/banner 1.png"
-            alt="Jewel Exchange — Bespoke Jewelry"
+            alt="Jewel Exchange - Bespoke Jewelry"
             fill
             style={{ objectFit: "cover" }}
             priority
@@ -72,7 +72,7 @@ export default function HomeClient({ featuredProducts = [] }) {
               <div className="ornament__diamond"></div>
             </div>
             <p>At Jewel Exchange, we believe that every piece of jewelry tells a story. Our master craftsmen combine time-honoured techniques with contemporary design to create pieces that are truly timeless.</p>
-            <p>Each creation begins with the finest materials — ethically sourced gemstones, precious metals, and an unwavering commitment to perfection.</p>
+            <p>Each creation begins with the finest materials - ethically sourced gemstones, precious metals, and an unwavering commitment to perfection.</p>
             <Link href="/about" className="intro__link">
               Discover Our Story <span className="intro__link-arrow">→</span>
             </Link>
@@ -80,11 +80,11 @@ export default function HomeClient({ featuredProducts = [] }) {
           <div className="intro__image-wrap reveal reveal-delay-2">
             <div className="intro__image">
               <Image
-                src="/images/models_and_shots/01.png"
-                alt="Craftsmanship"
-                width={560}
-                height={700}
-                style={{ objectFit: "cover", width: "100%", height: "auto" }}
+                src="/images/models_and_shots/05.png"
+                alt="Jewelry Craftsmanship and Workshop Artistry"
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                style={{ objectFit: "cover", objectPosition: "center" }}
               />
             </div>
           </div>
@@ -130,7 +130,7 @@ export default function HomeClient({ featuredProducts = [] }) {
         </div>
 
         <div className="container featured-cta reveal">
-          <Link href="/jewelry" className="btn btn--outline">
+          <Link href="/jewelry" className="btn btn--gold">
             View Full Collection <span className="btn-arrow">→</span>
           </Link>
         </div>

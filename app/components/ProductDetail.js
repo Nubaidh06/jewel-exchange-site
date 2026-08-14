@@ -15,9 +15,11 @@ export default function ProductDetail({ product, type }) {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [showSizeGuide, setShowSizeGuide] = useState(false);
   const [ringDiameter, setRingDiameter] = useState(16.5);
+  const [activeImageIndex, setActiveImageIndex] = useState(0);
   const { toggleWishlist, isInWishlist } = useWishlist();
   const actionsRef = useRef(null);
   const carouselRef = useRef(null);
+  const sliderRef = useRef(null);
 
   /* ── Scroll reveal ── */
   useEffect(() => {
@@ -59,6 +61,29 @@ export default function ProductDetail({ product, type }) {
 
   if (!product) return null;
 
+  const defaultImg = type === "Jewelry" ? "/images/models_and_shots/20.png" : "/images/models_and_shots/28.png";
+  const rawImages = (Array.isArray(product.images) && product.images.length > 0)
+    ? product.images
+    : [product.img || defaultImg];
+  const galleryImages = rawImages.filter(Boolean);
+
+  const handleSliderScroll = () => {
+    if (!sliderRef.current) return;
+    const index = Math.round(sliderRef.current.scrollLeft / sliderRef.current.clientWidth);
+    if (index !== activeImageIndex) {
+      setActiveImageIndex(index);
+    }
+  };
+
+  const scrollToIndex = (index) => {
+    if (!sliderRef.current) return;
+    sliderRef.current.scrollTo({
+      left: index * sliderRef.current.clientWidth,
+      behavior: "smooth",
+    });
+    setActiveImageIndex(index);
+  };
+
   const saved = isInWishlist(product.slug);
 
   /* ── Related items (4) ── */
@@ -92,34 +117,61 @@ export default function ProductDetail({ product, type }) {
       <div className="product-detail-split">
         {/* ── Left: Sticky Gallery ── */}
         <div className="product-gallery">
-          <div className="product-gallery__main reveal">
-            <Image
-              src={product.img || (type === "Jewelry" ? "/images/models_and_shots/20.png" : "/images/models_and_shots/28.png")}
-              alt={`${product.name} — primary view`}
-              fill
-              sizes="(min-width:1024px) 55vw, 100vw"
-              style={{ objectFit: "cover" }}
-              priority
-            />
-          </div>
+          {/* Desktop Thumbnails (Only show if multiple images exist) */}
+          {galleryImages.length > 1 && (
+            <div className="product-gallery__thumbs">
+              {galleryImages.map((img, i) => (
+                <button
+                  key={i}
+                  className={`product-gallery__thumb ${activeImageIndex === i ? "active" : ""}`}
+                  onClick={() => scrollToIndex(i)}
+                  aria-label={`View image ${i + 1}`}
+                >
+                  <Image
+                    src={img}
+                    alt={`${product.name} - thumbnail ${i + 1}`}
+                    fill
+                    sizes="80px"
+                    style={{ objectFit: "contain" }}
+                  />
+                </button>
+              ))}
+            </div>
+          )}
 
-          <div className="product-gallery__thumbs">
-            {[
-              { pos: "center", label: "Front" },
-              { pos: "top", label: "Detail" },
-              { pos: "bottom", label: "Profile" },
-            ].map((t) => (
-              <div key={t.pos} className="product-gallery__thumb">
+          {/* Main Slider / Image Showcase */}
+          <div 
+            className={`product-gallery__slider ${galleryImages.length === 1 ? "product-gallery__slider--single" : ""}`} 
+            ref={sliderRef}
+            onScroll={handleSliderScroll}
+          >
+            {galleryImages.map((img, i) => (
+              <div key={i} className="product-gallery__slide">
                 <Image
-                  src={product.img || (type === "Jewelry" ? "/images/models_and_shots/20.png" : "/images/models_and_shots/28.png")}
-                  alt={`${product.name} — ${t.label}`}
+                  src={img}
+                  alt={`${product.name} - view ${i + 1}`}
                   fill
-                  sizes="(min-width:1024px) 18vw, 30vw"
-                  style={{ objectFit: "cover", objectPosition: t.pos }}
+                  sizes="(min-width:1024px) 50vw, 100vw"
+                  style={{ objectFit: "contain" }}
+                  priority={i === 0}
                 />
               </div>
             ))}
           </div>
+
+          {/* Mobile Dots (Only show if multiple images exist) */}
+          {galleryImages.length > 1 && (
+            <div className="product-gallery__dots">
+              {galleryImages.map((_, i) => (
+                <button
+                  key={i}
+                  className={`product-gallery__dot ${activeImageIndex === i ? "active" : ""}`}
+                  onClick={() => scrollToIndex(i)}
+                  aria-label={`Go to image ${i + 1}`}
+                />
+              ))}
+            </div>
+          )}
         </div>
 
         {/* ── Right: Product Info ── */}

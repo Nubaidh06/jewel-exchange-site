@@ -32,11 +32,15 @@ export default async function sitemap() {
     '/contact',
     '/gemstones',
     '/jewelry',
+    '/shipping',
+    '/refunds',
+    '/terms',
+    '/privacy',
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
     changeFrequency: 'monthly',
-    priority: route === '' ? 1.0 : 0.9,
+    priority: route === '' ? 1.0 : 0.8,
   }));
 
   return [...staticRoutes, ...jewelryUrls, ...gemstoneUrls];

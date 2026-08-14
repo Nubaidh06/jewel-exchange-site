@@ -24,15 +24,34 @@ export default function BookingPage() {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission to Formspree
-    setTimeout(() => {
+    try {
+      const response = await fetch("https://formspree.io/f/xwvrebqo", {
+        method: "POST",
+        headers: {
+          "Accept": "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          ...formData,
+          _subject: `New Booking: ${formData.name} - ${formData.appointmentType}`,
+        }),
+      });
+
+      if (response.ok) {
+        setIsSubmitted(true);
+      } else {
+        alert("There was an issue submitting your request. Please try again or reach us on WhatsApp.");
+      }
+    } catch (err) {
+      console.error("Booking error:", err);
+      alert("Unable to submit booking right now. Please reach us on WhatsApp or call us directly.");
+    } finally {
       setIsSubmitting(false);
-      setIsSubmitted(true);
-    }, 1500);
+    }
   };
 
   return (
@@ -103,7 +122,7 @@ export default function BookingPage() {
       <section className="booking-form-section">
         <div className="container">
           <div className="booking-form-layout">
-            {/* Left — Context */}
+            {/* Left - Context */}
             <div className="booking-form-intro reveal">
               <span className="section-label">Schedule Your Visit</span>
               <h2 className="booking-form-intro__title">Reserve Your <br />Private Appointment</h2>
@@ -143,7 +162,7 @@ export default function BookingPage() {
               </div>
             </div>
 
-            {/* Right — Form */}
+            {/* Right - Form */}
             <div className="booking-form-wrapper reveal reveal-delay-2">
               {isSubmitted ? (
                 <div className="booking-success">
@@ -164,7 +183,7 @@ export default function BookingPage() {
                 <form 
                   className="booking-form"
                   onSubmit={handleSubmit}
-                  action="https://formspree.io/f/YOUR_FORM_ID"
+                  action="https://formspree.io/f/xwvrebqo"
                   method="POST"
                 >
                   <div className="booking-form__heading">
@@ -300,7 +319,7 @@ export default function BookingPage() {
               <div className="expect-step__number">04</div>
               <div className="expect-step__content">
                 <h3 className="expect-step__title">Next Steps</h3>
-                <p className="expect-step__desc">Leave with a clear plan — whether it&apos;s a purchase, a bespoke design brief, or a gemstone selection to consider.</p>
+                <p className="expect-step__desc">Leave with a clear plan - whether it&apos;s a purchase, a bespoke design brief, or a gemstone selection to consider.</p>
               </div>
             </div>
           </div>

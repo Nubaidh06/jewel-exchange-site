@@ -28,7 +28,7 @@ export default function ContactPage() {
             We&apos;d Love to<br />Hear From You
           </h1>
           <p className="contact-hero__subtitle reveal reveal-delay-2">
-            Whether you have a question about our collections, need assistance with a bespoke piece, or simply want to say hello — we&apos;re here for you.
+            Whether you have a question about our collections, need assistance with a bespoke piece, or simply want to say hello - we&apos;re here for you.
           </p>
         </div>
       </section>
@@ -92,29 +92,30 @@ export default function ContactPage() {
       <section className="contact-form-section">
         <div className="container">
           <div className="contact-form-layout">
-            {/* Left — Context */}
+            {/* Left - Context */}
             <div className="contact-form-intro reveal">
               <span className="section-label">Send a Message</span>
               <h2 className="contact-form-intro__title">Let&apos;s Start a Conversation</h2>
               <p className="contact-form-intro__text">
-                Whether it&apos;s a general question, support request, media inquiry, or the beginning of something bespoke — fill out the form and our team will get back to you within 24 hours.
+                Whether it&apos;s a general question, support request, media inquiry, or the beginning of something bespoke - fill out the form and our team will get back to you within 24 hours.
               </p>
               <div className="contact-form-intro__divider" />
               <p className="contact-form-intro__note">
                 Looking to book a private showroom viewing or start a custom design project?
               </p>
-              <Link href="/booking" className="btn btn--outline" style={{ maxWidth: '280px' }}>
+              <Link href="/booking" className="btn btn--gold" style={{ maxWidth: '280px' }}>
                 Book an Appointment <span className="btn-arrow">→</span>
               </Link>
             </div>
 
-            {/* Right — Form */}
+            {/* Right - Form */}
             <div className="contact-form-wrapper reveal reveal-delay-2">
               <form
-                action="https://formspree.io/f/YOUR_FORM_ID"
+                action="https://formspree.io/f/xwvrebqo"
                 method="POST"
                 className="form contact-form"
               >
+                <input type="hidden" name="_subject" value="New Contact Inquiry - Jewel Exchange" />
                 <div className="form-row">
                   <div className="form-group">
                     <label htmlFor="contact-name" className="form-label">Full Name</label>
@@ -184,26 +185,59 @@ export default function ContactPage() {
 
           <div className="showroom-content reveal reveal-delay-1">
             <div className="showroom-details">
-              <div className="showroom-detail-item">
-                <h4 className="showroom-detail-item__label">Address</h4>
-                <p>514A, R.A. De Mel Mawatha<br />Colombo 03, Sri Lanka</p>
+              <div className="showroom-details__header">
+                <span className="showroom-details__badge">Flagship Atelier</span>
+                <h3 className="showroom-details__title">Colombo Showroom</h3>
               </div>
+
               <div className="showroom-detail-item">
-                <h4 className="showroom-detail-item__label">Hours</h4>
-                <p>Monday – Saturday<br />10:00 AM – 6:00 PM</p>
+                <div className="showroom-detail-item__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width="20" height="20">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
+                </div>
+                <div className="showroom-detail-item__content">
+                  <h4 className="showroom-detail-item__label">Location & Address</h4>
+                  <p>514A, R.A. De Mel Mawatha, Colombo 03, Sri Lanka</p>
+                </div>
               </div>
+
               <div className="showroom-detail-item">
-                <h4 className="showroom-detail-item__label">Experience</h4>
-                <p>Valet Parking Available<br />Private Viewings by Appointment</p>
+                <div className="showroom-detail-item__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width="20" height="20">
+                    <circle cx="12" cy="12" r="10" />
+                    <polyline points="12 6 12 12 16 14" />
+                  </svg>
+                </div>
+                <div className="showroom-detail-item__content">
+                  <h4 className="showroom-detail-item__label">Opening Hours</h4>
+                  <p>Monday - Saturday: 10:00 AM - 6:00 PM<br /><span className="showroom-detail-item__sub">Sunday: Closed (Private Bookings Only)</span></p>
+                </div>
               </div>
-              <a
-                href="https://maps.google.com/?q=Jewel+Exchange,+514A+R.A.+De+Mel+Mawatha,+Colombo+03,+Sri+Lanka"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn--outline showroom-directions-btn"
-              >
-                Get Directions <span className="btn-arrow">→</span>
-              </a>
+
+              <div className="showroom-detail-item">
+                <div className="showroom-detail-item__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width="20" height="20">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                  </svg>
+                </div>
+                <div className="showroom-detail-item__content">
+                  <h4 className="showroom-detail-item__label">Concierge & Amenities</h4>
+                  <p>Valet Parking Available<br /><span className="showroom-detail-item__sub">Private Viewings by Appointment</span></p>
+                </div>
+              </div>
+
+              <div className="showroom-details__actions">
+                <a
+                  href="https://maps.google.com/?q=Jewel+Exchange,+514A+R.A.+De+Mel+Mawatha,+Colombo+03,+Sri+Lanka"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn--gold btn--full showroom-directions-btn"
+                >
+                  Get Directions <span className="btn-arrow">→</span>
+                </a>
+              </div>
             </div>
             <div className="showroom-map">
               <iframe

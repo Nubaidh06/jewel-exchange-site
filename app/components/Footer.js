@@ -14,15 +14,20 @@ export default function Footer() {
             <h3 className="footer__newsletter-title">Stay in the Loop</h3>
             <p className="footer__newsletter-desc">Be the first to know about new collections and exclusive offers.</p>
           </div>
-          <form className="footer__newsletter-form" action="#">
-            <input
-              type="email"
-              placeholder="Your email address"
-              className="form-input footer__newsletter-input"
-              aria-label="Email for newsletter"
-            />
-            <button type="submit" className="btn btn--sm">Subscribe</button>
-          </form>
+          <div className="footer__newsletter-form-wrapper">
+            <form className="footer__newsletter-form" action="#">
+              <input
+                type="email"
+                placeholder="Your email address"
+                className="form-input footer__newsletter-input"
+                aria-label="Email for newsletter"
+              />
+              <button type="submit" className="btn btn--sm">Subscribe</button>
+            </form>
+            <p className="footer__newsletter-consent" style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.6)', marginTop: '0.5rem' }}>
+              By subscribing, you agree to our <Link href="/privacy" style={{ textDecoration: 'underline', color: 'rgba(255,255,255,0.8)' }}>Privacy Policy</Link>.
+            </p>
+          </div>
         </div>
       </div>
 
@@ -55,6 +60,16 @@ export default function Footer() {
           <nav className="footer__nav">
             <Link href="/about">About Us</Link>
             <Link href="/contact">Contact</Link>
+          </nav>
+        </div>
+
+        <div className="footer__col">
+          <h4 className="footer__heading">Legal</h4>
+          <nav className="footer__nav">
+            <Link href="/terms">Terms & Conditions</Link>
+            <Link href="/privacy">Privacy Policy</Link>
+            <Link href="/refunds">Refunds & Returns</Link>
+            <Link href="/shipping">Shipping & Delivery</Link>
           </nav>
         </div>
 

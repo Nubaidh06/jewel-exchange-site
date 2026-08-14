@@ -1,5 +1,5 @@
 /* ============================================
-   JEWEL EXCHANGE — GLOBAL DESIGN SYSTEM
+   JEWEL EXCHANGE - GLOBAL DESIGN SYSTEM
    Light & Airy Luxury Aesthetic
    ============================================ */
 
@@ -265,6 +265,21 @@ button {
   background-color: var(--color-text);
   border-color: var(--color-text);
   color: var(--color-surface);
+}
+
+.btn--gold {
+  background-color: var(--color-gold);
+  color: #ffffff;
+  border-color: var(--color-gold);
+  box-shadow: 0 4px 16px rgba(184, 150, 90, 0.25);
+}
+
+.btn--gold:hover {
+  background-color: var(--color-gold-dark);
+  border-color: var(--color-gold-dark);
+  color: #ffffff;
+  box-shadow: 0 6px 24px rgba(184, 150, 90, 0.4);
+  transform: translateY(-2px);
 }
 
 .btn--white {

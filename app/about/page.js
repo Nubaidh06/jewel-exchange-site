@@ -4,7 +4,7 @@ import './about.css';
 
 export const metadata = {
   title: 'About Us | Jewel Exchange',
-  description: 'Discover the heritage, craftsmanship, and values behind Jewel Exchange — Sri Lanka\'s premier bespoke jewelry atelier.',
+  description: 'Discover the heritage, craftsmanship, and values behind Jewel Exchange - Sri Lanka\'s premier bespoke jewelry atelier.',
 };
 
 export default function AboutPage() {
@@ -44,17 +44,17 @@ export default function AboutPage() {
 
               <blockquote className="heritage-quote">
                 <span className="heritage-quote__mark">&ldquo;</span>
-                We believe that true luxury lies in the details — in the precision of every cut, the warmth of every polish, the story behind every stone.
+                We believe that true luxury lies in the details - in the precision of every cut, the warmth of every polish, the story behind every stone.
               </blockquote>
 
               <p>
                 Founded in the gemstone capital of Sri Lanka, Jewel Exchange was born from a deep reverence for the island&rsquo;s rich mineralogical heritage. For over two decades, our master craftsmen have transformed raw, earth-born stones into wearable works of art, honouring centuries-old techniques while embracing cutting-edge design technology.
               </p>
               <p>
-                Our atelier bridges the gap between old-world artisanship and modern luxury. Each creation begins with a conversation — understanding not just what our clients desire, but the emotions and milestones they wish to celebrate.
+                Our atelier bridges the gap between old-world artisanship and modern luxury. Each creation begins with a conversation - understanding not just what our clients desire, but the emotions and milestones they wish to celebrate.
               </p>
               <p>
-                Today, Jewel Exchange stands as a testament to what happens when passion, precision, and integrity converge. Every piece that leaves our workshop carries with it a piece of Sri Lanka&rsquo;s soul — and a promise of enduring beauty.
+                Today, Jewel Exchange stands as a testament to what happens when passion, precision, and integrity converge. Every piece that leaves our workshop carries with it a piece of Sri Lanka&rsquo;s soul - and a promise of enduring beauty.
               </p>
             </div>
 
@@ -132,7 +132,7 @@ export default function AboutPage() {
               <span className="value-card__number">02</span>
               <h3 className="value-card__title">Personal Touch</h3>
               <p className="value-card__desc">
-                From your first consultation to the final reveal, our artisans work closely with you. We listen, sketch, refine, and create — transforming your vision into a one-of-a-kind treasure.
+                From your first consultation to the final reveal, our artisans work closely with you. We listen, sketch, refine, and create - transforming your vision into a one-of-a-kind treasure.
               </p>
             </div>
 

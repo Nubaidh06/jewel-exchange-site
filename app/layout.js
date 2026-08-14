@@ -19,7 +19,7 @@ const outfit = Outfit({
 
 export const metadata = {
   metadataBase: new URL("https://jewelexchange.lk"),
-  title: "Jewel Exchange | Bespoke Jewelry & Gemstones — Sri Lanka",
+  title: "Jewel Exchange | Bespoke Jewelry & Gemstones - Sri Lanka",
   description:
     "Exquisite bespoke jewelry and premium gemstones crafted to perfection in Sri Lanka. Discover our collections or create your own masterpiece.",
   openGraph: {

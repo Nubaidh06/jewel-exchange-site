@@ -1,5 +1,5 @@
 /* ============================================
-   HOME PAGE — Airy Editorial Redesign
+   HOME PAGE - Airy Editorial Redesign
    ============================================ */
 
 /* ---- Hero (Enhanced) ---- */
@@ -232,8 +232,10 @@
 }
 
 .intro__image {
+  position: relative;
   overflow: hidden;
   box-shadow: var(--shadow-xl);
+  aspect-ratio: 4 / 5;
 }
 
 .intro__image img {
@@ -654,6 +656,11 @@
 
   .intro__image-wrap::before {
     display: none;
+  }
+
+  .intro__image {
+    aspect-ratio: 4 / 3;
+    border-radius: var(--radius-md);
   }
 
   .collections-split {

@@ -194,7 +194,7 @@ const JEWELRY_ITEMS = [
     category: "Necklaces", 
     price: "$3,100",
     img: "/images/products/Product 13 - 01.png",
-    description: "Pre-layered for effortless style, this necklace combines three distinct chain textures—snake, rolo, and cable—into one cohesive piece.",
+    description: "Pre-layered for effortless style, this necklace combines three distinct chain textures - snake, rolo, and cable - into one cohesive piece.",
     specifications: [
       "Metal: 18k Yellow Gold",
       "Lengths: 16, 18, and 20 inches",
