@@ -9,7 +9,7 @@ This document tracks all completed and pending tasks prior to final handoff and 
 ### Section A: Sanity CMS & Catalog Management
 - [ ] **Upload Inventory:** Populate live products (rings, necklaces, earrings, bracelets, loose gemstones) in Sanity Studio (`/studio`).
 - [ ] **Product Specifications:** Add metal karat, stone weight, lab cert details, and pricing to each piece.
-- [ ] **Image Asset Optimization:** Confirm uploaded photos render with `?auto=format` without latency.
+- [x] **Image Asset Optimization:** Confirm uploaded photos render with `?auto=format` without latency.
 
 ---
 
