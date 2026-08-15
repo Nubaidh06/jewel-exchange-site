@@ -1,5 +1,6 @@
 import Script from "next/script";
 import { Playfair_Display, Outfit } from "next/font/google";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -155,6 +156,7 @@ export default function RootLayout({ children }) {
           <ScrollToTop />
           <Footer />
         </WishlistProvider>
+        <SpeedInsights />
       </body>
     </html>
   );
