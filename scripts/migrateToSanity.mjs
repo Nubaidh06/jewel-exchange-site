@@ -493,9 +493,9 @@ const GEMSTONE_ITEMS = [
 ];
 
 const client = createClient({
-  projectId: 'rrsnwe4c',
-  dataset: 'production',
-  token: 'sk03RRt4ykmOS2sNK85TJmy8tJ0GuUovsfZZFouqtBy2gcjRSffAudoYKfCTLzNvJDFSMO7ygeeb857uLCJrIaxnWcH35Muk1EI8v3ZU8uSW4HXei5u7i8u6Z2Iv1n17YhQQ7IdhAW6Jf803hqN4zxMvGh4Pctd4rYQDX5OSFKWhv8hWrQL1',
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || 'rrsnwe4c',
+  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || 'production',
+  token: process.env.SANITY_API_TOKEN,
   apiVersion: '2024-06-01',
   useCdn: false,
 })

@@ -6,12 +6,29 @@ import { fileURLToPath } from 'url'
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
+// Load .env.local if present
+const envLocalPath = path.resolve(__dirname, '../.env.local')
+if (fs.existsSync(envLocalPath)) {
+  const envContent = fs.readFileSync(envLocalPath, 'utf8')
+  envContent.split(/\r?\n/).forEach(line => {
+    const match = line.match(/^\s*([\w_]+)\s*=\s*(.*)?\s*$/)
+    if (match) {
+      const key = match[1]
+      let value = match[2] || ''
+      if ((value.startsWith('"') && value.endsWith('"')) || (value.startsWith("'") && value.endsWith("'"))) {
+        value = value.slice(1, -1)
+      }
+      process.env[key] = value
+    }
+  })
+}
+
 // 1. Initialize Sanity Client
 const client = createClient({
   projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || 'rrsnwe4c',
   dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || 'production',
   apiVersion: '2024-03-01',
-  token: process.env.SANITY_API_TOKEN || 'sk03RRt4ykmOS2sNK85TJmy8tJ0GuUovsfZZFouqtBy2gcjRSffAudoYKfCTLzNvJDFSMO7ygeeb857uLCJrIaxnWcH35Muk1EI8v3ZU8uSW4HXei5u7i8u6Z2Iv1n17YhQQ7IdhAW6Jf803hqN4zxMvGh4Pctd4rYQDX5OSFKWhv8hWrQL1',
+  token: process.env.SANITY_API_TOKEN,
   useCdn: false,
 })
 
@@ -55,9 +72,9 @@ function parseCSVLine(text) {
 
   for (let i = 0; i < text.length; i++) {
     const char = text[i]
-    if (char === '"' || char === "'") {
-      if (inQuotes && text[i + 1] === char) {
-        cur += char
+    if (char === '"') {
+      if (inQuotes && text[i + 1] === '"') {
+        cur += '"'
         i++
       } else {
         inQuotes = !inQuotes
@@ -76,14 +93,13 @@ function parseCSVLine(text) {
 async function uploadImage(imageRelPath) {
   if (!imageRelPath) return null
 
-  // Try direct path or subfolder path
   let fullPath = path.resolve(assetsBaseDir, imageRelPath)
   if (!fs.existsSync(fullPath)) {
     fullPath = path.resolve(rootDir, 'website/public', imageRelPath)
   }
 
   if (!fs.existsSync(fullPath)) {
-    console.warn(`⚠️ Image not found at: ${fullPath} (Continuing without image)`)
+    console.warn(`  ⚠️ Image file not found at: ${fullPath}`)
     return null
   }
 
@@ -92,6 +108,20 @@ async function uploadImage(imageRelPath) {
   console.log(`  Uploading image asset: ${filename}...`)
   const asset = await client.assets.upload('image', stream, { filename })
   return asset._id
+}
+
+async function clearExistingProducts() {
+  console.log('🧹 Fetching and clearing all existing product documents from Sanity Cloud...')
+  try {
+    const existing = await client.fetch('*[_type == "product"]._id')
+    console.log(`Found ${existing.length} existing products to remove.`)
+    for (const id of existing) {
+      await client.delete(id)
+    }
+    console.log('✅ Clean slate: All old product records cleared successfully.\n')
+  } catch (err) {
+    console.error('⚠️ Error clearing products:', err.message)
+  }
 }
 
 async function runImport() {
@@ -103,14 +133,16 @@ async function runImport() {
   const csvContent = fs.readFileSync(csvPath, 'utf8')
   const products = parseCSV(csvContent)
 
-  console.log(`\n💎 Starting Sanity CSV Import — ${products.length} products found...\n`)
+  console.log(`💎 Starting Sanity CSV Import — ${products.length} products to sync...\n`)
+
+  let successCount = 0
 
   for (const item of products) {
     const sku = item.sku || 'ITEM'
     const name = item.name
     if (!name) continue
 
-    console.log(`▶ Processing: [${sku}] ${name}...`)
+    console.log(`▶ [${sku}] ${name}`)
 
     const slug = generateSlug(name)
     const isFeatured = item.featured && item.featured.toUpperCase() === 'TRUE'
@@ -132,7 +164,10 @@ async function runImport() {
       }
     }
 
+    const docId = `product-${sku.toLowerCase().replace(/[^a-z0-9-_]/g, '-')}`
+
     const doc = {
+      _id: docId,
       _type: 'product',
       name: name,
       slug: { _type: 'slug', current: slug },
@@ -155,14 +190,15 @@ async function runImport() {
     }
 
     try {
-      const res = await client.create(doc)
-      console.log(`  ✅ Successfully published to Sanity (ID: ${res._id})\n`)
+      const res = await client.createOrReplace(doc)
+      console.log(`  ✅ Published [${doc.type} > ${doc.category}] (ID: ${res._id})\n`)
+      successCount++
     } catch (err) {
       console.error(`  ❌ Sanity creation error for ${name}:`, err.message)
     }
   }
 
-  console.log('🎉 Import Complete! All inventory documents created in Sanity Cloud.')
+  console.log(`🎉 Import Complete! Successfully synced ${successCount} of ${products.length} products to Sanity Cloud.`)
 }
 
 runImport()
