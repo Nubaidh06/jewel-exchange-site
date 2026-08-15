@@ -1,4 +1,4 @@
-import { getProductBySlug } from "../../../lib/sanity";
+import { getProductBySlug, getRelatedProducts } from "../../../lib/sanity";
 import ProductDetail from "../../components/ProductDetail";
 import { notFound } from "next/navigation";
 
@@ -47,6 +47,8 @@ export default async function JewelryDetailPage({ params }) {
     notFound();
   }
 
+  const relatedProducts = await getRelatedProducts('Jewelry', product.category, slug, 8);
+
   // Ensure id is present for legacy components
   product.id = product._id;
 
@@ -68,7 +70,7 @@ export default async function JewelryDetailPage({ params }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <ProductDetail product={product} type="Jewelry" />
+      <ProductDetail product={product} type="Jewelry" relatedProducts={relatedProducts} />
     </>
   );
 }

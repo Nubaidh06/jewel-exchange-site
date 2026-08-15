@@ -279,26 +279,64 @@ export default function Navbar() {
       <div className={`mobile-menu ${mobileOpen ? "mobile-menu--open" : ""}`}>
         <div className="mobile-menu__backdrop" onClick={() => setMobileOpen(false)} />
         <div className="mobile-menu__content">
-          <button 
-            className="mobile-menu__close" 
-            onClick={() => setMobileOpen(false)}
-            aria-label="Close menu"
-          >
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" width="28" height="28">
-              <line x1="18" y1="6" x2="6" y2="18"></line>
-              <line x1="6" y1="6" x2="18" y2="18"></line>
-            </svg>
-          </button>
-          <Link href="/" onClick={() => setMobileOpen(false)} className={`mobile-menu__link ${isActive("/") ? "mobile-menu__link--active" : ""}`} style={{ "--i": 0 }}>Home</Link>
-          <Link href="/jewelry" onClick={() => setMobileOpen(false)} className={`mobile-menu__link ${isActive("/jewelry") ? "mobile-menu__link--active" : ""}`} style={{ "--i": 1 }}>Jewelry</Link>
-          <Link href="/gemstones" onClick={() => setMobileOpen(false)} className={`mobile-menu__link ${isActive("/gemstones") ? "mobile-menu__link--active" : ""}`} style={{ "--i": 2 }}>Gemstones</Link>
-          <Link href="/bespoke" onClick={() => setMobileOpen(false)} className={`mobile-menu__link ${isActive("/bespoke") ? "mobile-menu__link--active" : ""}`} style={{ "--i": 3 }}>Bespoke</Link>
-          <Link href="/booking" onClick={() => setMobileOpen(false)} className={`mobile-menu__link ${isActive("/booking") ? "mobile-menu__link--active" : ""}`} style={{ "--i": 4 }}>Book Appointment</Link>
-          <Link href="/about" onClick={() => setMobileOpen(false)} className={`mobile-menu__link ${isActive("/about") ? "mobile-menu__link--active" : ""}`} style={{ "--i": 5 }}>About</Link>
-          <Link href="/wishlist" onClick={() => setMobileOpen(false)} className={`mobile-menu__link ${isActive("/wishlist") ? "mobile-menu__link--active" : ""}`} style={{ "--i": 6 }}>
-            Inquiry Cart {wishlist.length > 0 && `(${wishlist.length})`}
-          </Link>
-          <Link href="/contact" onClick={() => setMobileOpen(false)} className={`mobile-menu__link ${isActive("/contact") ? "mobile-menu__link--active" : ""}`} style={{ "--i": 7 }}>Contact Us</Link>
+          <div className="mobile-menu__header">
+            <Link href="/" onClick={() => setMobileOpen(false)} className="mobile-menu__logo">
+              <Image
+                src="/images/logo-transparent.png"
+                alt="Jewel Exchange"
+                width={75}
+                height={30}
+                style={{ objectFit: "contain" }}
+              />
+            </Link>
+            <button 
+              className="mobile-menu__close" 
+              onClick={() => setMobileOpen(false)}
+              aria-label="Close menu"
+            >
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" width="22" height="22">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </button>
+          </div>
+
+          <div className="mobile-menu__nav">
+            <Link href="/" onClick={() => setMobileOpen(false)} className={`mobile-menu__link ${isActive("/") ? "mobile-menu__link--active" : ""}`} style={{ "--i": 0 }}>
+              <span>Home</span>
+              <span className="mobile-menu__link-arrow">→</span>
+            </Link>
+            <Link href="/jewelry" onClick={() => setMobileOpen(false)} className={`mobile-menu__link ${isActive("/jewelry") ? "mobile-menu__link--active" : ""}`} style={{ "--i": 1 }}>
+              <span>High Jewelry</span>
+              <span className="mobile-menu__link-arrow">→</span>
+            </Link>
+            <Link href="/gemstones" onClick={() => setMobileOpen(false)} className={`mobile-menu__link ${isActive("/gemstones") ? "mobile-menu__link--active" : ""}`} style={{ "--i": 2 }}>
+              <span>Rare Gemstones</span>
+              <span className="mobile-menu__link-arrow">→</span>
+            </Link>
+            <Link href="/bespoke" onClick={() => setMobileOpen(false)} className={`mobile-menu__link ${isActive("/bespoke") ? "mobile-menu__link--active" : ""}`} style={{ "--i": 3 }}>
+              <span>Bespoke Atelier</span>
+              <span className="mobile-menu__link-arrow">→</span>
+            </Link>
+            <Link href="/booking" onClick={() => setMobileOpen(false)} className={`mobile-menu__link ${isActive("/booking") ? "mobile-menu__link--active" : ""}`} style={{ "--i": 4 }}>
+              <span>Book Appointment</span>
+              <span className="mobile-menu__link-arrow">→</span>
+            </Link>
+            <Link href="/about" onClick={() => setMobileOpen(false)} className={`mobile-menu__link ${isActive("/about") ? "mobile-menu__link--active" : ""}`} style={{ "--i": 5 }}>
+              <span>Our Heritage</span>
+              <span className="mobile-menu__link-arrow">→</span>
+            </Link>
+            <Link href="/contact" onClick={() => setMobileOpen(false)} className={`mobile-menu__link ${isActive("/contact") ? "mobile-menu__link--active" : ""}`} style={{ "--i": 6 }}>
+              <span>Contact Us</span>
+              <span className="mobile-menu__link-arrow">→</span>
+            </Link>
+          </div>
+
+          <div className="mobile-menu__footer">
+            <p className="mobile-menu__address">
+              514A, R.A. De Mel Mawatha, Colombo 03
+            </p>
+          </div>
         </div>
       </div>
     </>

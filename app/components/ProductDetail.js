@@ -3,13 +3,12 @@ import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useWishlist } from "../../lib/WishlistContext";
-import { JEWELRY_ITEMS, GEMSTONE_ITEMS } from "../../lib/data";
 import "./ProductDetail.css";
 
 const WHATSAPP_NUMBER = "+94773534538";
 const INSTAGRAM_HANDLE = "jewel_exchange";
 
-export default function ProductDetail({ product, type }) {
+export default function ProductDetail({ product, type, relatedProducts = [] }) {
   const [activeAccordion, setActiveAccordion] = useState("specifications");
   const [showMobileBar, setShowMobileBar] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -86,15 +85,8 @@ export default function ProductDetail({ product, type }) {
 
   const saved = isInWishlist(product.slug);
 
-  /* ── Related items (4) ── */
-  const allItems = type === "Jewelry" ? JEWELRY_ITEMS : GEMSTONE_ITEMS;
-  const sameCategory = allItems.filter(
-    (i) => i.slug !== product.slug && i.category === product.category
-  );
-  const others = allItems.filter(
-    (i) => i.slug !== product.slug && i.category !== product.category
-  );
-  const relatedItems = [...sameCategory, ...others].slice(0, 4);
+  /* ── Related items from Sanity ── */
+  const relatedItems = relatedProducts;
 
   const toggleAccordion = (section) => {
     setActiveAccordion(activeAccordion === section ? null : section);
@@ -434,48 +426,50 @@ export default function ProductDetail({ product, type }) {
       </div>
 
       {/* ═══════ YOU MAY ALSO LIKE ═══════ */}
-      <section className="pd-related">
-        <div className="pd-related__header reveal">
-          <span className="section-label">Discover More</span>
-          <h2 className="section-title" style={{ marginTop: "0.5rem" }}>
-            You May Also Like
-          </h2>
-        </div>
+      {relatedItems && relatedItems.length > 0 && (
+        <section className="pd-related">
+          <div className="pd-related__header reveal">
+            <span className="section-label">Discover More</span>
+            <h2 className="section-title" style={{ marginTop: "0.5rem" }}>
+              You May Also Like
+            </h2>
+          </div>
 
-        <div className="pd-related__carousel" ref={carouselRef}>
-          {relatedItems.map((item) => (
-            <div key={item.id + item.slug} className="pd-related__card">
-              <Link
-                href={`/${type.toLowerCase()}/${item.slug}`}
-                className="pd-related__link"
-              >
-                <div className="pd-related__img-wrap">
-                  <Image
-                    src={item.img || (type === "Jewelry" ? "/images/models_and_shots/20.png" : "/images/models_and_shots/28.png")}
-                    alt={item.name || "Related Item"}
-                    fill
-                    sizes="(min-width:1024px) 25vw, (min-width:768px) 45vw, 80vw"
-                    className="pd-related__img"
-                  />
-                </div>
-                <div className="pd-related__meta">
-                  <span className="pd-related__category">{item.category}</span>
-                  <h3 className="pd-related__name">{item.name}</h3>
-                  <span className="pd-related__price">{item.price}</span>
-                </div>
-              </Link>
-            </div>
-          ))}
-        </div>
+          <div className="pd-related__carousel" ref={carouselRef}>
+            {relatedItems.map((item) => (
+              <div key={item._id || item.slug} className="pd-related__card">
+                <Link
+                  href={`/${(item.type || type).toLowerCase()}/${item.slug}`}
+                  className="pd-related__link"
+                >
+                  <div className="pd-related__img-wrap">
+                    <Image
+                      src={item.img || (type === "Jewelry" ? "/images/models_and_shots/20.png" : "/images/models_and_shots/28.png")}
+                      alt={item.name || "Related Item"}
+                      fill
+                      sizes="(min-width:1024px) 25vw, (min-width:768px) 45vw, 80vw"
+                      className="pd-related__img"
+                    />
+                  </div>
+                  <div className="pd-related__meta">
+                    <span className="pd-related__category">{item.category}</span>
+                    <h3 className="pd-related__name">{item.name}</h3>
+                    <span className="pd-related__price">{item.price || "Price on Inquiry"}</span>
+                  </div>
+                </Link>
+              </div>
+            ))}
+          </div>
 
-        {/* Scroll track indicator */}
-        <div className="pd-related__track" aria-hidden="true">
-          <div
-            className="pd-related__thumb"
-            style={{ transform: `translateX(${scrollProgress * 150}%)` }}
-          />
-        </div>
-      </section>
+          {/* Scroll track indicator */}
+          <div className="pd-related__track" aria-hidden="true">
+            <div
+              className="pd-related__thumb"
+              style={{ transform: `translateX(${scrollProgress * 150}%)` }}
+            />
+          </div>
+        </section>
+      )}
 
       {/* ═══════ MOBILE STICKY INQUIRY BAR ═══════ */}
       <div

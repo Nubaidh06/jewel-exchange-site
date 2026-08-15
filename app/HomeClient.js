@@ -2,7 +2,6 @@
 import { useRef, useEffect, useCallback } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { JEWELRY_ITEMS } from "../lib/data";
 import FAQAccordion from "./components/FAQAccordion";
 import "./page.css";
 
