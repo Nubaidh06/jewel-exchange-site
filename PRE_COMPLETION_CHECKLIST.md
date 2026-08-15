@@ -9,7 +9,6 @@ This document tracks all completed and pending tasks prior to final handoff and 
 ### Section A: Sanity CMS & Catalog Management
 - [ ] **Upload Inventory:** Populate live products (rings, necklaces, earrings, bracelets, loose gemstones) in Sanity Studio (`/studio`).
 - [ ] **Product Specifications:** Add metal karat, stone weight, lab cert details, and pricing to each piece.
-- [ ] **Featured Flag:** Toggle `featured: true` on 4–8 flagship pieces for the homepage curated carousel.
 - [ ] **Image Asset Optimization:** Confirm uploaded photos render with `?auto=format` without latency.
 
 ---
@@ -29,9 +28,7 @@ This document tracks all completed and pending tasks prior to final handoff and 
 ---
 
 ### Section D: SEO, Assets & Interactive Polish
-- [x] **Favicon & Touch Icons:** High-res gold jewel icon configured in browser tabs and mobile bookmarks (`/icon.png`).
-- [x] **Social Share (OG) Preview:** Dedicated 1200x630px OpenGraph and Twitter card (`/opengraph-image.png`) active for WhatsApp/iMessage previews.
-- [x] **Printable Ring Sizing PDF:** Verify the downloadable sizing guide PDF in `/public` is the final branded version.
+- [ ] **Favicon & Touch Icons:** High-res gold jewel icon configured in browser tabs and mobile bookmarks (`/icon.png`).
 - [ ] **Wishlist Inquiry Cart:** Test adding items, clearing, and dispatching a consolidated multi-item inquiry to WhatsApp.
 - [ ] **Mobile Device Smoke Test:** Final verification on physical iOS (Safari) and Android (Chrome) devices.
 
