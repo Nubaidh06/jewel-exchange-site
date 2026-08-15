@@ -49,7 +49,7 @@ zip -r jewel_exchange_website.zip . -x "node_modules/*" ".next/*" ".git/*" ".DS_
 ```env
 NEXT_PUBLIC_SANITY_PROJECT_ID=rrsnwe4c
 NEXT_PUBLIC_SANITY_DATASET=production
-SANITY_API_TOKEN=sk0No4q44YH1BfzKP09A4XSijpnPMOjKNTrPLOlgvXjMHvErjYxzppSBK1xgoNutn2eMvPKnw2NBkVgC9dHGIXRAdWZZVustWflBq6rcLoQDoNvgikweYnoT0XpySw1v15i7v8L42KfUBq4byWVnsjdjeSpNUtkQ92zKb3riZkR6nJhgLGS4
+SANITY_API_TOKEN=<YOUR_SANITY_API_WRITE_TOKEN>
 ```
 
 ### Build & Run Commands
