@@ -28,8 +28,7 @@ This document tracks all completed and pending tasks prior to final handoff and 
 ---
 
 ### Section D: SEO, Assets & Interactive Polish
-- [ ] **Favicon & Touch Icons:** High-res gold jewel icon configured in browser tabs and mobile bookmarks (`/icon.png`).
-- [ ] **Wishlist Inquiry Cart:** Test adding items, clearing, and dispatching a consolidated multi-item inquiry to WhatsApp.
+- [x] **Favicon & Touch Icons:** High-res gold jewel icon configured in browser tabs and mobile bookmarks (`/icon.png`).
 - [ ] **Mobile Device Smoke Test:** Final verification on physical iOS (Safari) and Android (Chrome) devices.
 
 ---
