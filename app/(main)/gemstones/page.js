@@ -1,5 +1,5 @@
 import GemstoneClient from "./GemstoneClient";
-import { getGemstones } from "../../lib/sanity";
+import { getGemstones } from "@/lib/sanity";
 
 export const metadata = {
   title: 'Rare Gemstones | Jewel Exchange',

@@ -1,5 +1,5 @@
-import { getProductBySlug, getRelatedProducts } from "../../../lib/sanity";
-import ProductDetail from "../../components/ProductDetail";
+import { getProductBySlug, getRelatedProducts } from "@/lib/sanity";
+import ProductDetail from "../../../components/ProductDetail";
 import { notFound } from "next/navigation";
 
 export const revalidate = 60;

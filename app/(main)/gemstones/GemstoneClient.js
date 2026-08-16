@@ -3,15 +3,15 @@ import { useState, useEffect, Suspense } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { useWishlist } from "../../lib/WishlistContext";
+import { useWishlist } from "@/lib/WishlistContext";
 import "./page.css";
 
-const CATEGORIES = ["All", "Rings", "Necklaces", "Earrings", "Bracelets", "Pendants"];
+const CATEGORIES = ["All", "Sapphires", "Rubies", "Emeralds", "Diamonds", "Semi-Precious"];
 const SORT_OPTIONS = ["Default", "Price: Low to High", "Price: High to Low"];
 
 const ITEMS_PER_PAGE = 12;
 
-function JewelryCatalog({ initialItems }) {
+function GemstoneCatalog({ initialItems }) {
   const searchParams = useSearchParams();
   const categoryParam = searchParams.get('category');
 
@@ -106,8 +106,8 @@ function JewelryCatalog({ initialItems }) {
       <div className="catalog-hero">
         <div className="catalog-hero__bg">
           <Image
-            src="/images/models_and_shots/20.png"
-            alt="Jewelry Collection"
+            src="/images/models_and_shots/22.png"
+            alt="Gemstones Collection"
             fill
             style={{ objectFit: "cover" }}
             priority
@@ -116,9 +116,9 @@ function JewelryCatalog({ initialItems }) {
         <div className="catalog-hero__overlay" />
         <div className="container catalog-hero__content">
           <span className="catalog-hero__label">Collections</span>
-          <h1 className="catalog-hero__title">High Jewelry</h1>
+          <h1 className="catalog-hero__title">Rare Gemstones</h1>
           <p className="catalog-hero__subtitle">
-            Timeless masterworks designed to be treasured across generations.
+            Nature's most precious treasures, hand-selected for brilliance and clarity.
           </p>
         </div>
       </div>
@@ -140,7 +140,7 @@ function JewelryCatalog({ initialItems }) {
             </div>
             <div className="catalog-filters__right">
               <span className="catalog-filters__count">
-                {filteredItems.length} piece{filteredItems.length !== 1 ? "s" : ""}
+                {filteredItems.length} stone{filteredItems.length !== 1 ? "s" : ""}
               </span>
               <select className="sort-select" value={activeSort} onChange={handleSort}>
                 {SORT_OPTIONS.map((opt) => (
@@ -161,13 +161,13 @@ function JewelryCatalog({ initialItems }) {
               return (
                 <Link
                   key={item._id || item.slug}
-                  href={`/jewelry/${item.slug}`}
+                  href={`/gemstones/${item.slug}`}
                   className="product-card"
                 >
                   <div className="product-card__img-wrap">
                     <Image
-                      src={item.img || "/images/models_and_shots/20.png"}
-                      alt={item.name || "Jewelry Item"}
+                      src={item.img || "/images/models_and_shots/28.png"}
+                      alt={item.name || "Gemstone Item"}
                       fill
                       className="product-card__img"
                     />
@@ -181,7 +181,7 @@ function JewelryCatalog({ initialItems }) {
                       onClick={(e) => {
                         e.preventDefault();
                         e.stopPropagation();
-                        toggleWishlist({ ...item, type: 'Jewelry' });
+                        toggleWishlist({ ...item, type: 'Gemstones' });
                       }}
                       style={{ marginTop: '0.75rem', width: '100%', fontSize: '0.75rem', padding: '0.6rem' }}
                     >
@@ -195,7 +195,7 @@ function JewelryCatalog({ initialItems }) {
 
           {filteredItems.length === 0 && (
             <div className="product-empty">
-              <p>No pieces found in this collection.</p>
+              <p>No stones found in this collection.</p>
             </div>
           )}
 
@@ -203,7 +203,7 @@ function JewelryCatalog({ initialItems }) {
           {totalPages > 1 && (
             <div className="catalog-pagination">
               <div className="catalog-pagination__info">
-                Showing {startIndex + 1}–{Math.min(endIndex, filteredItems.length)} of {filteredItems.length} pieces
+                Showing {startIndex + 1}–{Math.min(endIndex, filteredItems.length)} of {filteredItems.length} stones
               </div>
               <div className="catalog-pagination__controls">
                 <button
@@ -248,10 +248,10 @@ function JewelryCatalog({ initialItems }) {
       {/* CTA Banner */}
       <section className="catalog-cta bg-alt">
         <div className="container catalog-cta__inner reveal">
-          <h2 className="catalog-cta__title">Bespoke Creations</h2>
-          <p className="catalog-cta__desc">Cannot find the perfect piece? We specialize in creating one-of-a-kind bespoke jewelry tailored entirely to your vision.</p>
-          <Link href="/bespoke" className="btn btn--outline">
-            Discover Bespoke <span className="btn-arrow">→</span>
+          <h2 className="catalog-cta__title">Searching for the Extraordinary?</h2>
+          <p className="catalog-cta__desc">We source rare and exceptional loose gemstones from around the world. Let us know exactly what you are looking for.</p>
+          <Link href="/contact" className="btn btn--outline">
+            Inquire Now <span className="btn-arrow">→</span>
           </Link>
         </div>
       </section>
@@ -259,10 +259,10 @@ function JewelryCatalog({ initialItems }) {
   );
 }
 
-export default function JewelryClient({ initialItems }) {
+export default function GemstoneClient({ initialItems }) {
   return (
     <Suspense fallback={<div className="catalog-page" style={{ minHeight: '100vh', backgroundColor: 'var(--color-bg)' }}></div>}>
-      <JewelryCatalog initialItems={initialItems} />
+      <GemstoneCatalog initialItems={initialItems} />
     </Suspense>
   );
 }

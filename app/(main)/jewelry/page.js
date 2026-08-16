@@ -1,5 +1,5 @@
 import JewelryClient from "./JewelryClient";
-import { getJewelry } from "../../lib/sanity";
+import { getJewelry } from "@/lib/sanity";
 
 export const metadata = {
   title: 'High Jewelry | Jewel Exchange',

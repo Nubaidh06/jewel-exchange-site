@@ -2,7 +2,7 @@
 import { useRef, useEffect, useCallback } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import FAQAccordion from "./components/FAQAccordion";
+import FAQAccordion from "../components/FAQAccordion";
 import "./page.css";
 
 export default function HomeClient({ featuredProducts = [] }) {

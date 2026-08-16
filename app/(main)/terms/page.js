@@ -1,4 +1,4 @@
-import "../legal.css";
+import "@/app/legal.css";
 
 export const metadata = {
   title: "Terms & Conditions | Jewel Exchange",

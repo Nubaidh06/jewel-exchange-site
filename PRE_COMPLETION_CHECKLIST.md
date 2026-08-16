@@ -7,15 +7,11 @@ This document tracks all completed and pending tasks prior to final handoff and 
 ## 1. Remaining Tasks to Complete
 
 ### Section A: Sanity CMS & Catalog Management
-- [ ] **Upload Inventory:** Populate live products (rings, necklaces, earrings, bracelets, loose gemstones) in Sanity Studio (`/studio`).
-- [ ] **Product Specifications:** Add metal karat, stone weight, lab cert details, and pricing to each piece.
-- [x] **Image Asset Optimization:** Confirm uploaded photos render with `?auto=format` without latency.
+- [ ] **Product Specifications:** Update and finalize metal karat, stone weight, lab cert details, and pricing to each piece.
 
----
+- [ ] **Final Text & Story Tweaks:** Finalize and confirm of About page heritage copy, Bespoke process steps, and FAQs.
 
-### Section B: Content, Typography & Copywriting
-- [ ] **Final Text & Story Tweaks:** Final read of About page heritage copy, Bespoke process steps, and FAQs.
-- [ ] **Final Photography Swaps:** Replace any remaining placeholder model/craftsmanship photos with finalized brand assets.
+- [ ] **Final Photography Swaps:** Replace any remaining placeholder model/craftsmanship photos, photo of showroom etc with finalized brand assets.
 
 ---
 
@@ -28,7 +24,6 @@ This document tracks all completed and pending tasks prior to final handoff and 
 ---
 
 ### Section D: SEO, Assets & Interactive Polish
-- [x] **Favicon & Touch Icons:** High-res gold jewel icon configured in browser tabs and mobile bookmarks (`/icon.png`).
 - [ ] **Mobile Device Smoke Test:** Final verification on physical iOS (Safari) and Android (Chrome) devices.
 
 ---

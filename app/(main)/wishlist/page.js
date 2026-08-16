@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { useWishlist } from "../../lib/WishlistContext";
+import { useWishlist } from "@/lib/WishlistContext";
 import "./page.css";
 
 const WHATSAPP_NUMBER = "+94773534538"; // Updated with actual number

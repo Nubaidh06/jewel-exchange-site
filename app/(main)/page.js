@@ -1,4 +1,4 @@
-import { getFeaturedProducts } from "../lib/sanity";
+import { getFeaturedProducts } from "../../lib/sanity";
 import HomeClient from "./HomeClient";
 
 export const metadata = {
