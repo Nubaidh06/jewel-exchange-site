@@ -110,16 +110,10 @@ export default function WishlistPage() {
                   <button 
                     onClick={handleWhatsAppInquiry}
                     className="btn btn--full"
-                    style={{ backgroundColor: '#25D366', borderColor: '#25D366', color: '#fff', marginBottom: '1rem' }}
+                    style={{ backgroundColor: '#25D366', borderColor: '#25D366', color: '#fff' }}
                   >
-                    Inquire via WhatsApp
+                    Submit Inquiry via WhatsApp
                   </button>
-                  <Link 
-                    href="/booking" 
-                    className="btn btn--outline btn--full"
-                  >
-                    Book an Appointment Instead
-                  </Link>
                 </div>
               </div>
             </div>
