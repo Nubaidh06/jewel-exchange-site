@@ -454,7 +454,7 @@ export default function ProductDetail({ product, type, relatedProducts = [] }) {
                   <div className="pd-related__meta">
                     <span className="pd-related__category">{item.category}</span>
                     <h3 className="pd-related__name">{item.name}</h3>
-                    <span className="pd-related__price">{item.price || "Price on Inquiry"}</span>
+                    <span className="pd-related__price">Price on Inquiry</span>
                   </div>
                 </Link>
               </div>

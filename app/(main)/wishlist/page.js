@@ -75,7 +75,7 @@ export default function WishlistPage() {
                       </div>
                     </div>
                     <div className="cart-item-price-actions">
-                      <span className="cart-item-price">{item.price}</span>
+                      <span className="cart-item-price">Price on Inquiry</span>
                       <button 
                         className="cart-item-remove"
                         onClick={() => removeFromWishlist(item.slug)}
