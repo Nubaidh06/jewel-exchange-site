@@ -17,26 +17,32 @@ export default function ShippingPage() {
         <p className="legal-updated">Last Updated: {new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}</p>
 
         <h2>1. Global Insured Shipping</h2>
-        <p>We ship our high-value bespoke jewelry and loose gemstones worldwide. Because of the nature of our products, every package is shipped via a premium courier service (such as FedEx Priority or DHL Express) and is <strong>fully insured</strong> for the total value of the item while in transit.</p>
+        <p>We ship our bespoke jewelry collections and certified Ceylon gemstones to esteemed clients worldwide. Every parcel is dispatched through premier high-security courier partners (<strong>FedEx Priority</strong> or <strong>DHL Express</strong>) and is <strong>fully insured</strong> for 100% of its valuation throughout transit until delivered to your hands.</p>
 
-        <h2>2. Delivery Times</h2>
+        <h2>2. Domestic Shipping & Boutique Collection</h2>
+        <p>For clients within Sri Lanka, we provide complimentary secure door-to-door courier delivery. Alternatively, you are welcome to pick up your completed piece directly from our flagship Colombo atelier at <strong>514A, R.A. De Mel Mawatha, Colombo 00300</strong> by prior appointment with our concierge.</p>
+
+        <h2>3. Official Export Certification & Compliance</h2>
+        <p>Jewel Exchange operates under the regulatory standards of the Sri Lankan gemstone trade. All international gemstone and fine jewelry shipments undergo official inspection, sealing, and export clearance through the <strong>National Gem & Jewellery Authority (NGJA)</strong> and Sri Lanka Customs, guaranteeing legitimate origin and ethical certification.</p>
+
+        <h2>4. Delivery & Production Timelines</h2>
         <ul>
-          <li><strong>Ready-to-Wear & Loose Stones:</strong> Dispatched within 2-4 business days. Delivery typically takes 3-7 business days depending on the destination country.</li>
-          <li><strong>Bespoke & Custom Orders:</strong> Because these are crafted from scratch, please allow 3-6 weeks for production before the item is dispatched. Your design consultant will provide you with a specific timeline.</li>
+          <li><strong>In-Stock Fine Jewelry & Loose Gemstones:</strong> Dispatched within 2–4 business days following payment confirmation and export clearance. International transit typically takes 3–7 business days.</li>
+          <li><strong>Bespoke & Custom Commissions:</strong> Handcrafted to order with individualized gemstone setting and hallmarking. Please allow 3–6 weeks for artisanal creation prior to dispatch.</li>
         </ul>
 
-        <h2>3. Signature Requirement</h2>
-        <p>For your security and the requirements of our insurance, <strong>an adult signature is required upon delivery</strong> for all orders. We cannot ship to P.O. Boxes or freight forwarding addresses.</p>
+        <h2>5. Adult Signature & Security Requirements</h2>
+        <p>Due to the high valuation of fine jewelry, <strong>an adult signature is mandatory upon delivery</strong>. Couriers will not leave packages unattended at doorsteps. For insurance and security reasons, we do not ship to P.O. Boxes, APO/FPO addresses, or unverified freight forwarders.</p>
 
-        <h2>4. Customs, Duties, and Import Taxes</h2>
-        <p>Jewel Exchange operates out of Sri Lanka. <strong>International customers are solely responsible for any local customs duties, import taxes, or VAT</strong> levied by their destination country.</p>
-        <p>These charges are not included in the item price or shipping cost at checkout. Customs policies vary widely from country to country; please contact your local customs office for further information. Refusal to pay customs duties does not constitute a valid reason for a return, and any costs incurred to return the item will be deducted from your refund.</p>
+        <h2>6. Customs, Duties, and Import Taxes</h2>
+        <p>All international orders are exported directly from Colombo, Sri Lanka. <strong>International clients are responsible for any applicable local customs duties, tariffs, VAT, or import taxes</strong> imposed by the destination country.</p>
+        <p>These local fees are levied directly by your government and are not included in our item or shipping quotes. Customs procedures vary by region; please consult your local customs authority for specific import thresholds. Refusal to settle local import taxes does not constitute an eligible return.</p>
 
-        <h2>5. Tracking Your Order</h2>
-        <p>Once your order is dispatched, you will receive an email containing your tracking number and a link to trace your package&apos;s progress.</p>
+        <h2>7. Order Tracking & Delivery Support</h2>
+        <p>Upon dispatch and export clearance, you will receive a confirmation email with your dedicated tracking number to monitor your shipment in real time.</p>
 
-        <h2>6. Lost or Damaged Packages</h2>
-        <p>In the rare event that a package appears lost or arrives damaged, please contact us immediately at <strong>info@jewelexchange.lk</strong>. Do not discard the packaging if the box appears damaged upon arrival, as it may be required for the insurance claim process.</p>
+        <h2>8. Transit Claims & Damaged Shipments</h2>
+        <p>In the unlikely event that a parcel arrives with signs of tampering or damage, please document the outer box with photographs immediately and contact our concierge team at <strong>info@jewelexchange.lk</strong> within 24 hours of receipt so our insurance claims department can assist you without delay.</p>
       </div>
     </main>
   );

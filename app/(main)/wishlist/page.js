@@ -79,9 +79,14 @@ export default function WishlistPage() {
                       <button 
                         className="cart-item-remove"
                         onClick={() => removeFromWishlist(item.slug)}
-                        aria-label="Remove from Cart"
+                        aria-label={`Remove ${item.name} from inquiry cart`}
+                        title="Remove item"
                       >
-                        Remove
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                          <line x1="18" y1="6" x2="6" y2="18"></line>
+                          <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                        <span>Remove</span>
                       </button>
                     </div>
                   </div>

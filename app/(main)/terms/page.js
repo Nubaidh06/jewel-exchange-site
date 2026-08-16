@@ -21,9 +21,9 @@ export default function TermsPage() {
         <h2>1. Natural Variations in Gemstones</h2>
         <p>Precious gemstones are natural products. As such, variations in color, clarity, tone, and inclusions are natural and to be expected. While we make every effort to display the colors and details of our gemstones and jewelry accurately, the actual colors you see will depend on your monitor and lighting conditions. Jewel Exchange cannot guarantee that your monitor&apos;s display of any color will be completely accurate.</p>
 
-        <h2>2. Pricing & Inventory Errors</h2>
+        <h2>2. Pricing, Fluctuations & Quote Validity</h2>
         <p>We strive to provide accurate product and pricing information; however, pricing or typographical errors may occur. In the event that an item is listed at an incorrect price or with incorrect information due to an error, Jewel Exchange shall have the right, at our sole discretion, to refuse or cancel any orders placed for that item.</p>
-        <p>Precious metal and gemstone markets fluctuate. We reserve the right to change prices for products displayed on our website at any time, particularly for bespoke commissions.</p>
+        <p>Precious metal and gemstone markets fluctuate daily. Due to recent high market volatility, all personalized price quotes involving gold and precious metals provided via our inquiry channels, email, or WhatsApp are strictly valid for <strong>24 hours</strong> from the time of issue. Re-confirmation of pricing is required before placing a deposit or finalizing an order once this period has elapsed.</p>
 
         <h2>3. Bespoke & Custom Orders</h2>
         <p>Custom-made, bespoke, and personalized jewelry pieces require a non-refundable deposit to commence production. Once production has begun or gemstones have been set, the order cannot be canceled, refunded, or significantly altered without incurring additional costs.</p>
