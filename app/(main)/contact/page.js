@@ -14,9 +14,10 @@ export default function ContactPage() {
       <section className="contact-hero">
         <div className="contact-hero__bg">
           <Image
-            src="/images/models_and_shots/20.png"
-            alt="Jewel Exchange Showroom"
+            src="/images/banners/contact-hero.png"
+            alt="Jewel Exchange Showroom & Studio"
             fill
+            sizes="100vw"
             style={{ objectFit: 'cover' }}
             priority
           />
