@@ -60,9 +60,10 @@ export default function BookingPage() {
       <section className="booking-hero">
         <div className="booking-hero__bg">
           <Image
-            src="/images/models_and_shots/02.png"
+            src="/images/banners/experience-hero.png"
             alt="Book an appointment at Jewel Exchange"
             fill
+            sizes="100vw"
             style={{ objectFit: "cover" }}
             priority
           />
