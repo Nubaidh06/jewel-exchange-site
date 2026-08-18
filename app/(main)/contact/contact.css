@@ -18,6 +18,11 @@
   z-index: 0;
 }
 
+.contact-hero__bg img {
+  object-fit: cover !important;
+  object-position: center 35% !important;
+}
+
 .contact-hero__overlay {
   position: absolute;
   inset: 0;
@@ -424,7 +429,8 @@
 
 @media (max-width: 480px) {
   .contact-hero {
-    min-height: 40vh;
+    min-height: 52vh;
+    padding-top: calc(var(--nav-height) + 1.5rem);
   }
 
   .contact-cards {

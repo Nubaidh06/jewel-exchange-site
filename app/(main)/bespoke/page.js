@@ -13,8 +13,8 @@ export default function BespokePage() {
       {/* ── Hero Section ── */}
       <section className="bespoke-hero">
         <Image
-          src="/images/banners/banner 2.png"
-          alt="Bespoke jewelry craftsmanship"
+          src="/images/banners/bespoke-hero.png"
+          alt="Bespoke jewelry craftsmanship and artistry"
           fill
           priority
           sizes="100vw"

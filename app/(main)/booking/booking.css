@@ -18,6 +18,11 @@
   z-index: 0;
 }
 
+.booking-hero__bg img {
+  object-fit: cover !important;
+  object-position: center 30% !important;
+}
+
 .booking-hero__overlay {
   position: absolute;
   inset: 0;
@@ -494,7 +499,8 @@
 
 @media (max-width: 480px) {
   .booking-hero {
-    min-height: 40vh;
+    min-height: 52vh;
+    padding-top: calc(var(--nav-height) + 1.5rem);
   }
 
   .booking-form {
