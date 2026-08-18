@@ -61,12 +61,12 @@ export default function AboutPage() {
             <div className="heritage-image reveal reveal-delay-2">
               <div className="heritage-image__wrapper">
                 <Image
-                  src="/images/models_and_shots/10.png"
-                  alt="Heritage craftsmanship"
-                  width={600}
-                  height={800}
+                  src="/images/models_and_shots/26B.png"
+                  alt="Where Tradition Meets Innovation — Jewel Exchange Craftsmanship"
+                  width={1080}
+                  height={1350}
                   sizes="(max-width: 768px) 100vw, 45vw"
-                  style={{ width: '100%', height: 'auto', display: 'block' }}
+                  style={{ width: '100%', height: 'auto', display: 'block', objectFit: 'cover' }}
                 />
               </div>
             </div>

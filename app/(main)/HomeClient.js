@@ -74,9 +74,11 @@ export default function HomeClient({ featuredProducts = [] }) {
             </div>
             <p>At Jewel Exchange, we believe that every piece of jewelry tells a story. Our master craftsmen combine time-honoured techniques with contemporary design to create pieces that are truly timeless.</p>
             <p>Each creation begins with the finest materials - ethically sourced gemstones, precious metals, and an unwavering commitment to perfection.</p>
-            <Link href="/about" className="intro__link">
-              Discover Our Story <span className="intro__link-arrow">→</span>
-            </Link>
+            <div style={{ marginTop: "var(--space-md)" }}>
+              <Link href="/about" className="btn btn--gold">
+                Discover Our Story <span className="btn-arrow">→</span>
+              </Link>
+            </div>
           </div>
           <div className="intro__image-wrap reveal reveal-delay-2">
             <div className="intro__image">
