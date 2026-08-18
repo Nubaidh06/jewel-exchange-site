@@ -355,7 +355,7 @@ export default function ProductDetail({ product, type, relatedProducts = [] }) {
                 </button>
                 <div className="accordion-content">
                   <ul className="product-info__specs-list accordion-text">
-                    {product.specifications.map((spec, i) => (
+                    {product.specifications?.map((spec, i) => (
                       <li key={i}>
                         <span className="spec-dot" />
                         {spec}
