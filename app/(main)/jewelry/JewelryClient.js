@@ -109,6 +109,7 @@ function JewelryCatalog({ initialItems }) {
             src="/images/models_and_shots/20.png"
             alt="Jewelry Collection"
             fill
+            sizes="100vw"
             style={{ objectFit: "cover" }}
             priority
           />
@@ -169,6 +170,7 @@ function JewelryCatalog({ initialItems }) {
                       src={item.img || "/images/models_and_shots/20.png"}
                       alt={item.name || "Jewelry Item"}
                       fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       className="product-card__img"
                     />
                   </div>

@@ -38,6 +38,7 @@ export default function HomeClient({ featuredProducts = [] }) {
             src="/images/banners/banner 1.png"
             alt="Jewel Exchange - Bespoke Jewelry"
             fill
+            sizes="100vw"
             style={{ objectFit: "cover" }}
             priority
           />
@@ -110,6 +111,7 @@ export default function HomeClient({ featuredProducts = [] }) {
                     src={item.img || "/images/models_and_shots/20.png"}
                     alt={item.name || "Featured Item"}
                     fill
+                    sizes="(max-width: 768px) 85vw, (max-width: 1200px) 40vw, 320px"
                     style={{ objectFit: "cover" }}
                   />
                   <Link href={`/${item.type ? item.type.toLowerCase() : 'jewelry'}/${item.slug}`} className="featured-card__hover">

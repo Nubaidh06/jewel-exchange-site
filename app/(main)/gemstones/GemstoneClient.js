@@ -109,6 +109,7 @@ function GemstoneCatalog({ initialItems }) {
             src="/images/models_and_shots/22.png"
             alt="Gemstones Collection"
             fill
+            sizes="100vw"
             style={{ objectFit: "cover" }}
             priority
           />
@@ -169,6 +170,7 @@ function GemstoneCatalog({ initialItems }) {
                       src={item.img || "/images/models_and_shots/28.png"}
                       alt={item.name || "Gemstone Item"}
                       fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       className="product-card__img"
                     />
                   </div>
