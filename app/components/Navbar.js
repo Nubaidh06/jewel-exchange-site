@@ -307,15 +307,15 @@ export default function Navbar() {
               <span className="mobile-menu__link-arrow">→</span>
             </Link>
             <Link href="/jewelry" onClick={() => setMobileOpen(false)} className={`mobile-menu__link ${isActive("/jewelry") ? "mobile-menu__link--active" : ""}`} style={{ "--i": 1 }}>
-              <span>High Jewelry</span>
+              <span>Jewelry</span>
               <span className="mobile-menu__link-arrow">→</span>
             </Link>
             <Link href="/gemstones" onClick={() => setMobileOpen(false)} className={`mobile-menu__link ${isActive("/gemstones") ? "mobile-menu__link--active" : ""}`} style={{ "--i": 2 }}>
-              <span>Rare Gemstones</span>
+              <span>Gemstones</span>
               <span className="mobile-menu__link-arrow">→</span>
             </Link>
             <Link href="/bespoke" onClick={() => setMobileOpen(false)} className={`mobile-menu__link ${isActive("/bespoke") ? "mobile-menu__link--active" : ""}`} style={{ "--i": 3 }}>
-              <span>Bespoke Atelier</span>
+              <span>Bespoke</span>
               <span className="mobile-menu__link-arrow">→</span>
             </Link>
             <Link href="/booking" onClick={() => setMobileOpen(false)} className={`mobile-menu__link ${isActive("/booking") ? "mobile-menu__link--active" : ""}`} style={{ "--i": 4 }}>
@@ -323,11 +323,11 @@ export default function Navbar() {
               <span className="mobile-menu__link-arrow">→</span>
             </Link>
             <Link href="/about" onClick={() => setMobileOpen(false)} className={`mobile-menu__link ${isActive("/about") ? "mobile-menu__link--active" : ""}`} style={{ "--i": 5 }}>
-              <span>Our Heritage</span>
+              <span>About</span>
               <span className="mobile-menu__link-arrow">→</span>
             </Link>
             <Link href="/contact" onClick={() => setMobileOpen(false)} className={`mobile-menu__link ${isActive("/contact") ? "mobile-menu__link--active" : ""}`} style={{ "--i": 6 }}>
-              <span>Contact Us</span>
+              <span>Contact</span>
               <span className="mobile-menu__link-arrow">→</span>
             </Link>
           </div>
