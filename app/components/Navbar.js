@@ -166,13 +166,14 @@ export default function Navbar() {
                   </svg>
                 </Link>
                 <div className={`nav__dropdown-menu ${activeDropdown === "gemstones" ? "nav__dropdown-menu--open" : ""}`}>
-                  <div className="nav__dropdown-menu-inner" style={{ minWidth: '200px' }}>
+                  <div className="nav__dropdown-menu-inner" style={{ minWidth: '210px' }}>
                     <Link href="/gemstones" className="nav__dropdown-item">View All Gemstones</Link>
                     <Link href="/gemstones?category=Sapphires" className="nav__dropdown-item">Sapphires</Link>
+                    <Link href="/gemstones?category=Padparadscha" className="nav__dropdown-item">Padparadscha</Link>
                     <Link href="/gemstones?category=Rubies" className="nav__dropdown-item">Rubies</Link>
                     <Link href="/gemstones?category=Emeralds" className="nav__dropdown-item">Emeralds</Link>
                     <Link href="/gemstones?category=Diamonds" className="nav__dropdown-item">Diamonds</Link>
-                    <Link href="/gemstones?category=Semi-Precious" className="nav__dropdown-item">Semi-Precious</Link>
+                    <Link href="/gemstones?category=Rare Gems" className="nav__dropdown-item">Rare & Collector Gems</Link>
                   </div>
                 </div>
               </div>

@@ -6,7 +6,7 @@ import { useSearchParams } from "next/navigation";
 import { useWishlist } from "@/lib/WishlistContext";
 import "./page.css";
 
-const CATEGORIES = ["All", "Sapphires", "Rubies", "Emeralds", "Diamonds", "Semi-Precious"];
+const CATEGORIES = ["All", "Sapphires", "Padparadscha", "Rubies", "Emeralds", "Diamonds", "Rare Gems"];
 const SORT_OPTIONS = ["Default", "Price: Low to High", "Price: High to Low"];
 
 const ITEMS_PER_PAGE = 12;
