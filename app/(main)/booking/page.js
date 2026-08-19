@@ -27,7 +27,7 @@ export default function BookingPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     try {
       const response = await fetch("https://formspree.io/f/xwvrebqo", {
         method: "POST",
@@ -139,28 +139,28 @@ export default function BookingPage() {
                 <div className="booking-types">
                   <div className="booking-type">
                     <h4 className="booking-type__title">
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
                       Showroom Visit
                     </h4>
                     <p className="booking-type__desc">Browse our latest jewelry and gemstone collections in person.</p>
                   </div>
                   <div className="booking-type">
                     <h4 className="booking-type__title">
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" /></svg>
                       Bespoke Consultation
                     </h4>
                     <p className="booking-type__desc">Discuss your custom design ideas with our artisans and designers.</p>
                   </div>
                   <div className="booking-type">
                     <h4 className="booking-type__title">
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M6 3h12l4 6-10 13L2 9z"/></svg>
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M6 3h12l4 6-10 13L2 9z" /></svg>
                       Gemstone Sourcing
                     </h4>
                     <p className="booking-type__desc">View and select rare Ceylon gemstones with expert guidance.</p>
                   </div>
                   <div className="booking-type">
                     <h4 className="booking-type__title">
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2" /><line x1="8" y1="21" x2="16" y2="21" /><line x1="12" y1="17" x2="12" y2="21" /></svg>
                       Virtual Meeting
                     </h4>
                     <p className="booking-type__desc">Connect with us remotely via Zoom or Google Meet from anywhere.</p>
@@ -187,7 +187,7 @@ export default function BookingPage() {
                   </button>
                 </div>
               ) : (
-                <form 
+                <form
                   className="booking-form"
                   onSubmit={handleSubmit}
                   action="https://formspree.io/f/xwvrebqo"
@@ -267,13 +267,13 @@ export default function BookingPage() {
 
                   <div className="form-group">
                     <label htmlFor="booking-message" className="form-label">Additional Details <span style={{ fontWeight: 400, textTransform: 'none', letterSpacing: 0, color: 'var(--color-text-light)' }}>(Optional)</span></label>
-                    <textarea 
-                      id="booking-message" 
-                      name="message" 
-                      className="form-textarea" 
-                      rows="4" 
+                    <textarea
+                      id="booking-message"
+                      name="message"
+                      className="form-textarea"
+                      rows="4"
                       placeholder="Let us know if you're interested in specific pieces, or if you have a particular design in mind…"
-                      value={formData.message} 
+                      value={formData.message}
                       onChange={handleChange}
                     ></textarea>
                   </div>

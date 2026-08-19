@@ -119,7 +119,7 @@ function JewelryCatalog({ initialItems }) {
           <span className="catalog-hero__label">Collections</span>
           <h1 className="catalog-hero__title">High Jewelry</h1>
           <p className="catalog-hero__subtitle">
-            Timeless masterworks designed to be treasured across generations.
+            Explore our crafted statement pieces, signature sets, and bespoke creations designed to be treasured across generations.
           </p>
         </div>
       </div>
@@ -248,11 +248,23 @@ function JewelryCatalog({ initialItems }) {
       </section>
 
       {/* CTA Banner */}
-      <section className="catalog-cta bg-alt">
+      <section className="catalog-cta">
+        <div className="catalog-cta__bg">
+          <div className="catalog-cta__bg-img">
+            <Image src="/images/cta/ring-trillion-ceylon-sapphire-ribbon-swirl-01.png" alt="Jewelry Craftsmanship 1" fill sizes="(max-width: 768px) 100vw, 33vw" style={{ objectFit: 'cover' }} />
+          </div>
+          <div className="catalog-cta__bg-img">
+            <Image src="/images/cta/earrings-petite-beaded-gold-huggies-ring-and-bracelet-suite.png" alt="Jewelry Craftsmanship 3" fill sizes="(max-width: 768px) 100vw, 33vw" style={{ objectFit: 'cover' }} />
+          </div>
+          <div className="catalog-cta__bg-img">
+            <Image src="/images/cta/necklace-florentine-ripple-teardrop-gold-01.png" alt="Jewelry Craftsmanship 2" fill sizes="(max-width: 768px) 100vw, 33vw" style={{ objectFit: 'cover' }} />
+          </div>
+          <div className="catalog-cta__overlay" />
+        </div>
         <div className="container catalog-cta__inner reveal">
-          <h2 className="catalog-cta__title">Bespoke Creations</h2>
-          <p className="catalog-cta__desc">Cannot find the perfect piece? We specialize in creating one-of-a-kind bespoke jewelry tailored entirely to your vision.</p>
-          <Link href="/contact" className="btn btn--gold">
+          <h2 className="catalog-cta__title">Looking for Something Specific?</h2>
+          <p className="catalog-cta__desc">In addition to our showroom collections, our master craftsmen create one-of-a-kind bespoke designs tailored entirely to your vision.</p>
+          <Link href="/contact" className="btn btn--white">
             Inquire Now <span className="btn-arrow">→</span>
           </Link>
         </div>

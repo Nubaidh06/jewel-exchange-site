@@ -86,8 +86,6 @@ export default function Navbar() {
     if (!supportsHover) {
       e.preventDefault();
       setActiveDropdown(activeDropdown === name ? null : name);
-    } else {
-      e.preventDefault();
     }
   };
 
@@ -292,8 +290,8 @@ export default function Navbar() {
               />
               <span className="mobile-menu__logo-est">SINCE 2008</span>
             </Link>
-            <button 
-              className="mobile-menu__close" 
+            <button
+              className="mobile-menu__close"
               onClick={() => setMobileOpen(false)}
               aria-label="Close menu"
             >

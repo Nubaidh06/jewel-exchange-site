@@ -26,6 +26,12 @@ const BYPASS_PREFIXES = [
   '/studio',
   '/_next',
   '/api',
+  '/sys',
+  '/cgs',
+  '/cgssys',
+  '/system',
+  '/pos',
+  '/inventory',
 ];
 
 const BYPASS_FILES = [

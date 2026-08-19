@@ -2,8 +2,8 @@ import { getFeaturedProducts } from "../../lib/sanity";
 import HomeClient from "./HomeClient";
 
 export const metadata = {
-  title: 'Jewel Exchange | Bespoke Jewelry & Rare Gemstones',
-  description: 'Bespoke jewelry and premium gemstones, handcrafted in Sri Lanka. Where Elegance Meets Eternity.',
+  title: 'Jewel Exchange | Fine Jewelry, Rare Gemstones & Bespoke Creations',
+  description: 'Curated fine jewelry, rare gemstones, and bespoke creations, handcrafted in Sri Lanka. Where Elegance Meets Eternity.',
 };
 
 export const revalidate = 60; // Revalidate every 60 seconds

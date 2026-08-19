@@ -248,11 +248,17 @@ function GemstoneCatalog({ initialItems }) {
       </section>
 
       {/* CTA Banner */}
-      <section className="catalog-cta bg-alt">
+      <section className="catalog-cta">
+        <div className="catalog-cta__bg">
+          <div className="catalog-cta__bg-img">
+            <Image src="/images/cta/searching-for-the-extraordinary-banner.png" alt="Searching for the Extraordinary Banner" fill style={{ objectFit: 'cover' }} />
+          </div>
+          <div className="catalog-cta__overlay" />
+        </div>
         <div className="container catalog-cta__inner reveal">
           <h2 className="catalog-cta__title">Searching for the Extraordinary?</h2>
           <p className="catalog-cta__desc">We source rare and exceptional loose gemstones from around the world. Let us know exactly what you are looking for.</p>
-          <Link href="/contact" className="btn btn--gold">
+          <Link href="/contact" className="btn btn--white">
             Inquire Now <span className="btn-arrow">→</span>
           </Link>
         </div>

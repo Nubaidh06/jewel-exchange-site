@@ -47,7 +47,7 @@ export default function HomeClient({ featuredProducts = [] }) {
         <div className="container hero__content">
           <span className="hero__label">Jewel Exchange</span>
           <h1 className="hero__title">Where Elegance<br />Meets Eternity</h1>
-          <p className="hero__subtitle">Bespoke jewelry and premium gemstones, handcrafted in Sri Lanka.</p>
+          <p className="hero__subtitle">Curated fine jewelry, rare gemstones, and bespoke creations, handcrafted in Sri Lanka.</p>
           <div className="hero__actions">
             <Link href="/jewelry" className="btn btn--white">
               Explore Jewelry <span className="btn-arrow">→</span>
@@ -183,7 +183,10 @@ export default function HomeClient({ featuredProducts = [] }) {
             <div className="trust-item reveal reveal-delay-1">
               <div className="trust-item__icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M12 2L9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2z" />
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                  <polyline points="14 2 14 8 20 8" />
+                  <circle cx="12" cy="14" r="2.5" />
+                  <path d="M10.5 16.2L9.5 19.5l2.5-1 2.5 1-1-3.3" />
                 </svg>
               </div>
               <h3 className="trust-item__title">Certified Gemstones</h3>
@@ -192,12 +195,13 @@ export default function HomeClient({ featuredProducts = [] }) {
             <div className="trust-item reveal reveal-delay-2">
               <div className="trust-item__icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                  <path d="M9 12l2 2 4-4" />
+                  <path d="M6 3h12l4 6-10 12L2 9l4-6z" />
+                  <path d="M2 9h20" />
+                  <path d="M10 3l-2 6 4 12 4-12-2-6" />
                 </svg>
               </div>
-              <h3 className="trust-item__title">Bespoke Design</h3>
-              <p className="trust-item__desc">Custom pieces crafted to your exact vision by our master artisans.</p>
+              <h3 className="trust-item__title">Signature Collections</h3>
+              <p className="trust-item__desc">Handcrafted fine jewelry, complete sets, and one-of-a-kind bespoke commissions.</p>
             </div>
             <div className="trust-item reveal reveal-delay-3">
               <div className="trust-item__icon">
