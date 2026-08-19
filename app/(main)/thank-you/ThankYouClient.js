@@ -97,7 +97,7 @@ export default function ThankYouClient() {
                 </svg>
               </div>
               <h3 className="thank-you-action-card__title">Colombo Flagship</h3>
-              <p className="thank-you-action-card__desc">514A, R.A. De Mel Mawatha, Colombo 03<br />Mon – Sat: 10 AM – 6 PM</p>
+              <p className="thank-you-action-card__desc">514A, R.A. De Mel Mawatha, Colombo 03<br />Mon - Sat: 10 AM - 6 PM</p>
               <a
                 href="https://maps.google.com/?q=Jewel+Exchange,+514A+R.A.+De+Mel+Mawatha,+Colombo+03,+Sri+Lanka"
                 target="_blank"

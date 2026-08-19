@@ -23,7 +23,14 @@ This document tracks all completed and pending tasks prior to final handoff and 
 
 ---
 
-### Section D: SEO, Assets & Interactive Polish
+### Section D: SEO, Google Indexing & Public Launch
+- [ ] **Google Search Console Verification:** HTML meta tag verified (`google-site-verification`).
+- [ ] **Coming Soon Gate Deactivation (Public Launch):**
+  - *Note on Indexing:* While `NEXT_PUBLIC_COMING_SOON=true` is active, Googlebot only indexes the root brand metadata (title, description, favicon) and the coming-soon banner.
+  - *To Index Full Catalog (133 products):* When ready for public launch, set `NEXT_PUBLIC_COMING_SOON=false` in Vercel environment variables and redeploy so Googlebot can crawl and index all 22 routes, gemstone pages, and jewelry collections.
+- [ ] **Google Sitemap Submission:** After setting coming-soon to `false`, submit `https://www.jewelexchange.lk/sitemap.xml` in Google Search Console and click **Request Indexing** on `https://www.jewelexchange.lk`.
+- [ ] **Google Business Profile & Socials Sync:** Ensure Google Maps listing links to `https://www.jewelexchange.lk` and WhatsApp chat link (`https://wa.me/94773534538`).
+- [ ] **Brand Protection (NIPO Sri Lanka):** File formal Trademark registration for "Jewel Exchange" under Class 14 & Class 35 with National Intellectual Property Office, Colombo for nationwide legal exclusivity against imitators.
 - [ ] **Mobile Device Smoke Test:** Final verification on physical iOS (Safari) and Android (Chrome) devices.
 
 ---

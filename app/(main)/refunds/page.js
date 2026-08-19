@@ -46,7 +46,7 @@ export default function RefundsPage() {
         <p>Due to the high value of our products, returns must be dispatched via a tracked, fully insured courier service (such as FedEx Priority or DHL Express). Jewel Exchange is not liable for packages lost, stolen, or damaged during return transit.</p>
 
         <h2>8. Refunds</h2>
-        <p>Once your return is received and inspected by our certified gemologists to verify its condition, weight, and authenticity, we will notify you of the approval or rejection of your refund. If approved, your refund will be processed to your original method of payment within 7–10 business days (minus any applicable certificate replacement or shipping fees).</p>
+        <p>Once your return is received and inspected by our certified gemologists to verify its condition, weight, and authenticity, we will notify you of the approval or rejection of your refund. If approved, your refund will be processed to your original method of payment within 7-10 business days (minus any applicable certificate replacement or shipping fees).</p>
       </div>
     </main>
   );

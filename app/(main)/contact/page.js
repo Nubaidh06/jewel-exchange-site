@@ -82,7 +82,7 @@ export default function ContactPage() {
                 </svg>
               </div>
               <h3 className="contact-card__title">Showroom Hours</h3>
-              <p className="contact-card__detail">Mon – Sat: 10 AM – 6 PM</p>
+              <p className="contact-card__detail">Mon - Sat: 10 AM - 6 PM</p>
               <p className="contact-card__detail contact-card__detail--muted">Sunday: Closed</p>
             </div>
           </div>

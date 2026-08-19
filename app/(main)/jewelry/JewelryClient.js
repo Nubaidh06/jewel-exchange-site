@@ -205,7 +205,7 @@ function JewelryCatalog({ initialItems }) {
           {totalPages > 1 && (
             <div className="catalog-pagination">
               <div className="catalog-pagination__info">
-                Showing {startIndex + 1}–{Math.min(endIndex, filteredItems.length)} of {filteredItems.length} pieces
+                Showing {startIndex + 1}-{Math.min(endIndex, filteredItems.length)} of {filteredItems.length} pieces
               </div>
               <div className="catalog-pagination__controls">
                 <button
@@ -252,8 +252,8 @@ function JewelryCatalog({ initialItems }) {
         <div className="container catalog-cta__inner reveal">
           <h2 className="catalog-cta__title">Bespoke Creations</h2>
           <p className="catalog-cta__desc">Cannot find the perfect piece? We specialize in creating one-of-a-kind bespoke jewelry tailored entirely to your vision.</p>
-          <Link href="/bespoke" className="btn btn--outline">
-            Discover Bespoke <span className="btn-arrow">→</span>
+          <Link href="/contact" className="btn btn--gold">
+            Inquire Now <span className="btn-arrow">→</span>
           </Link>
         </div>
       </section>

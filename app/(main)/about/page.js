@@ -48,7 +48,7 @@ export default function AboutPage() {
               </blockquote>
 
               <p>
-                Founded in the gemstone capital of Sri Lanka, Jewel Exchange was born from a deep reverence for the island&rsquo;s rich mineralogical heritage. For over two decades, our master craftsmen have transformed raw, earth-born stones into wearable works of art, honouring centuries-old techniques while embracing cutting-edge design technology.
+                Founded in 2008 in the gemstone capital of Sri Lanka, Jewel Exchange was born from a deep reverence for the island&rsquo;s rich mineralogical heritage. For over 18 years, our master craftsmen have transformed raw, earth-born stones into wearable works of art, honouring centuries-old techniques while embracing cutting-edge design technology.
               </p>
               <p>
                 Our atelier bridges the gap between old-world artisanship and modern luxury. Each creation begins with a conversation - understanding not just what our clients desire, but the emotions and milestones they wish to celebrate.
@@ -62,7 +62,7 @@ export default function AboutPage() {
               <div className="heritage-image__wrapper">
                 <Image
                   src="/images/models_and_shots/26B.png"
-                  alt="Where Tradition Meets Innovation — Jewel Exchange Craftsmanship"
+                  alt="Where Tradition Meets Innovation - Jewel Exchange Craftsmanship"
                   width={1080}
                   height={1350}
                   sizes="(max-width: 768px) 100vw, 45vw"
@@ -79,7 +79,7 @@ export default function AboutPage() {
         <div className="container">
           <div className="stats-grid reveal">
             <div className="stat-item">
-              <span className="stat-item__number">20+</span>
+              <span className="stat-item__number">18+</span>
               <span className="stat-item__label">Years of Craft</span>
             </div>
             <div className="stat-item">

@@ -232,9 +232,9 @@ export default function BookingPage() {
                     <div className="form-group">
                       <label htmlFor="booking-time" className="form-label">Preferred Time</label>
                       <select id="booking-time" name="preferredTime" className="form-select" value={formData.preferredTime} onChange={handleChange}>
-                        <option value="Morning (10AM - 12PM)">Morning (10:00 AM – 12:00 PM)</option>
-                        <option value="Early Afternoon (12PM - 3PM)">Early Afternoon (12:00 PM – 3:00 PM)</option>
-                        <option value="Late Afternoon (3PM - 6PM)">Late Afternoon (3:00 PM – 6:00 PM)</option>
+                        <option value="Morning (10AM - 12PM)">Morning (10:00 AM - 12:00 PM)</option>
+                        <option value="Early Afternoon (12PM - 3PM)">Early Afternoon (12:00 PM - 3:00 PM)</option>
+                        <option value="Late Afternoon (3PM - 6PM)">Late Afternoon (3:00 PM - 6:00 PM)</option>
                       </select>
                     </div>
                   </div>
@@ -257,8 +257,8 @@ export default function BookingPage() {
                         <select id="budget" name="budget" className="form-select" value={formData.budget} onChange={handleChange} required>
                           <option value="" disabled>Select budget</option>
                           <option value="under-500">Under $500</option>
-                          <option value="500-1000">$500 – $1,000</option>
-                          <option value="1000-5000">$1,000 – $5,000</option>
+                          <option value="500-1000">$500 - $1,000</option>
+                          <option value="1000-5000">$1,000 - $5,000</option>
                           <option value="5000+">$5,000+</option>
                         </select>
                       </div>

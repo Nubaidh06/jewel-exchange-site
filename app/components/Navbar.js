@@ -201,6 +201,7 @@ export default function Navbar() {
                   priority
                 />
               </div>
+              <span className="nav__logo-est">SINCE 2008</span>
             </Link>
 
             {/* Right Links */}
@@ -285,10 +286,11 @@ export default function Navbar() {
               <Image
                 src="/images/logo-transparent.png"
                 alt="Jewel Exchange"
-                width={75}
-                height={30}
+                width={85}
+                height={34}
                 style={{ objectFit: "contain" }}
               />
+              <span className="mobile-menu__logo-est">SINCE 2008</span>
             </Link>
             <button 
               className="mobile-menu__close" 

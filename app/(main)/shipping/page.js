@@ -27,8 +27,8 @@ export default function ShippingPage() {
 
         <h2>4. Delivery & Production Timelines</h2>
         <ul>
-          <li><strong>In-Stock Fine Jewelry & Loose Gemstones:</strong> Dispatched within 2–4 business days following payment confirmation and export clearance. International transit typically takes 3–7 business days.</li>
-          <li><strong>Bespoke & Custom Commissions:</strong> Handcrafted to order with individualized gemstone setting and hallmarking. Please allow 3–6 weeks for artisanal creation prior to dispatch.</li>
+          <li><strong>In-Stock Fine Jewelry & Loose Gemstones:</strong> Dispatched within 2-4 business days following payment confirmation and export clearance. International transit typically takes 3-7 business days.</li>
+          <li><strong>Bespoke & Custom Commissions:</strong> Handcrafted to order with individualized gemstone setting and hallmarking. Please allow 3-6 weeks for artisanal creation prior to dispatch.</li>
         </ul>
 
         <h2>5. Adult Signature & Security Requirements</h2>

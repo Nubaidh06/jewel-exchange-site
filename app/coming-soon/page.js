@@ -79,7 +79,7 @@ export default function ComingSoonPage() {
       const res = await fetch('https://formspree.io/f/xwvrebqo', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify({ email, _subject: 'Jewel Exchange — Launch Notification Request' }),
+        body: JSON.stringify({ email, _subject: 'Jewel Exchange - Launch Notification Request' }),
       });
       if (res.ok) {
         setStatus('success');
@@ -114,7 +114,7 @@ export default function ComingSoonPage() {
         </div>
 
         {/* Label */}
-        <p className="cs-label">Colombo, Sri Lanka · Est. Since 1990</p>
+        <p className="cs-label">Colombo, Sri Lanka · Est. 2008</p>
 
         {/* Headline */}
         <h1 className="cs-headline">
@@ -124,7 +124,7 @@ export default function ComingSoonPage() {
         {/* Subtext */}
         <p className="cs-subtext">
           Our new website is being crafted with the same care we bring to
-          every jewel — with precision, beauty, and intention. We&apos;ll
+          every jewel - with precision, beauty, and intention. We&apos;ll
           be ready soon.
         </p>
 
@@ -173,7 +173,7 @@ export default function ComingSoonPage() {
                 <circle cx="8" cy="8" r="7.5" stroke="currentColor" strokeOpacity=".4"/>
                 <path d="M4.5 8l2.5 2.5 4-4" stroke="#c9a96e" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
-              You&apos;re on the list — we&apos;ll be in touch.
+              You&apos;re on the list - we&apos;ll be in touch.
             </div>
           ) : (
             <form

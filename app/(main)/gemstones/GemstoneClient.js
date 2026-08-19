@@ -205,7 +205,7 @@ function GemstoneCatalog({ initialItems }) {
           {totalPages > 1 && (
             <div className="catalog-pagination">
               <div className="catalog-pagination__info">
-                Showing {startIndex + 1}–{Math.min(endIndex, filteredItems.length)} of {filteredItems.length} stones
+                Showing {startIndex + 1}-{Math.min(endIndex, filteredItems.length)} of {filteredItems.length} stones
               </div>
               <div className="catalog-pagination__controls">
                 <button
@@ -252,7 +252,7 @@ function GemstoneCatalog({ initialItems }) {
         <div className="container catalog-cta__inner reveal">
           <h2 className="catalog-cta__title">Searching for the Extraordinary?</h2>
           <p className="catalog-cta__desc">We source rare and exceptional loose gemstones from around the world. Let us know exactly what you are looking for.</p>
-          <Link href="/contact" className="btn btn--outline">
+          <Link href="/contact" className="btn btn--gold">
             Inquire Now <span className="btn-arrow">→</span>
           </Link>
         </div>
