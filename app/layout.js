@@ -21,13 +21,18 @@ export const metadata = {
     default: 'Jewel Exchange | Bespoke Fine Jewelry & Ceylon Gemstones',
     template: '%s | Jewel Exchange',
   },
-  description: 'Colombo’s premier bespoke jewelry atelier and certified Ceylon gemstone specialists. Handcrafted fine rings, necklaces, bracelets, and unheated sapphires in Sri Lanka.',
+  description: 'Colombo’s premier jewelry atelier and Ceylon gemstone specialists. Handcrafted fine rings, necklaces, bracelets, and unheated sapphires in Sri Lanka.',
   keywords: [
     'Jewel Exchange',
     'Jewel Exchange Colombo',
     'Jewel Exchange Sri Lanka',
     'Bespoke Jewelry Sri Lanka',
+    'Custom Jewelry Sri Lanka',
+    'Custom Ring Sri Lanka',
     'Ceylon Sapphires',
+    'Pink Sapphire Sri Lanka',
+    
+
     'Padparadscha Sapphire Sri Lanka',
     'Fine Jewelry Colombo',
     'Custom Engagement Rings Sri Lanka',
@@ -44,9 +49,12 @@ export const metadata = {
   alternates: {
     canonical: 'https://www.jewelexchange.lk',
   },
+  verification: {
+    google: 'e5gAbbpjDuKqyw2ruxtVgdfrvUgXlSwDhAmBghWtbE8',
+  },
   openGraph: {
     title: 'Jewel Exchange | Bespoke Fine Jewelry & Ceylon Gemstones',
-    description: 'Colombo’s premier bespoke jewelry atelier and certified Ceylon gemstone specialists. Handcrafted fine jewelry in Sri Lanka.',
+    description: 'Colombo’s premier jewelry atelier and Ceylon gemstone specialists. Handcrafted fine jewelry in Sri Lanka.',
     url: 'https://www.jewelexchange.lk',
     siteName: 'Jewel Exchange',
     images: [{ url: '/opengraph-image.png', width: 1200, height: 630, alt: 'Jewel Exchange — Bespoke Fine Jewelry & Ceylon Gemstones' }],
@@ -56,7 +64,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Jewel Exchange | Bespoke Fine Jewelry & Ceylon Gemstones',
-    description: 'Colombo’s premier bespoke jewelry atelier and certified Ceylon gemstone specialists. Handcrafted fine jewelry in Sri Lanka.',
+    description: 'Colombo’s premier jewelry atelier and Ceylon gemstone specialists. Handcrafted fine jewelry in Sri Lanka.',
     images: ['/opengraph-image.png'],
   },
 };
