@@ -680,8 +680,21 @@
     grid-template-columns: repeat(3, 1fr);
   }
 
+  .featured-carousel {
+    padding: 0 1.25rem var(--space-md) 1.25rem;
+    gap: 1.25rem;
+  }
+
   .featured-card {
-    flex: 0 0 75vw;
+    flex: 0 0 240px;
+  }
+
+  .featured-card__img {
+    margin-bottom: 1rem;
+  }
+
+  .featured-card__name {
+    font-size: 1.1rem;
   }
 }
 
@@ -689,7 +702,31 @@
   .lifestyle {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .featured-carousel {
+    padding: 0 1rem var(--space-sm) 1rem;
+    gap: 1rem;
+  }
+
   .featured-card {
-    flex: 0 0 85vw;
+    flex: 0 0 205px;
+    max-width: 65vw;
+  }
+
+  .featured-card__img {
+    margin-bottom: 0.75rem;
+  }
+
+  .featured-card__category {
+    font-size: 0.625rem;
+    letter-spacing: 1.5px;
+  }
+
+  .featured-card__name {
+    font-size: 1rem;
+  }
+
+  .featured-card__price {
+    font-size: 0.8125rem;
   }
 }

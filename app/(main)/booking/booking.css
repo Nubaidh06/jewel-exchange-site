@@ -424,8 +424,19 @@
   }
 
   .booking-form-layout {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: var(--space-xl);
+    max-width: 720px;
+  }
+
+  .booking-intro-card {
+    padding: 2.25rem 2rem;
+  }
+
+  .booking-types {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
   }
 
   .expect-timeline {
@@ -452,9 +463,8 @@
     gap: var(--space-md);
   }
 
-  .booking-form-layout {
+  .booking-types {
     grid-template-columns: 1fr;
-    gap: var(--space-xl);
   }
 
   .booking-form {

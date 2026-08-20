@@ -10,6 +10,7 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
+  const [mobileActiveDropdown, setMobileActiveDropdown] = useState(null);
   const [mounted, setMounted] = useState(false);
   const dropdownRef = useRef(null);
   const pathname = usePathname();
@@ -30,6 +31,7 @@ export default function Navbar() {
   useEffect(() => {
     setMobileOpen(false);
     setActiveDropdown(null);
+    setMobileActiveDropdown(null);
   }, [pathname]);
 
   useEffect(() => {
@@ -280,14 +282,18 @@ export default function Navbar() {
         <div className="mobile-menu__backdrop" onClick={() => setMobileOpen(false)} />
         <div className="mobile-menu__content">
           <div className="mobile-menu__header">
+            <div style={{ width: 38, height: 38 }} aria-hidden="true" />
             <Link href="/" onClick={() => setMobileOpen(false)} className="mobile-menu__logo">
-              <Image
-                src="/images/logo-transparent.png"
-                alt="Jewel Exchange"
-                width={85}
-                height={34}
-                style={{ objectFit: "contain" }}
-              />
+              <div className="mobile-menu__logo-img">
+                <Image
+                  src="/images/logo-transparent.png"
+                  alt="Jewel Exchange"
+                  width={110}
+                  height={50}
+                  style={{ objectFit: "contain", width: "100%", height: "100%" }}
+                  priority
+                />
+              </div>
               <span className="mobile-menu__logo-est">SINCE 2008</span>
             </Link>
             <button
@@ -307,14 +313,48 @@ export default function Navbar() {
               <span>Home</span>
               <span className="mobile-menu__link-arrow">→</span>
             </Link>
-            <Link href="/jewelry" onClick={() => setMobileOpen(false)} className={`mobile-menu__link ${isActive("/jewelry") ? "mobile-menu__link--active" : ""}`} style={{ "--i": 1 }}>
-              <span>Jewelry</span>
-              <span className="mobile-menu__link-arrow">→</span>
-            </Link>
-            <Link href="/gemstones" onClick={() => setMobileOpen(false)} className={`mobile-menu__link ${isActive("/gemstones") ? "mobile-menu__link--active" : ""}`} style={{ "--i": 2 }}>
-              <span>Gemstones</span>
-              <span className="mobile-menu__link-arrow">→</span>
-            </Link>
+            <div className="mobile-menu__item" style={{ "--i": 1 }}>
+              <button 
+                className={`mobile-menu__link ${pathname.startsWith("/jewelry") ? "mobile-menu__link--active" : ""}`}
+                onClick={() => setMobileActiveDropdown(mobileActiveDropdown === "jewelry" ? null : "jewelry")}
+                style={{ width: '100%', background: 'transparent', border: 'none', textAlign: 'left', cursor: 'pointer' }}
+              >
+                <span>Jewelry</span>
+                <svg className={`mobile-menu__chevron ${mobileActiveDropdown === "jewelry" ? "mobile-menu__chevron--open" : ""}`} width="14" height="8" viewBox="0 0 10 6" fill="none">
+                  <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
+              <div className={`mobile-menu__subnav ${mobileActiveDropdown === "jewelry" ? "mobile-menu__subnav--open" : ""}`}>
+                <Link href="/jewelry" onClick={() => setMobileOpen(false)} className="mobile-menu__sublink">View All Jewelry</Link>
+                <Link href="/jewelry?category=Rings" onClick={() => setMobileOpen(false)} className="mobile-menu__sublink">Rings</Link>
+                <Link href="/jewelry?category=Necklaces" onClick={() => setMobileOpen(false)} className="mobile-menu__sublink">Necklaces</Link>
+                <Link href="/jewelry?category=Earrings" onClick={() => setMobileOpen(false)} className="mobile-menu__sublink">Earrings</Link>
+                <Link href="/jewelry?category=Bracelets" onClick={() => setMobileOpen(false)} className="mobile-menu__sublink">Bracelets</Link>
+                <Link href="/jewelry?category=Pendants" onClick={() => setMobileOpen(false)} className="mobile-menu__sublink">Pendants</Link>
+              </div>
+            </div>
+            
+            <div className="mobile-menu__item" style={{ "--i": 2 }}>
+              <button 
+                className={`mobile-menu__link ${pathname.startsWith("/gemstones") ? "mobile-menu__link--active" : ""}`}
+                onClick={() => setMobileActiveDropdown(mobileActiveDropdown === "gemstones" ? null : "gemstones")}
+                style={{ width: '100%', background: 'transparent', border: 'none', textAlign: 'left', cursor: 'pointer' }}
+              >
+                <span>Gemstones</span>
+                <svg className={`mobile-menu__chevron ${mobileActiveDropdown === "gemstones" ? "mobile-menu__chevron--open" : ""}`} width="14" height="8" viewBox="0 0 10 6" fill="none">
+                  <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
+              <div className={`mobile-menu__subnav ${mobileActiveDropdown === "gemstones" ? "mobile-menu__subnav--open" : ""}`}>
+                <Link href="/gemstones" onClick={() => setMobileOpen(false)} className="mobile-menu__sublink">View All Gemstones</Link>
+                <Link href="/gemstones?category=Sapphires" onClick={() => setMobileOpen(false)} className="mobile-menu__sublink">Sapphires</Link>
+                <Link href="/gemstones?category=Padparadscha" onClick={() => setMobileOpen(false)} className="mobile-menu__sublink">Padparadscha</Link>
+                <Link href="/gemstones?category=Rubies" onClick={() => setMobileOpen(false)} className="mobile-menu__sublink">Rubies</Link>
+                <Link href="/gemstones?category=Emeralds" onClick={() => setMobileOpen(false)} className="mobile-menu__sublink">Emeralds</Link>
+                <Link href="/gemstones?category=Diamonds" onClick={() => setMobileOpen(false)} className="mobile-menu__sublink">Diamonds</Link>
+                <Link href="/gemstones?category=Rare Gems" onClick={() => setMobileOpen(false)} className="mobile-menu__sublink">Rare & Collector Gems</Link>
+              </div>
+            </div>
             <Link href="/bespoke" onClick={() => setMobileOpen(false)} className={`mobile-menu__link ${isActive("/bespoke") ? "mobile-menu__link--active" : ""}`} style={{ "--i": 3 }}>
               <span>Bespoke</span>
               <span className="mobile-menu__link-arrow">→</span>

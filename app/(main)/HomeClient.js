@@ -158,7 +158,7 @@ export default function HomeClient({ featuredProducts = [] }) {
           </Link>
           <Link href="/gemstones" className="split-card reveal reveal-delay-2">
             <div className="split-card__img">
-              <Image src="/images/models_and_shots/28.png" alt="Gemstones Collection" fill style={{ objectFit: "cover" }} />
+              <Image src="/images/models_and_shots/gemstones-category-grid.png" alt="Gemstones Collection" fill style={{ objectFit: "cover" }} />
               <div className="split-card__overlay" />
             </div>
             <div className="split-card__content">

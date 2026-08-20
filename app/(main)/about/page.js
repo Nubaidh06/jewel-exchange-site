@@ -61,8 +61,18 @@ export default function AboutPage() {
             <div className="heritage-image reveal reveal-delay-2">
               <div className="heritage-image__wrapper">
                 <Image
-                  src="/images/models_and_shots/26B.png"
+                  src="/images/models_and_shots/gem-sift.png"
                   alt="Where Tradition Meets Innovation - Jewel Exchange Craftsmanship"
+                  width={1080}
+                  height={1350}
+                  sizes="(max-width: 768px) 100vw, 45vw"
+                  style={{ width: '100%', height: 'auto', display: 'block', objectFit: 'cover' }}
+                />
+              </div>
+              <div className="heritage-image__wrapper">
+                <Image
+                  src="/images/models_and_shots/gem-setting.png"
+                  alt="Where Tradition Meets Innovation - Gem Setting"
                   width={1080}
                   height={1350}
                   sizes="(max-width: 768px) 100vw, 45vw"
@@ -166,27 +176,46 @@ export default function AboutPage() {
           </div>
 
           <div className="gallery-masonry">
-            {[
-              { src: '/images/models_and_shots/04.png', alt: 'Craftsmanship detail', span: 'tall' },
-              { src: '/images/models_and_shots/05.png', alt: 'Workshop artistry', span: '' },
-              { src: '/images/models_and_shots/06.png', alt: 'Gemstone selection', span: '' },
-              { src: '/images/models_and_shots/07.png', alt: 'Jewelry finishing', span: '' },
-              { src: '/images/models_and_shots/09.png', alt: 'Final masterpiece', span: 'tall' },
-            ].map((img, idx) => (
-              <div
-                key={img.src}
-                className={`gallery-item ${img.span ? `gallery-item--${img.span}` : ''} reveal reveal-delay-${(idx % 3) + 1}`}
-              >
-                <Image
-                  src={img.src}
-                  alt={img.alt}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                  style={{ objectFit: 'cover' }}
-                  className="gallery-item__img"
-                />
-              </div>
-            ))}
+            <div className="gallery-item gallery-item--left reveal reveal-delay-1">
+              <Image
+                src="/images/models_and_shots/04.png"
+                alt="Craftsmanship detail"
+                fill
+                sizes="(max-width: 768px) 100vw, 33vw"
+                style={{ objectFit: 'cover' }}
+                className="gallery-item__img"
+              />
+            </div>
+            <div className="gallery-item gallery-item--mid-top reveal reveal-delay-2">
+              <Image
+                src="/images/models_and_shots/05.png"
+                alt="Workshop artistry"
+                fill
+                sizes="(max-width: 768px) 100vw, 33vw"
+                style={{ objectFit: 'cover' }}
+                className="gallery-item__img"
+              />
+            </div>
+            <div className="gallery-item gallery-item--mid-bottom reveal reveal-delay-3">
+              <Image
+                src="/images/models_and_shots/06.png"
+                alt="Gemstone selection"
+                fill
+                sizes="(max-width: 768px) 100vw, 33vw"
+                style={{ objectFit: 'cover' }}
+                className="gallery-item__img"
+              />
+            </div>
+            <div className="gallery-item gallery-item--right reveal reveal-delay-1">
+              <Image
+                src="/images/models_and_shots/09.png"
+                alt="Final masterpiece"
+                fill
+                sizes="(max-width: 768px) 100vw, 33vw"
+                style={{ objectFit: 'cover' }}
+                className="gallery-item__img"
+              />
+            </div>
           </div>
         </div>
       </section>

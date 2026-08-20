@@ -60,7 +60,7 @@ export default function BookingPage() {
       <section className="booking-hero">
         <div className="booking-hero__bg">
           <Image
-            src="/images/banners/experience-hero.png"
+            src="/images/banners/experience-hero-2.png"
             alt="Book an appointment at Jewel Exchange"
             fill
             sizes="100vw"

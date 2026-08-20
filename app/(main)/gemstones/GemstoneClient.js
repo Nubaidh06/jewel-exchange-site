@@ -28,6 +28,7 @@ function GemstoneCatalog({ initialItems }) {
     } else if (!categoryParam) {
       setActiveFilter("All");
     }
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
   }, [categoryParam]);
 
   const handleFilter = (category) => {
@@ -185,7 +186,7 @@ function GemstoneCatalog({ initialItems }) {
                         e.stopPropagation();
                         toggleWishlist({ ...item, type: 'Gemstones' });
                       }}
-                      style={{ marginTop: '0.75rem', width: '100%', fontSize: '0.75rem', padding: '0.6rem' }}
+                      style={{ marginTop: 'auto', width: '100%', fontSize: '0.75rem', padding: '0.6rem' }}
                     >
                       {saved ? "Added to Inquiry" : "Add to Inquiry"}
                     </button>
