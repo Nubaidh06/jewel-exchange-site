@@ -35,10 +35,9 @@ export default function WishlistPage() {
           {wishlist.length === 0 ? (
             <div className="wishlist-empty reveal reveal-delay-3">
               <div className="wishlist-empty__icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="48" height="48">
-                  <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
-                  <line x1="3" y1="6" x2="21" y2="6"></line>
-                  <path d="M16 10a4 4 0 0 1-8 0"></path>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.15" width="48" height="48">
+                  <path d="M5 8.5h14l-1.2 11.5a1.5 1.5 0 0 1-1.5 1.3H7.7a1.5 1.5 0 0 1-1.5-1.3L5 8.5z" />
+                  <path d="M9 8.5V6a3 3 0 0 1 6 0v2.5" strokeLinecap="round" />
                 </svg>
               </div>
               <h2 className="wishlist-empty__title">Your inquiry cart is empty</h2>
@@ -82,7 +81,7 @@ export default function WishlistPage() {
                         aria-label={`Remove ${item.name} from inquiry cart`}
                         title="Remove item"
                       >
-                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                           <line x1="18" y1="6" x2="6" y2="18"></line>
                           <line x1="6" y1="6" x2="18" y2="18"></line>
                         </svg>
