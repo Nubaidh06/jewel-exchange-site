@@ -73,8 +73,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" data-scroll-behavior="smooth">
-      <body className={`${playfair.variable} ${outfit.variable}`}>
+    <html lang="en" data-scroll-behavior="smooth" suppressHydrationWarning>
+      <body className={`${playfair.variable} ${outfit.variable}`} suppressHydrationWarning>
         {children}
         <SpeedInsights />
         <Analytics />

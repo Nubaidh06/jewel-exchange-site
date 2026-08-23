@@ -281,6 +281,9 @@ export default function HomeClient({ featuredProducts = [] }) {
           ══════════════════════════════════════ */}
       <section className="trust-section">
         <div className="container">
+          <div className="trust-header reveal">
+            <h2 className="trust-header__title">The Jewel Exchange Promise</h2>
+          </div>
           <div className="trust-grid">
             <div className="trust-item reveal">
               <span className="trust-item__number">01</span>
