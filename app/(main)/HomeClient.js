@@ -38,40 +38,76 @@ export default function HomeClient({ featuredProducts = [] }) {
   return (
     <div className="home">
 
-      {/* ══════════════════════════════════════
-          HERO — Full-Bleed, Left Text
-          ══════════════════════════════════════ */}
-      <section className="hero">
-        <div className="hero__bg">
-          <Image
-            src="/images/banners/banner 1.png"
-            alt="Jewel Exchange — Rare Gems & Bespoke Jewelry, Colombo"
-            fill
-            sizes="100vw"
-            style={{ objectFit: "cover", objectPosition: "center top" }}
-            priority
-          />
-          <div className="hero__overlay" />
-        </div>
+      {/* ══════════════════════
+          HERO — 3-Column Editorial Panel
+          Desktop: 3 portrait panels
+          Mobile: single center panel
+          ══════════════════════ */}
+      <section className="hero" aria-label="Hero">
+        {/* 3 portrait image panels */}
+        <div className="hero__panels">
+          {/* Left panel */}
+          <div className="hero__panel hero__panel--left">
+            <Image
+              src="/images/models_and_shots/05.png"
+              alt="Fine jewelry, earrings and rings by Jewel Exchange"
+              fill
+              sizes="(max-width: 1024px) 0vw, 33vw"
+              style={{ objectFit: "cover" }}
+              priority
+            />
+          </div>
 
-        <div className="container hero__content">
-          <span className="hero__eyebrow">Jewel Exchange — Colombo</span>
-          <h1 className="hero__title">
-            Where Elegance<br />Meets Eternity
-          </h1>
-          <p className="hero__subtitle">
-            Curated fine jewelry, rare gemstones, and bespoke creations — handcrafted in Sri Lanka since 2008.
-          </p>
-          <div className="hero__actions">
-            <Link href="/jewelry" className="hero__btn hero__btn--primary">
-              Explore Jewelry
-            </Link>
-            <Link href="/bespoke" className="hero__btn hero__btn--ghost">
-              Bespoke Creations
-            </Link>
+          {/* Center panel (also used solo on mobile) */}
+          <div className="hero__panel hero__panel--center">
+            <Image
+              src="/images/banners/banner 2.png"
+              alt="Jewel Exchange — Rare Gems & Bespoke Jewelry"
+              fill
+              sizes="(max-width: 1024px) 100vw, 40vw"
+              style={{ objectFit: "cover", objectPosition: "center top" }}
+              priority
+            />
+          </div>
+
+          {/* Right panel */}
+          <div className="hero__panel hero__panel--right">
+            <Image
+              src="/images/models_and_shots/08.png"
+              alt="Fine necklaces by Jewel Exchange"
+              fill
+              sizes="(max-width: 1024px) 0vw, 33vw"
+              style={{ objectFit: "cover" }}
+              priority
+            />
           </div>
         </div>
 
+        {/* Directional gradient over text area */}
+        <div className="hero__text-bg" aria-hidden="true" />
+
+        {/* Text content */}
+        <div className="hero__content">
+          <div className="hero__content-inner">
+            <span className="hero__eyebrow">Jewel Exchange — Colombo</span>
+            <h1 className="hero__title">
+              Where Elegance<br />Meets Eternity
+            </h1>
+            <p className="hero__subtitle">
+              Curated fine jewelry, rare gemstones, and bespoke creations — handcrafted in Sri Lanka since 2008.
+            </p>
+            <div className="hero__actions">
+              <Link href="/jewelry" className="hero__btn hero__btn--primary">
+                Explore Jewelry
+              </Link>
+              <Link href="/bespoke" className="hero__btn hero__btn--ghost">
+                Bespoke Creations
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        {/* Scroll indicator */}
         <div className="hero__scroll" aria-hidden="true">
           <div className="hero__scroll-line" />
           <span>Scroll</span>
@@ -99,46 +135,73 @@ export default function HomeClient({ featuredProducts = [] }) {
       </section>
 
       {/* ══════════════════════════════════════
-          CATEGORY GRID — Editorial 3-Column
+          CATEGORY GRID — Tiffany-Inspired 5-Column
           ══════════════════════════════════════ */}
       <section className="category-section">
-        <div className="container">
+        <div className="container category-container">
           <div className="category-header reveal">
-            <span className="category-header__eyebrow">Collections</span>
             <h2 className="category-header__title">Shop by Category</h2>
           </div>
           <div className="category-grid reveal reveal-delay-1">
+            <Link href="/jewelry?category=Necklaces%20%26%20Pendants" className="category-card">
+              <div className="category-card__img">
+                <Image
+                  src="/images/models_and_shots/14.png"
+                  alt="Necklaces & Pendants"
+                  fill
+                  sizes="(max-width: 768px) 70vw, 20vw"
+                  style={{ objectFit: "cover" }}
+                />
+              </div>
+              <span className="category-card__label">Necklaces &amp; Pendants</span>
+            </Link>
+
+            <Link href="/jewelry?category=Bracelets" className="category-card">
+              <div className="category-card__img">
+                <Image
+                  src="/images/products/classic-tennis-bracelet.png"
+                  alt="Fine Bracelets"
+                  fill
+                  sizes="(max-width: 768px) 70vw, 20vw"
+                  style={{ objectFit: "cover" }}
+                />
+              </div>
+              <span className="category-card__label">Bracelets</span>
+            </Link>
+
+            <Link href="/jewelry?category=Earrings" className="category-card">
+              <div className="category-card__img">
+                <Image
+                  src="/images/models_and_shots/01.png"
+                  alt="Fine Earrings"
+                  fill
+                  sizes="(max-width: 768px) 70vw, 20vw"
+                  style={{ objectFit: "cover" }}
+                />
+              </div>
+              <span className="category-card__label">Earrings</span>
+            </Link>
+
             <Link href="/jewelry?category=Rings" className="category-card">
               <div className="category-card__img">
                 <Image
-                  src="/images/models_and_shots/02.png"
+                  src="/images/products/emerald-drop-earrings.png"
                   alt="Fine Rings"
                   fill
-                  sizes="(max-width: 768px) 50vw, 33vw"
+                  sizes="(max-width: 768px) 70vw, 20vw"
                   style={{ objectFit: "cover" }}
                 />
               </div>
               <span className="category-card__label">Rings</span>
             </Link>
-            <Link href="/jewelry?category=Necklaces" className="category-card">
-              <div className="category-card__img">
-                <Image
-                  src="/images/models_and_shots/03.png"
-                  alt="Fine Necklaces"
-                  fill
-                  sizes="(max-width: 768px) 50vw, 33vw"
-                  style={{ objectFit: "cover" }}
-                />
-              </div>
-              <span className="category-card__label">Necklaces</span>
-            </Link>
+
             <Link href="/gemstones" className="category-card">
               <div className="category-card__img">
                 <Image
                   src="/images/models_and_shots/gemstones-category-grid.png"
-                  alt="Rare Gemstones"
+                  alt="Ceylon Gemstones"
                   fill
-                  sizes="(max-width: 768px) 50vw, 33vw"
+                  sizes="(max-width: 768px) 70vw, 20vw"
                   style={{ objectFit: "cover" }}
                 />
               </div>
@@ -151,65 +214,67 @@ export default function HomeClient({ featuredProducts = [] }) {
       {/* ══════════════════════════════════════
           FEATURED PRODUCTS — Carousel
           ══════════════════════════════════════ */}
-      <section className="featured-section">
-        <div className="container">
-          <div className="featured-header reveal">
-            <div className="featured-header__text">
-              <span className="featured-header__eyebrow">Curated Selection</span>
-              <h2 className="featured-header__title">Featured Pieces</h2>
-            </div>
-            <div className="featured-header__nav">
-              <button
-                className="featured-nav-btn"
-                onClick={() => scrollCarousel(-1)}
-                aria-label="Scroll left"
-              >
-                ←
-              </button>
-              <button
-                className="featured-nav-btn"
-                onClick={() => scrollCarousel(1)}
-                aria-label="Scroll right"
-              >
-                →
-              </button>
-            </div>
-          </div>
-
-          <div className="featured-carousel reveal reveal-delay-1" ref={carouselRef}>
-            {featuredProducts.map((item) => (
-              <div key={item._id || item.slug} className="featured-card">
-                <div className="featured-card__img">
-                  <Image
-                    src={item.img || "/images/models_and_shots/20.png"}
-                    alt={item.name || "Featured Piece"}
-                    fill
-                    sizes="(max-width: 768px) 70vw, 300px"
-                    style={{ objectFit: "cover" }}
-                  />
-                  <Link
-                    href={`/${item.type ? item.type.toLowerCase() : "jewelry"}/${item.slug}`}
-                    className="featured-card__hover"
-                  >
-                    <span className="featured-card__hover-btn">View Piece</span>
-                  </Link>
-                </div>
-                <div className="featured-card__info">
-                  <span className="featured-card__category">{item.category}</span>
-                  <h3 className="featured-card__name">{item.name}</h3>
-                  <span className="featured-card__price">Price on Inquiry</span>
-                </div>
+      {featuredProducts && featuredProducts.length > 0 && (
+        <section className="featured-section">
+          <div className="container">
+            <div className="featured-header reveal">
+              <div className="featured-header__text">
+                <span className="featured-header__eyebrow">Curated Selection</span>
+                <h2 className="featured-header__title">Featured Pieces</h2>
               </div>
-            ))}
-          </div>
+              <div className="featured-header__nav">
+                <button
+                  className="featured-nav-btn"
+                  onClick={() => scrollCarousel(-1)}
+                  aria-label="Scroll left"
+                >
+                  ←
+                </button>
+                <button
+                  className="featured-nav-btn"
+                  onClick={() => scrollCarousel(1)}
+                  aria-label="Scroll right"
+                >
+                  →
+                </button>
+              </div>
+            </div>
 
-          <div className="featured-cta reveal">
-            <Link href="/jewelry" className="btn btn--outline">
-              View Full Collection →
-            </Link>
+            <div className="featured-carousel reveal reveal-delay-1" ref={carouselRef}>
+              {featuredProducts.map((item) => (
+                <div key={item._id || item.slug} className="featured-card">
+                  <div className="featured-card__img">
+                    <Image
+                      src={item.img || "/images/models_and_shots/20.png"}
+                      alt={item.name || "Featured Piece"}
+                      fill
+                      sizes="(max-width: 768px) 70vw, 300px"
+                      style={{ objectFit: "cover" }}
+                    />
+                    <Link
+                      href={`/${item.type ? item.type.toLowerCase() : "jewelry"}/${item.slug}`}
+                      className="featured-card__hover"
+                    >
+                      <span className="featured-card__hover-btn">View Piece</span>
+                    </Link>
+                  </div>
+                  <div className="featured-card__info">
+                    <span className="featured-card__category">{item.category}</span>
+                    <h3 className="featured-card__name">{item.name}</h3>
+                    <span className="featured-card__price">Price on Inquiry</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="featured-cta reveal">
+              <Link href="/jewelry" className="btn btn--outline">
+                View Full Collection →
+              </Link>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* ══════════════════════════════════════
           TRUST PILLARS — Minimal Text Grid

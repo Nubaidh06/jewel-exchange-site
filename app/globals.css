@@ -172,6 +172,11 @@ button {
   color: var(--color-text-secondary);
 }
 
+.section-header {
+  text-align: center;
+  margin-bottom: var(--space-lg);
+}
+
 .section-label {
   display: inline-block;
   font-family: var(--font-sans);

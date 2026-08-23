@@ -9,7 +9,7 @@ import "./page.css";
 const CATEGORIES = ["All", "Sapphires", "Padparadscha", "Rubies", "Emeralds", "Diamonds", "Rare Gems"];
 const SORT_OPTIONS = ["Default", "Price: Low to High", "Price: High to Low"];
 
-const ITEMS_PER_PAGE = 12;
+const ITEMS_PER_PAGE = 16;
 
 function GemstoneCatalog({ initialItems }) {
   const searchParams = useSearchParams();
@@ -19,7 +19,6 @@ function GemstoneCatalog({ initialItems }) {
   const [activeSort, setActiveSort] = useState("Default");
   const [currentPage, setCurrentPage] = useState(1);
   const [isTransitioning, setIsTransitioning] = useState(false);
-  const { toggleWishlist, isInWishlist } = useWishlist();
 
   useEffect(() => {
     if (categoryParam && CATEGORIES.includes(categoryParam)) {
@@ -101,26 +100,27 @@ function GemstoneCatalog({ initialItems }) {
     return pages;
   };
 
+  const getCategoryTitle = () => {
+    switch (activeFilter) {
+      case "Sapphires": return "Ceylon Blue & Fancy Sapphires";
+      case "Padparadscha": return "Lotus Ceylon Padparadscha";
+      case "Rubies": return "Pigeon Blood Rubies";
+      case "Emeralds": return "Natural Vivid Emeralds";
+      case "Diamonds": return "Brilliant Natural Diamonds";
+      case "Rare Gems": return "Collector & Rare Gems";
+      default: return "Rare Gemstones";
+    }
+  };
+
   return (
     <div className="catalog-page">
-      {/* Compact Hero */}
+      {/* Editorial Collection Header (Dinidu-inspired) */}
       <div className="catalog-hero">
-        <div className="catalog-hero__bg">
-          <Image
-            src="/images/models_and_shots/22.png"
-            alt="Gemstones Collection"
-            fill
-            sizes="100vw"
-            style={{ objectFit: "cover" }}
-            priority
-          />
-        </div>
-        <div className="catalog-hero__overlay" />
         <div className="container catalog-hero__content">
-          <span className="catalog-hero__label">Collections</span>
-          <h1 className="catalog-hero__title">Rare Gemstones</h1>
+          <span className="catalog-hero__eyebrow">Jewel Exchange Collections</span>
+          <h1 className="catalog-hero__title">{getCategoryTitle()}</h1>
           <p className="catalog-hero__subtitle">
-            Nature's most precious treasures, hand-selected for brilliance and clarity.
+            Direct from the legendary gem mines of Ceylon, certified for exceptional color, clarity, and investment provenance.
           </p>
         </div>
       </div>
@@ -130,6 +130,7 @@ function GemstoneCatalog({ initialItems }) {
         <div className="container">
           <div className="catalog-filters__row">
             <div className="catalog-filters__categories">
+              <span className="catalog-filters__filter-label">Filter By:</span>
               {CATEGORIES.map((cat) => (
                 <button
                   key={cat}
@@ -142,13 +143,16 @@ function GemstoneCatalog({ initialItems }) {
             </div>
             <div className="catalog-filters__right">
               <span className="catalog-filters__count">
-                {filteredItems.length} stone{filteredItems.length !== 1 ? "s" : ""}
+                {filteredItems.length} {filteredItems.length === 1 ? "Stone" : "Stones"}
               </span>
-              <select className="sort-select" value={activeSort} onChange={handleSort}>
-                {SORT_OPTIONS.map((opt) => (
-                  <option key={opt} value={opt}>{opt}</option>
-                ))}
-              </select>
+              <div className="sort-wrapper">
+                <label htmlFor="sort-select" className="sort-label">Sort By:</label>
+                <select id="sort-select" className="sort-select" value={activeSort} onChange={handleSort}>
+                  {SORT_OPTIONS.map((opt) => (
+                    <option key={opt} value={opt}>{opt}</option>
+                  ))}
+                </select>
+              </div>
             </div>
           </div>
         </div>
@@ -158,42 +162,28 @@ function GemstoneCatalog({ initialItems }) {
       <section id="catalog-products" className="catalog-grid-section">
         <div className="container">
           <div className={`product-grid ${isTransitioning ? "product-grid--fading" : ""}`}>
-            {paginatedItems.map((item) => {
-              const saved = isInWishlist(item.slug);
-              return (
-                <Link
-                  key={item._id || item.slug}
-                  href={`/gemstones/${item.slug}`}
-                  className="product-card"
-                >
-                  <div className="product-card__img-wrap">
-                    <Image
-                      src={item.img || "/images/models_and_shots/28.png"}
-                      alt={item.name || "Gemstone Item"}
-                      fill
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                      className="product-card__img"
-                    />
-                  </div>
-                  <div className="product-card__info">
-                    <span className="product-card__category">{item.category}</span>
-                    <h3 className="product-card__title">{item.name}</h3>
-                    <p className="product-card__price">Price on Inquiry</p>
-                    <button
-                      className={`btn ${saved ? "btn--outline" : "btn--full"}`}
-                      onClick={(e) => {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        toggleWishlist({ ...item, type: 'Gemstones' });
-                      }}
-                      style={{ marginTop: 'auto', width: '100%', fontSize: '0.75rem', padding: '0.6rem' }}
-                    >
-                      {saved ? "Added to Inquiry" : "Add to Inquiry"}
-                    </button>
-                  </div>
-                </Link>
-              );
-            })}
+            {paginatedItems.map((item) => (
+              <Link
+                key={item._id || item.slug}
+                href={`/gemstones/${item.slug}`}
+                className="product-card"
+              >
+                <div className="product-card__img-wrap">
+                  <Image
+                    src={item.img || "/images/models_and_shots/28.png"}
+                    alt={item.name || "Gemstone Item"}
+                    fill
+                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                    className="product-card__img"
+                  />
+                </div>
+                <div className="product-card__info">
+                  <span className="product-card__category">{item.category}</span>
+                  <h3 className="product-card__title">{item.name}</h3>
+                  <p className="product-card__price">Price on Inquiry</p>
+                </div>
+              </Link>
+            ))}
           </div>
 
           {filteredItems.length === 0 && (
@@ -248,20 +238,19 @@ function GemstoneCatalog({ initialItems }) {
         </div>
       </section>
 
-      {/* CTA Banner */}
-      <section className="catalog-cta">
-        <div className="catalog-cta__bg">
-          <div className="catalog-cta__bg-img">
-            <Image src="/images/cta/searching-for-the-extraordinary-banner.png" alt="Searching for the Extraordinary Banner" fill style={{ objectFit: 'cover' }} />
+      {/* Clean Editorial Bespoke Banner */}
+      <section className="catalog-bespoke-cta">
+        <div className="container">
+          <div className="catalog-bespoke-card">
+            <span className="catalog-bespoke-tag">Gemstone Sourcing</span>
+            <h2 className="catalog-bespoke-title">Searching for the Extraordinary?</h2>
+            <p className="catalog-bespoke-desc">
+              We source certified, investment-grade Ceylon and global gemstones directly from historical mines. Inquire with our gemologists for bespoke sourcing.
+            </p>
+            <Link href="/booking" className="btn btn--outline">
+              Request Sourcing Consultation →
+            </Link>
           </div>
-          <div className="catalog-cta__overlay" />
-        </div>
-        <div className="container catalog-cta__inner reveal">
-          <h2 className="catalog-cta__title">Searching for the Extraordinary?</h2>
-          <p className="catalog-cta__desc">We source rare and exceptional loose gemstones from around the world. Let us know exactly what you are looking for.</p>
-          <Link href="/contact" className="btn btn--white">
-            Inquire Now <span className="btn-arrow">→</span>
-          </Link>
         </div>
       </section>
     </div>

@@ -119,13 +119,6 @@ export default function AboutPage() {
 
           <div className="values-grid">
             <div className="value-card reveal">
-              <div className="value-card__icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M12 2L2 7l10 5 10-5-10-5z" />
-                  <path d="M2 17l10 5 10-5" />
-                  <path d="M2 12l10 5 10-5" />
-                </svg>
-              </div>
               <span className="value-card__number">01</span>
               <h3 className="value-card__title">Exceptional Quality</h3>
               <p className="value-card__desc">
@@ -134,11 +127,6 @@ export default function AboutPage() {
             </div>
 
             <div className="value-card reveal reveal-delay-1">
-              <div className="value-card__icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
-                </svg>
-              </div>
               <span className="value-card__number">02</span>
               <h3 className="value-card__title">Curated & Custom</h3>
               <p className="value-card__desc">
@@ -147,13 +135,6 @@ export default function AboutPage() {
             </div>
 
             <div className="value-card reveal reveal-delay-2">
-              <div className="value-card__icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" />
-                  <path d="M2 12h20" />
-                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-                </svg>
-              </div>
               <span className="value-card__number">03</span>
               <h3 className="value-card__title">Ethical Practice</h3>
               <p className="value-card__desc">

@@ -161,10 +161,9 @@ export default function Navbar() {
               <div className="nav__dropdown-menu-inner">
                 <Link href="/jewelry" className="nav__dropdown-item">View All Jewelry</Link>
                 <Link href="/jewelry?category=Rings" className="nav__dropdown-item">Rings</Link>
-                <Link href="/jewelry?category=Necklaces" className="nav__dropdown-item">Necklaces</Link>
+                <Link href="/jewelry?category=Necklaces%20%26%20Pendants" className="nav__dropdown-item">Necklaces &amp; Pendants</Link>
                 <Link href="/jewelry?category=Earrings" className="nav__dropdown-item">Earrings</Link>
                 <Link href="/jewelry?category=Bracelets" className="nav__dropdown-item">Bracelets</Link>
-                <Link href="/jewelry?category=Pendants" className="nav__dropdown-item">Pendants</Link>
               </div>
             </div>
           </div>
@@ -219,47 +218,16 @@ export default function Navbar() {
 
           {/* Header */}
           <div className="mobile-menu__header">
-            <div className="mobile-menu__header-left">
-              <Link
-                href="/wishlist"
-                onClick={() => setMobileOpen(false)}
-                className="mobile-menu__cart-btn"
-                aria-label="View Inquiry Cart"
-              >
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.25" width="16" height="16">
-                  <path d="M5 8.5h14l-1.2 11.5a1.5 1.5 0 0 1-1.5 1.3H7.7a1.5 1.5 0 0 1-1.5-1.3L5 8.5z" />
-                  <path d="M9 8.5V6a3 3 0 0 1 6 0v2.5" strokeLinecap="round" />
-                </svg>
-                {wishlist.length > 0 && <span className="mobile-menu__cart-badge">{wishlist.length}</span>}
-              </Link>
-            </div>
-
-            <Link href="/" onClick={() => setMobileOpen(false)} className="mobile-menu__logo">
-              <div className="mobile-menu__logo-img">
-                <Image
-                  src="/images/logo-transparent.png"
-                  alt="Jewel Exchange"
-                  width={110}
-                  height={48}
-                  style={{ objectFit: "contain", width: "100%", height: "100%" }}
-                  priority
-                />
-              </div>
-              <span className="mobile-menu__logo-est">Since 2008</span>
-            </Link>
-
-            <div className="mobile-menu__header-right">
-              <button
-                className="mobile-menu__close"
-                onClick={() => setMobileOpen(false)}
-                aria-label="Close menu"
-              >
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" width="18" height="18">
-                  <line x1="18" y1="6" x2="6" y2="18" strokeLinecap="round" />
-                  <line x1="6" y1="6" x2="18" y2="18" strokeLinecap="round" />
-                </svg>
-              </button>
-            </div>
+            <button
+              className="mobile-menu__close"
+              onClick={() => setMobileOpen(false)}
+              aria-label="Close menu"
+            >
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" width="18" height="18">
+                <line x1="18" y1="6" x2="6" y2="18" strokeLinecap="round" />
+                <line x1="6" y1="6" x2="18" y2="18" strokeLinecap="round" />
+              </svg>
+            </button>
           </div>
 
           {/* Navigation */}
@@ -284,10 +252,9 @@ export default function Navbar() {
               <div className={`mobile-menu__subnav ${mobileActiveDropdown === "jewelry" ? "mobile-menu__subnav--open" : ""}`}>
                 <Link href="/jewelry" onClick={() => setMobileOpen(false)} className="mobile-menu__sublink">Discover All</Link>
                 <Link href="/jewelry?category=Rings" onClick={() => setMobileOpen(false)} className="mobile-menu__sublink">Rings</Link>
-                <Link href="/jewelry?category=Necklaces" onClick={() => setMobileOpen(false)} className="mobile-menu__sublink">Necklaces</Link>
+                <Link href="/jewelry?category=Necklaces%20%26%20Pendants" onClick={() => setMobileOpen(false)} className="mobile-menu__sublink">Necklaces &amp; Pendants</Link>
                 <Link href="/jewelry?category=Earrings" onClick={() => setMobileOpen(false)} className="mobile-menu__sublink">Earrings</Link>
                 <Link href="/jewelry?category=Bracelets" onClick={() => setMobileOpen(false)} className="mobile-menu__sublink">Bracelets</Link>
-                <Link href="/jewelry?category=Pendants" onClick={() => setMobileOpen(false)} className="mobile-menu__sublink">Pendants</Link>
               </div>
             </div>
 

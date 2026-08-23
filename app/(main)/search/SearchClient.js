@@ -13,9 +13,8 @@ const CATEGORIES = [
   "Rings",
   "Sapphires",
   "Diamonds",
-  "Necklaces",
+  "Necklaces & Pendants",
   "Earrings",
-  "Pendants",
   "Padparadscha",
 ];
 

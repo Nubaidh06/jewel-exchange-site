@@ -1,5 +1,5 @@
 /* ============================================
-   SEARCH MODAL — LUXURY COMMAND PALETTE
+   SEARCH MODAL — LUXURY EDITORIAL MINIMALISM
    Jewel Exchange Design System
    ============================================ */
 
@@ -7,13 +7,13 @@
   position: fixed;
   inset: 0;
   z-index: 2000;
-  background: rgba(11, 12, 16, 0.72);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  background: rgba(10, 10, 10, 0.65);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  padding: 4rem 1.25rem 2rem;
+  padding: 4.5rem 1.25rem 2rem;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   animation: searchBackdropFade 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
@@ -32,15 +32,10 @@
   position: relative;
   width: 100%;
   max-width: 680px;
-  background: rgba(249, 248, 245, 0.96);
-  backdrop-filter: blur(28px) saturate(1.3);
-  -webkit-backdrop-filter: blur(28px) saturate(1.3);
-  border: 1px solid rgba(255, 255, 255, 0.8);
-  border-radius: var(--radius-lg, 16px);
-  box-shadow:
-    0 24px 64px rgba(0, 0, 0, 0.28),
-    0 4px 16px rgba(0, 0, 0, 0.08),
-    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  background: #ffffff;
+  border: 1px solid var(--color-border);
+  border-radius: 0;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -51,51 +46,48 @@
 @keyframes searchModalSlideDown {
   from {
     opacity: 0;
-    transform: translateY(-24px) scale(0.98);
+    transform: translateY(-20px);
   }
   to {
     opacity: 1;
-    transform: translateY(0) scale(1);
+    transform: translateY(0);
   }
 }
 
 /* ============================================
-   HEADER & INPUT
+   HEADER & INPUT (Underline Luxury Style)
    ============================================ */
 
 .search-modal-header {
-  padding: 1.25rem 1.5rem 1rem;
-  border-bottom: 1px solid rgba(184, 150, 90, 0.16);
-  background: rgba(255, 255, 255, 0.45);
+  padding: 1.75rem 2rem 1.25rem;
+  background: #ffffff;
+  border-bottom: 1px solid var(--color-border-light);
   display: flex;
   flex-direction: column;
-  gap: 0.85rem;
+  gap: 1.25rem;
 }
 
 .search-input-wrapper {
   position: relative;
   display: flex;
   align-items: center;
-  gap: 0.85rem;
-  background: #ffffff;
-  border: 1px solid rgba(184, 150, 90, 0.28);
-  border-radius: var(--radius-full, 999px);
-  padding: 0.5rem 0.85rem 0.5rem 1.15rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
-  transition: all 0.25s ease;
+  gap: 1rem;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--color-border);
+  border-radius: 0;
+  padding: 0.6rem 0.25rem;
+  transition: border-color 0.25s ease;
 }
 
 .search-input-wrapper:focus-within {
-  border-color: var(--color-gold, #B8965A);
-  box-shadow:
-    0 0 0 3px rgba(184, 150, 90, 0.15),
-    0 4px 14px rgba(0, 0, 0, 0.06);
+  border-bottom-color: var(--color-gold);
 }
 
 .search-icon {
   width: 20px;
   height: 20px;
-  color: var(--color-gold, #B8965A);
+  color: var(--color-gold);
   flex-shrink: 0;
 }
 
@@ -120,21 +112,22 @@
   border: none;
   outline: none;
   font-family: var(--font-sans);
-  font-size: 1.05rem;
-  color: var(--color-text, #1a1a1a);
+  font-size: 1.125rem;
+  color: var(--color-text);
   letter-spacing: 0.2px;
 }
 
 .search-input::placeholder {
-  color: var(--color-text-light, #8a8880);
+  color: var(--color-text-light);
   font-size: 0.95rem;
+  font-weight: 300;
 }
 
 .search-spinner {
   width: 16px;
   height: 16px;
   border: 2px solid rgba(184, 150, 90, 0.25);
-  border-top-color: var(--color-gold, #B8965A);
+  border-top-color: var(--color-gold);
   border-radius: 50%;
   animation: searchSpin 0.6s linear infinite;
 }
@@ -146,55 +139,51 @@
 }
 
 .search-clear-btn {
-  background: rgba(0, 0, 0, 0.05);
+  background: transparent;
   border: none;
-  border-radius: 50%;
+  border-radius: 0;
   width: 24px;
   height: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.75rem;
-  color: var(--color-text-secondary, #666);
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: color 0.2s ease;
   padding: 0;
 }
 
 .search-clear-btn:hover {
-  background: rgba(0, 0, 0, 0.12);
-  color: var(--color-text, #111);
+  color: var(--color-text);
 }
 
 .search-close-btn {
-  background: rgba(0, 0, 0, 0.04);
-  border: 1px solid rgba(184, 150, 90, 0.2);
-  border-radius: 50%;
-  width: 32px;
-  height: 32px;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  width: 28px;
+  height: 28px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  color: var(--color-text-secondary, #666);
-  transition: all 0.2s ease;
+  color: var(--color-text-secondary);
+  transition: color 0.2s ease;
   padding: 0;
   flex-shrink: 0;
 }
 
 .search-close-btn:hover {
-  background: var(--color-gold, #B8965A);
-  color: #ffffff;
-  border-color: var(--color-gold, #B8965A);
-  transform: scale(1.05);
+  color: var(--color-gold);
 }
 
 .search-close-icon {
-  width: 16px;
-  height: 16px;
+  width: 18px;
+  height: 18px;
 }
 
-/* Category Filter Pills */
+/* Category Filter Tabs */
 .search-category-pills {
   display: flex;
   align-items: center;
@@ -210,30 +199,30 @@
 
 .search-pill {
   font-family: var(--font-sans);
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: 500;
-  letter-spacing: 0.4px;
-  padding: 0.35rem 0.75rem;
-  border-radius: var(--radius-full, 999px);
-  background: rgba(255, 255, 255, 0.7);
-  border: 1px solid rgba(184, 150, 90, 0.2);
-  color: var(--color-text-secondary, #555);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 0.4rem 0.85rem;
+  border-radius: 0;
+  background: transparent;
+  border: 1px solid var(--color-border-light);
+  color: var(--color-text-secondary);
   cursor: pointer;
   white-space: nowrap;
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.2s ease;
 }
 
 .search-pill:hover {
-  background: #ffffff;
-  color: var(--color-text, #111);
-  border-color: var(--color-gold, #B8965A);
+  background: var(--color-bg-alt);
+  color: var(--color-text);
+  border-color: var(--color-gold);
 }
 
 .search-pill--active {
-  background: var(--color-gold, #B8965A);
+  background: var(--color-gold);
   color: #ffffff;
-  border-color: var(--color-gold, #B8965A);
-  box-shadow: 0 2px 8px rgba(184, 150, 90, 0.28);
+  border-color: var(--color-gold);
 }
 
 .search-pill--active:hover {
@@ -248,18 +237,17 @@
 .search-modal-body {
   max-height: min(60vh, 520px);
   overflow-y: auto;
-  padding: 1.25rem 1.5rem;
+  padding: 1.5rem 2rem;
   scrollbar-width: thin;
   scrollbar-color: rgba(184, 150, 90, 0.3) transparent;
 }
 
 .search-modal-body::-webkit-scrollbar {
-  width: 6px;
+  width: 4px;
 }
 
 .search-modal-body::-webkit-scrollbar-thumb {
   background: rgba(184, 150, 90, 0.3);
-  border-radius: 999px;
 }
 
 /* Results Meta */
@@ -267,16 +255,17 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 0.85rem;
-  padding: 0 0.25rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--color-border-light);
 }
 
 .search-results-count {
   font-family: var(--font-sans);
-  font-size: 0.8rem;
-  font-weight: 500;
-  color: var(--color-text-light, #777);
-  letter-spacing: 0.5px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  letter-spacing: 1px;
   text-transform: uppercase;
 }
 
@@ -284,9 +273,11 @@
   background: transparent;
   border: none;
   font-family: var(--font-sans);
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   font-weight: 600;
-  color: var(--color-gold, #B8965A);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--color-gold);
   cursor: pointer;
   transition: color 0.2s ease;
   padding: 0;
@@ -298,42 +289,38 @@
 }
 
 /* ============================================
-   RESULT ITEMS LIST
+   RESULT ITEMS LIST (Minimalist Rows)
    ============================================ */
 
 .search-results-list {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
 }
 
 .search-item-card {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #ffffff;
-  border: 1px solid rgba(184, 150, 90, 0.15);
-  border-radius: var(--radius-md, 10px);
-  padding: 0.65rem 0.85rem;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--color-border-light);
+  border-radius: 0;
+  padding: 0.85rem 0.5rem;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
   position: relative;
-  gap: 0.85rem;
+  gap: 1rem;
 }
 
 .search-item-card:hover,
 .search-item-card--selected {
-  border-color: var(--color-gold, #B8965A);
-  background: rgba(255, 255, 255, 1);
-  box-shadow:
-    0 6px 20px rgba(184, 150, 90, 0.12),
-    0 1px 3px rgba(0, 0, 0, 0.04);
-  transform: translateY(-1px);
+  background: var(--color-bg-alt);
+  border-bottom-color: var(--color-gold-light);
 }
 
 .search-item-main-link {
   display: flex;
   align-items: center;
-  gap: 0.85rem;
+  gap: 1rem;
   flex: 1;
   min-width: 0;
   text-decoration: none;
@@ -342,12 +329,12 @@
 
 .search-item-thumb {
   position: relative;
-  width: 56px;
-  height: 56px;
-  border-radius: 8px;
+  width: 54px;
+  height: 54px;
+  border-radius: 0;
   overflow: hidden;
-  background: var(--color-bg-alt, #f5f3ef);
-  border: 1px solid rgba(184, 150, 90, 0.18);
+  background: var(--color-bg-alt);
+  border: 1px solid var(--color-border-light);
   flex-shrink: 0;
 }
 
@@ -357,13 +344,13 @@
 }
 
 .search-item-card:hover .search-item-img {
-  transform: scale(1.06);
+  transform: scale(1.05);
 }
 
 .search-item-details {
   display: flex;
   flex-direction: column;
-  gap: 0.15rem;
+  gap: 0.2rem;
   min-width: 0;
   flex: 1;
 }
@@ -373,18 +360,18 @@
   align-items: center;
   gap: 0.35rem;
   font-family: var(--font-sans);
-  font-size: 0.6875rem;
+  font-size: 0.65rem;
   font-weight: 600;
-  letter-spacing: 0.8px;
+  letter-spacing: 1px;
   text-transform: uppercase;
-  color: var(--color-gold, #B8965A);
+  color: var(--color-gold);
 }
 
 .search-item-name {
   font-family: var(--font-serif);
-  font-size: 1rem;
-  font-weight: 500;
-  color: var(--color-text, #111);
+  font-size: 1.05rem;
+  font-weight: 400;
+  color: var(--color-text);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -393,64 +380,65 @@
 
 .search-item-price {
   font-family: var(--font-sans);
-  font-size: 0.78rem;
-  color: var(--color-text-secondary, #666);
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+  font-weight: 400;
 }
 
 .search-item-actions {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.75rem;
   flex-shrink: 0;
 }
 
 .search-inquiry-btn {
   display: inline-flex;
   align-items: center;
-  gap: 0.35rem;
-  padding: 0.45rem 0.75rem;
+  gap: 0.4rem;
+  padding: 0.45rem 0.85rem;
   font-family: var(--font-sans);
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.5px;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 1px;
   text-transform: uppercase;
-  background: rgba(184, 150, 90, 0.08);
-  color: var(--color-gold-dark, #9c7b40);
-  border: 1px solid rgba(184, 150, 90, 0.25);
-  border-radius: 6px;
+  background: transparent;
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  border-radius: 0;
   cursor: pointer;
   transition: all 0.2s ease;
   white-space: nowrap;
 }
 
 .search-inquiry-btn:hover {
-  background: var(--color-gold, #B8965A);
+  background: var(--color-gold);
   color: #ffffff;
-  border-color: var(--color-gold, #B8965A);
+  border-color: var(--color-gold);
 }
 
 .search-inquiry-btn--saved {
-  background: var(--color-gold, #B8965A);
+  background: var(--color-gold);
   color: #ffffff;
-  border-color: var(--color-gold, #B8965A);
+  border-color: var(--color-gold);
 }
 
 .search-item-arrow {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  border-radius: 0;
   background: transparent;
-  color: var(--color-text-light, #888);
+  color: var(--color-text-light);
   font-size: 1rem;
   text-decoration: none;
-  transition: all 0.2s ease;
+  transition: transform 0.2s ease, color 0.2s ease;
 }
 
 .search-item-card:hover .search-item-arrow {
-  color: var(--color-gold, #B8965A);
+  color: var(--color-gold);
   transform: translateX(3px);
 }
 
@@ -467,52 +455,49 @@
 .search-quick-section {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 0.85rem;
 }
 
 .search-section-title {
   font-family: var(--font-sans);
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: 600;
-  letter-spacing: 1.2px;
+  letter-spacing: 1.5px;
   text-transform: uppercase;
-  color: var(--color-text-secondary, #666);
+  color: var(--color-text-secondary);
 }
 
 .search-suggestion-chips {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.45rem;
+  gap: 0.5rem;
 }
 
 .search-chip {
   display: inline-flex;
   align-items: center;
-  gap: 0.35rem;
+  gap: 0.4rem;
   font-family: var(--font-sans);
-  font-size: 0.8rem;
-  font-weight: 500;
-  color: var(--color-text, #333);
-  background: #ffffff;
-  border: 1px solid rgba(184, 150, 90, 0.22);
-  border-radius: var(--radius-full, 999px);
-  padding: 0.4rem 0.85rem;
+  font-size: 0.78rem;
+  font-weight: 400;
+  color: var(--color-text);
+  background: var(--color-bg-alt);
+  border: 1px solid var(--color-border-light);
+  border-radius: 0;
+  padding: 0.45rem 0.85rem;
   cursor: pointer;
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.2s ease;
 }
 
 .search-chip:hover {
-  background: rgba(184, 150, 90, 0.08);
-  border-color: var(--color-gold, #B8965A);
-  color: var(--color-gold-dark, #9c7b40);
-  transform: translateY(-1px);
+  background: #ffffff;
+  border-color: var(--color-gold);
+  color: var(--color-gold);
 }
 
 .search-chip svg {
-  color: var(--color-gold, #B8965A);
+  color: var(--color-gold);
 }
-
-
 
 /* ============================================
    EMPTY RESULTS STATE
@@ -523,14 +508,14 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 3.5rem 1.5rem;
+  padding: 3rem 1.5rem;
 }
 
 .search-empty-text {
   font-family: var(--font-sans);
   font-size: 0.95rem;
-  color: var(--color-text-secondary, #666);
-  line-height: 1.5;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
 }
 
 /* ============================================
@@ -538,9 +523,9 @@
    ============================================ */
 
 .search-modal-footer {
-  padding: 0.85rem 1.5rem;
-  background: rgba(255, 255, 255, 0.65);
-  border-top: 1px solid rgba(184, 150, 90, 0.16);
+  padding: 1rem 2rem;
+  background: var(--color-bg-alt);
+  border-top: 1px solid var(--color-border-light);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -550,9 +535,11 @@
   background: transparent;
   border: none;
   font-family: var(--font-sans);
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   font-weight: 600;
-  color: var(--color-gold, #B8965A);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--color-gold);
   cursor: pointer;
   transition: color 0.2s ease;
   padding: 0.25rem 0.5rem;
@@ -569,39 +556,36 @@
 
 @media (max-width: 640px) {
   .search-modal-backdrop {
-    padding: 0.75rem 0.5rem;
+    padding: 1rem 0.75rem;
     align-items: flex-start;
   }
 
   .search-modal-container {
-    max-height: 92dvh;
-    border-radius: var(--radius-md, 12px);
+    max-height: 90dvh;
   }
 
   .search-modal-header {
-    padding: 0.85rem 0.85rem 0.65rem;
-    gap: 0.65rem;
+    padding: 1.25rem 1rem 1rem;
+    gap: 1rem;
   }
 
   .search-input-wrapper {
-    padding: 0.4rem 0.65rem 0.4rem 0.85rem;
-    gap: 0.65rem;
+    padding: 0.5rem 0.25rem;
+    gap: 0.75rem;
   }
 
   .search-input {
-    font-size: 0.95rem;
+    font-size: 1rem;
   }
 
   .search-modal-body {
-    padding: 0.85rem;
+    padding: 1rem;
     max-height: 65dvh;
   }
 
-
-
   .search-item-card {
-    padding: 0.55rem 0.65rem;
-    gap: 0.65rem;
+    padding: 0.75rem 0.25rem;
+    gap: 0.75rem;
   }
 
   .search-item-thumb {
@@ -610,7 +594,7 @@
   }
 
   .search-item-name {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
   }
 
   .search-inquiry-text {
@@ -622,12 +606,6 @@
   }
 
   .search-modal-footer {
-    padding: 0.65rem 0.85rem;
-  }
-
-  .search-footer-action-btn {
-    text-align: center;
-    font-size: 0.85rem;
-    padding: 0.35rem 0;
+    padding: 0.85rem 1rem;
   }
 }

@@ -13,9 +13,8 @@ const FILTER_PILLS = [
   "Rings",
   "Sapphires",
   "Diamonds",
-  "Necklaces",
+  "Necklaces & Pendants",
   "Earrings",
-  "Pendants",
   "Padparadscha",
 ];
 

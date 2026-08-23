@@ -6,10 +6,10 @@ import { useSearchParams } from "next/navigation";
 import { useWishlist } from "@/lib/WishlistContext";
 import "./page.css";
 
-const CATEGORIES = ["All", "Rings", "Necklaces", "Earrings", "Bracelets", "Pendants"];
+const CATEGORIES = ["All", "Rings", "Necklaces & Pendants", "Earrings", "Bracelets"];
 const SORT_OPTIONS = ["Default", "Price: Low to High", "Price: High to Low"];
 
-const ITEMS_PER_PAGE = 12;
+const ITEMS_PER_PAGE = 16;
 
 function JewelryCatalog({ initialItems }) {
   const searchParams = useSearchParams();
@@ -19,13 +19,18 @@ function JewelryCatalog({ initialItems }) {
   const [activeSort, setActiveSort] = useState("Default");
   const [currentPage, setCurrentPage] = useState(1);
   const [isTransitioning, setIsTransitioning] = useState(false);
-  const { toggleWishlist, isInWishlist } = useWishlist();
 
   useEffect(() => {
-    if (categoryParam && CATEGORIES.includes(categoryParam)) {
-      setActiveFilter(categoryParam);
-      setCurrentPage(1);
-    } else if (!categoryParam) {
+    if (categoryParam) {
+      const normalizedParam = categoryParam.toLowerCase();
+      if (normalizedParam.includes("necklace") || normalizedParam.includes("pendant")) {
+        setActiveFilter("Necklaces & Pendants");
+        setCurrentPage(1);
+      } else if (CATEGORIES.includes(categoryParam)) {
+        setActiveFilter(categoryParam);
+        setCurrentPage(1);
+      }
+    } else {
       setActiveFilter("All");
     }
     window.scrollTo({ top: 0, left: 0, behavior: "instant" });
@@ -57,7 +62,13 @@ function JewelryCatalog({ initialItems }) {
 
   let filteredItems = activeFilter === "All"
     ? [...initialItems]
-    : initialItems.filter((item) => item.category === activeFilter);
+    : initialItems.filter((item) => {
+        if (activeFilter === "Necklaces & Pendants") {
+          const cat = (item.category || "").toLowerCase();
+          return cat.includes("necklace") || cat.includes("pendant");
+        }
+        return item.category === activeFilter;
+      });
 
   if (activeSort === "Price: Low to High") {
     filteredItems.sort((a, b) => parsePrice(a.price) - parsePrice(b.price));
@@ -101,26 +112,25 @@ function JewelryCatalog({ initialItems }) {
     return pages;
   };
 
+  const getCategoryTitle = () => {
+    switch (activeFilter) {
+      case "Rings": return "Fine Rings";
+      case "Necklaces & Pendants": return "Necklaces & Pendants";
+      case "Earrings": return "Fine Earrings";
+      case "Bracelets": return "Bracelets & Bangles";
+      default: return "High Jewelry";
+    }
+  };
+
   return (
     <div className="catalog-page">
-      {/* Compact Hero */}
+      {/* Editorial Collection Header (Dinidu-inspired) */}
       <div className="catalog-hero">
-        <div className="catalog-hero__bg">
-          <Image
-            src="/images/models_and_shots/20.png"
-            alt="Jewelry Collection"
-            fill
-            sizes="100vw"
-            style={{ objectFit: "cover" }}
-            priority
-          />
-        </div>
-        <div className="catalog-hero__overlay" />
         <div className="container catalog-hero__content">
-          <span className="catalog-hero__label">Collections</span>
-          <h1 className="catalog-hero__title">High Jewelry</h1>
+          <span className="catalog-hero__eyebrow">Jewel Exchange Collections</span>
+          <h1 className="catalog-hero__title">{getCategoryTitle()}</h1>
           <p className="catalog-hero__subtitle">
-            Explore our crafted statement pieces, signature sets, and bespoke creations designed to be treasured across generations.
+            Handcrafted in Sri Lanka with rare natural gemstones, brilliant diamonds, and timeless bespoke artistry.
           </p>
         </div>
       </div>
@@ -130,6 +140,7 @@ function JewelryCatalog({ initialItems }) {
         <div className="container">
           <div className="catalog-filters__row">
             <div className="catalog-filters__categories">
+              <span className="catalog-filters__filter-label">Filter By:</span>
               {CATEGORIES.map((cat) => (
                 <button
                   key={cat}
@@ -142,13 +153,16 @@ function JewelryCatalog({ initialItems }) {
             </div>
             <div className="catalog-filters__right">
               <span className="catalog-filters__count">
-                {filteredItems.length} piece{filteredItems.length !== 1 ? "s" : ""}
+                {filteredItems.length} {filteredItems.length === 1 ? "Piece" : "Pieces"}
               </span>
-              <select className="sort-select" value={activeSort} onChange={handleSort}>
-                {SORT_OPTIONS.map((opt) => (
-                  <option key={opt} value={opt}>{opt}</option>
-                ))}
-              </select>
+              <div className="sort-wrapper">
+                <label htmlFor="sort-select" className="sort-label">Sort By:</label>
+                <select id="sort-select" className="sort-select" value={activeSort} onChange={handleSort}>
+                  {SORT_OPTIONS.map((opt) => (
+                    <option key={opt} value={opt}>{opt}</option>
+                  ))}
+                </select>
+              </div>
             </div>
           </div>
         </div>
@@ -158,42 +172,28 @@ function JewelryCatalog({ initialItems }) {
       <section id="catalog-products" className="catalog-grid-section">
         <div className="container">
           <div className={`product-grid ${isTransitioning ? "product-grid--fading" : ""}`}>
-            {paginatedItems.map((item) => {
-              const saved = isInWishlist(item.slug);
-              return (
-                <Link
-                  key={item._id || item.slug}
-                  href={`/jewelry/${item.slug}`}
-                  className="product-card"
-                >
-                  <div className="product-card__img-wrap">
-                    <Image
-                      src={item.img || "/images/models_and_shots/20.png"}
-                      alt={item.name || "Jewelry Item"}
-                      fill
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                      className="product-card__img"
-                    />
-                  </div>
-                  <div className="product-card__info">
-                    <span className="product-card__category">{item.category}</span>
-                    <h3 className="product-card__title">{item.name}</h3>
-                    <p className="product-card__price">Price on Inquiry</p>
-                    <button
-                      className={`btn ${saved ? "btn--outline" : "btn--full"}`}
-                      onClick={(e) => {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        toggleWishlist({ ...item, type: 'Jewelry' });
-                      }}
-                      style={{ marginTop: 'auto', width: '100%', fontSize: '0.75rem', padding: '0.6rem' }}
-                    >
-                      {saved ? "Added to Inquiry" : "Add to Inquiry"}
-                    </button>
-                  </div>
-                </Link>
-              );
-            })}
+            {paginatedItems.map((item) => (
+              <Link
+                key={item._id || item.slug}
+                href={`/jewelry/${item.slug}`}
+                className="product-card"
+              >
+                <div className="product-card__img-wrap">
+                  <Image
+                    src={item.img || "/images/models_and_shots/20.png"}
+                    alt={item.name || "Jewelry Item"}
+                    fill
+                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                    className="product-card__img"
+                  />
+                </div>
+                <div className="product-card__info">
+                  <span className="product-card__category">{item.category}</span>
+                  <h3 className="product-card__title">{item.name}</h3>
+                  <p className="product-card__price">Price on Inquiry</p>
+                </div>
+              </Link>
+            ))}
           </div>
 
           {filteredItems.length === 0 && (
@@ -248,26 +248,19 @@ function JewelryCatalog({ initialItems }) {
         </div>
       </section>
 
-      {/* CTA Banner */}
-      <section className="catalog-cta">
-        <div className="catalog-cta__bg">
-          <div className="catalog-cta__bg-img">
-            <Image src="/images/cta/ring-trillion-ceylon-sapphire-ribbon-swirl-01.png" alt="Jewelry Craftsmanship 1" fill sizes="(max-width: 768px) 100vw, 33vw" style={{ objectFit: 'cover' }} />
+      {/* Clean Editorial Bespoke Banner */}
+      <section className="catalog-bespoke-cta">
+        <div className="container">
+          <div className="catalog-bespoke-card">
+            <span className="catalog-bespoke-tag">Bespoke Commissions</span>
+            <h2 className="catalog-bespoke-title">Looking for Something One-of-a-Kind?</h2>
+            <p className="catalog-bespoke-desc">
+              In addition to our showroom collections, our master craftsmen create custom high jewelry tailored entirely to your personal vision.
+            </p>
+            <Link href="/booking" className="btn btn--outline">
+              Book a Consultation →
+            </Link>
           </div>
-          <div className="catalog-cta__bg-img">
-            <Image src="/images/cta/earrings-petite-beaded-gold-huggies-ring-and-bracelet-suite.png" alt="Jewelry Craftsmanship 3" fill sizes="(max-width: 768px) 100vw, 33vw" style={{ objectFit: 'cover' }} />
-          </div>
-          <div className="catalog-cta__bg-img">
-            <Image src="/images/cta/necklace-florentine-ripple-teardrop-gold-01.png" alt="Jewelry Craftsmanship 2" fill sizes="(max-width: 768px) 100vw, 33vw" style={{ objectFit: 'cover' }} />
-          </div>
-          <div className="catalog-cta__overlay" />
-        </div>
-        <div className="container catalog-cta__inner reveal">
-          <h2 className="catalog-cta__title">Looking for Something Specific?</h2>
-          <p className="catalog-cta__desc">In addition to our showroom collections, our master craftsmen create one-of-a-kind bespoke designs tailored entirely to your vision.</p>
-          <Link href="/contact" className="btn btn--white">
-            Inquire Now <span className="btn-arrow">→</span>
-          </Link>
         </div>
       </section>
     </div>
