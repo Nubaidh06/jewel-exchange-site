@@ -4,18 +4,19 @@
    ============================================ */
 
 :root {
-  /* Colors */
-  --color-bg: #f8f6f3;
-  --color-bg-alt: #f1eeea;
+  /* Colors — Pure White Luxury Palette */
+  --color-bg: #ffffff;
+  --color-bg-alt: #f7f6f4;
+  --color-bg-warm: #faf9f7;
   --color-surface: #ffffff;
-  --color-text: #1a1a1a;
-  --color-text-secondary: #6b6b6b;
-  --color-text-light: #999999;
+  --color-text: #111111;
+  --color-text-secondary: #6a6a6a;
+  --color-text-light: #aaaaaa;
   --color-gold: #b8965a;
   --color-gold-light: #d4b98a;
   --color-gold-dark: #96783f;
-  --color-border: #e8e4df;
-  --color-border-light: #f0ece7;
+  --color-border: #e8e6e3;
+  --color-border-light: #f0eeeb;
 
   /* Typography */
   --font-serif: var(--font-playfair), 'Georgia', serif;
@@ -28,18 +29,19 @@
   --space-lg: 3rem;
   --space-xl: 5rem;
   --space-2xl: 8rem;
+  --space-3xl: 11rem;
 
   /* Radii */
-  --radius-sm: 4px;
-  --radius-md: 8px;
-  --radius-lg: 16px;
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 8px;
   --radius-full: 9999px;
 
   /* Shadows */
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
-  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.06);
-  --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.08);
-  --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.1);
+  --shadow-sm: 0 1px 6px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 24px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 12px 48px rgba(0, 0, 0, 0.07);
+  --shadow-xl: 0 24px 72px rgba(0, 0, 0, 0.09);
 
   /* Transitions */
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
@@ -49,9 +51,9 @@
   --duration-slow: 0.6s;
 
   /* Layout */
-  --nav-height: 80px;
+  --nav-height: 152px; /* 36 utility + 74 brand + 42 links */
   --container-max: 1280px;
-  --container-narrow: 900px;
+  --container-narrow: 860px;
 }
 
 /* ============================================
@@ -77,7 +79,7 @@ body {
   color: var(--color-text);
   font-family: var(--font-sans);
   font-size: 1rem;
-  line-height: 1.7;
+  line-height: 1.75;
   overflow-x: hidden;
 }
 
@@ -144,7 +146,7 @@ button {
 }
 
 .pt-nav {
-  padding-top: calc(var(--nav-height) + 3rem);
+  padding-top: calc(var(--nav-height) + 2rem);
 }
 
 /* ============================================
@@ -153,7 +155,7 @@ button {
 
 .page-header {
   text-align: center;
-  padding-top: calc(var(--nav-height) + 4rem);
+  padding-top: calc(var(--nav-height) + 3.5rem);
   padding-bottom: var(--space-xl);
 }
 
@@ -231,20 +233,20 @@ button {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  padding: 0.9rem 2.2rem;
+  padding: 0.85rem 2.25rem;
   min-height: 44px;
   font-family: var(--font-sans);
-  font-size: 0.8125rem;
+  font-size: 0.72rem;
   font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 2.5px;
   border: 1px solid var(--color-text);
   background-color: var(--color-text);
   color: var(--color-surface);
   cursor: pointer;
   transition: all var(--duration-normal) var(--ease-out);
   position: relative;
-  overflow: hidden;
+  border-radius: 0;
 }
 
 .btn:hover {
