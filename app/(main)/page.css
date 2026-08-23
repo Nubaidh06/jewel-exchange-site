@@ -526,8 +526,6 @@
   margin-bottom: 3.5rem;
 }
 
-.featured-header__text {}
-
 .featured-header__eyebrow {
   display: block;
   font-family: var(--font-sans);
