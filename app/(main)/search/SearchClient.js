@@ -1,37 +1,10 @@
 "use client";
-import { useState, useEffect, useCallback, useTransition } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useSearchParams, useRouter } from "next/navigation";
 import { useWishlist } from "@/lib/WishlistContext";
 import "./search.css";
-
-const CATEGORIES = [
-  "All",
-  "Jewelry",
-  "Gemstones",
-  "Rings",
-  "Sapphires",
-  "Diamonds",
-  "Necklaces & Pendants",
-  "Earrings",
-  "Padparadscha",
-];
-
-const SORT_OPTIONS = [
-  "Default",
-  "Name: A to Z",
-  "Name: Z to A",
-];
-
-const POPULAR_SEARCHES = [
-  "Ceylon Sapphire",
-  "Solitaire Diamond",
-  "Emerald Drop",
-  "Tennis Bracelet",
-  "Padparadscha",
-  "Gold Necklace",
-];
 
 const ITEMS_PER_PAGE = 12;
 
@@ -39,11 +12,8 @@ export default function SearchClient() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const initialQ = searchParams.get("q") || "";
-  const initialCategory = searchParams.get("category") || "All";
 
   const [query, setQuery] = useState(initialQ);
-  const [activeCategory, setActiveCategory] = useState(initialCategory);
-  const [activeSort, setActiveSort] = useState("Default");
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
@@ -54,7 +24,6 @@ export default function SearchClient() {
   // Sync state when URL params change
   useEffect(() => {
     setQuery(searchParams.get("q") || "");
-    setActiveCategory(searchParams.get("category") || "All");
     setCurrentPage(1);
   }, [searchParams]);
 
@@ -68,7 +37,6 @@ export default function SearchClient() {
       try {
         const params = new URLSearchParams();
         if (query.trim()) params.set("q", query.trim());
-        if (activeCategory && activeCategory !== "All") params.set("category", activeCategory);
         params.set("limit", "60");
 
         const res = await fetch(`/api/search?${params.toString()}`, {
@@ -86,60 +54,34 @@ export default function SearchClient() {
       } finally {
         if (!isCancelled) setLoading(false);
       }
-    }, 200);
+    }, 180);
 
     return () => {
       isCancelled = true;
       clearTimeout(timer);
       controller.abort();
     };
-  }, [query, activeCategory]);
+  }, [query]);
 
-  const updateUrl = useCallback((newQ, newCat) => {
+  const updateUrl = useCallback((newQ) => {
     const params = new URLSearchParams();
     if (newQ.trim()) params.set("q", newQ.trim());
-    if (newCat && newCat !== "All") params.set("category", newCat);
     router.replace(`/search?${params.toString()}`, { scroll: false });
   }, [router]);
 
   const handleQueryChange = (e) => {
     const val = e.target.value;
     setQuery(val);
-    updateUrl(val, activeCategory);
+    updateUrl(val);
     setCurrentPage(1);
   };
-
-  const handleCategoryClick = (cat) => {
-    const newCat = cat === activeCategory ? "All" : cat;
-    setActiveCategory(newCat);
-    updateUrl(query, newCat);
-    setCurrentPage(1);
-  };
-
-  const handleSortChange = (e) => {
-    setIsTransitioning(true);
-    const val = e.target.value;
-    setTimeout(() => {
-      setActiveSort(val);
-      setCurrentPage(1);
-      setIsTransitioning(false);
-    }, 200);
-  };
-
-  // Sorting
-  let sortedItems = [...items];
-  if (activeSort === "Name: A to Z") {
-    sortedItems.sort((a, b) => (a.name || "").localeCompare(b.name || ""));
-  } else if (activeSort === "Name: Z to A") {
-    sortedItems.sort((a, b) => (b.name || "").localeCompare(a.name || ""));
-  }
 
   // Pagination
-  const totalPages = Math.ceil(sortedItems.length / ITEMS_PER_PAGE) || 1;
+  const totalPages = Math.ceil(items.length / ITEMS_PER_PAGE) || 1;
   const safeCurrentPage = Math.min(currentPage, totalPages);
   const startIndex = (safeCurrentPage - 1) * ITEMS_PER_PAGE;
   const endIndex = startIndex + ITEMS_PER_PAGE;
-  const paginatedItems = sortedItems.slice(startIndex, endIndex);
+  const paginatedItems = items.slice(startIndex, endIndex);
 
   const handlePageChange = (newPage) => {
     if (newPage < 1 || newPage > totalPages || newPage === safeCurrentPage) return;
@@ -151,12 +93,12 @@ export default function SearchClient() {
       if (section) {
         section.scrollIntoView({ behavior: "smooth", block: "start" });
       }
-    }, 200);
+    }, 180);
   };
 
   return (
     <div className="search-page">
-      {/* Hero Section */}
+      {/* Clean Hero Section */}
       <div className="search-hero">
         <div className="search-hero__bg">
           <Image
@@ -182,7 +124,7 @@ export default function SearchClient() {
             <input
               type="text"
               className="search-hero__input"
-              placeholder="Search sapphire rings, diamond pendants, rare gemstones..."
+              placeholder="Search fine jewelry, sapphire rings, rare gemstones..."
               value={query}
               onChange={handleQueryChange}
               autoComplete="off"
@@ -193,7 +135,7 @@ export default function SearchClient() {
                 className="search-hero__clear"
                 onClick={() => {
                   setQuery("");
-                  updateUrl("", activeCategory);
+                  updateUrl("");
                 }}
                 aria-label="Clear search"
               >
@@ -204,33 +146,17 @@ export default function SearchClient() {
         </div>
       </div>
 
-      {/* Filter Bar */}
-      <div className="search-filters">
+      {/* Results Header Meta */}
+      <div className="search-meta-bar">
         <div className="container">
-          <div className="search-filters__row">
-            <div className="search-filters__categories">
-              {CATEGORIES.map((cat) => (
-                <button
-                  key={cat}
-                  type="button"
-                  className={`search-filter-pill ${activeCategory === cat ? "search-filter-pill--active" : ""}`}
-                  onClick={() => handleCategoryClick(cat)}
-                >
-                  {cat}
-                </button>
-              ))}
-            </div>
-
-            <div className="search-filters__right">
-              <span className="search-filters__count">
-                {loading ? "Searching..." : `${sortedItems.length} piece${sortedItems.length !== 1 ? "s" : ""}`}
-              </span>
-              <select className="search-sort-select" value={activeSort} onChange={handleSortChange}>
-                {SORT_OPTIONS.map((opt) => (
-                  <option key={opt} value={opt}>{opt}</option>
-                ))}
-              </select>
-            </div>
+          <div className="search-meta-bar__inner">
+            <span className="search-meta-bar__count">
+              {loading
+                ? "Searching catalog..."
+                : items.length > 0
+                ? `${items.length} piece${items.length !== 1 ? "s" : ""} found${query.trim() ? ` for "${query}"` : ""}`
+                : `No pieces found${query.trim() ? ` for "${query}"` : ""}`}
+            </span>
           </div>
         </div>
       </div>
@@ -267,17 +193,12 @@ export default function SearchClient() {
                       </div>
                       <div className="search-product-card__info">
                         <div className="search-product-card__meta">
-                          <span className="search-product-card__type">{item.type}</span>
+                          <span className="search-product-card__type">{item.type || "Fine Piece"}</span>
                           {item.category && (
                             <span className="search-product-card__category">• {item.category}</span>
                           )}
                         </div>
                         <h3 className="search-product-card__title">{item.name}</h3>
-                        <p className="search-product-card__price">
-                          {item.price && !item.price.includes("$") && !item.price.toLowerCase().includes("inquiry")
-                            ? item.price
-                            : "Price on Inquiry"}
-                        </p>
                         <button
                           type="button"
                           className={`btn ${saved ? "btn--outline" : "btn--full"}`}
@@ -322,13 +243,13 @@ export default function SearchClient() {
               )}
             </>
           ) : (
-            /* Empty State */
+            /* Clean Empty State */
             <div className="search-no-results">
               <h2 className="search-no-results__title">
-                No matches found for &ldquo;{query}&rdquo;{activeCategory !== "All" ? ` in ${activeCategory}` : ""}
+                {query.trim() ? `No matches found for "${query}"` : "Search our collections"}
               </h2>
               <p className="search-no-results__text">
-                Please check your search term or select another category above.
+                Explore our catalog of handcrafted jewelry and certified Ceylon gemstones.
               </p>
               <div className="search-no-results__actions">
                 <Link href="/jewelry" className="btn btn--outline">

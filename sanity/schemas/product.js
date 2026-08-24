@@ -72,6 +72,20 @@ export default {
       },
       validation: (Rule) => Rule.required(),
     },
+    {
+      name: 'gallery',
+      title: 'Additional Gallery Images',
+      type: 'array',
+      of: [
+        {
+          type: 'image',
+          options: {
+            hotspot: true,
+          },
+        },
+      ],
+      description: 'Upload optional additional views, multi-angle shots, or detail photos for this listing.',
+    },
   ],
   preview: {
     select: {

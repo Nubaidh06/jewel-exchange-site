@@ -681,9 +681,88 @@
   letter-spacing: 0.5px;
 }
 
+/* ============================================
+   SLIDER PROGRESS TRACK & GOLD ANIMATION
+   ============================================ */
+
+.slider-track-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2.25rem auto 0;
+  width: 100%;
+}
+
+.category-track-wrap {
+  display: none;
+  margin-top: 1.75rem;
+}
+
+@media (max-width: 768px) {
+  .category-track-wrap {
+    display: flex;
+  }
+}
+
+.slider-track {
+  position: relative;
+  width: 200px;
+  max-width: 70vw;
+  height: 2px;
+  background: var(--color-border, #e8e6e3);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.slider-track__thumb {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 36%;
+  background: var(--color-gold, #b8965a);
+  border-radius: 2px;
+  will-change: transform;
+  transition: transform 0.08s linear;
+  box-shadow: 0 0 6px rgba(184, 150, 90, 0.45);
+}
+
+/* Subtle gold sliding cue pulse on initial view */
+.slider-track::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(184, 150, 90, 0.65) 50%,
+    transparent 100%
+  );
+  transform: translateX(-100%);
+  animation: sliderShimmerHint 3.5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes sliderShimmerHint {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.85;
+  }
+  45%, 100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
 .featured-cta {
   text-align: center;
-  margin-top: 4rem;
+  margin-top: 3.5rem;
 }
 
 /* ============================================
@@ -698,14 +777,28 @@
 .trust-header {
   text-align: center;
   margin-bottom: 3.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.trust-header__eyebrow {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: 0.75rem;
 }
 
 .trust-header__title {
   font-family: var(--font-serif);
-  font-size: clamp(1.75rem, 3.2vw, 2.35rem);
-  font-weight: 300;
-  letter-spacing: 0.04em;
-  color: var(--color-gold);
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  color: var(--color-text);
   line-height: 1.25;
   margin: 0;
 }

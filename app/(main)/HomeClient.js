@@ -7,6 +7,70 @@ import "./page.css";
 
 export default function HomeClient({ featuredProducts = [] }) {
   const carouselRef = useRef(null);
+  const featuredThumbRef = useRef(null);
+  const categoryGridRef = useRef(null);
+  const categoryThumbRef = useRef(null);
+
+  // Sync Featured Carousel Scroll with Slider Thumb
+  const handleCarouselScroll = useCallback(() => {
+    const el = carouselRef.current;
+    const thumb = featuredThumbRef.current;
+    if (!el || !thumb) return;
+    const scrollLeft = el.scrollLeft;
+    const maxScroll = el.scrollWidth - el.clientWidth;
+    if (maxScroll <= 0) {
+      thumb.style.transform = "translateX(0px)";
+      return;
+    }
+    const progress = Math.min(Math.max(scrollLeft / maxScroll, 0), 1);
+    const track = thumb.parentElement;
+    const trackWidth = track ? track.clientWidth : 180;
+    const thumbWidth = thumb.clientWidth || 65;
+    const maxTranslate = Math.max(trackWidth - thumbWidth, 0);
+    thumb.style.transform = `translateX(${progress * maxTranslate}px)`;
+  }, []);
+
+  // Sync Category Grid Scroll with Slider Thumb
+  const handleCategoryScroll = useCallback(() => {
+    const el = categoryGridRef.current;
+    const thumb = categoryThumbRef.current;
+    if (!el || !thumb) return;
+    const scrollLeft = el.scrollLeft;
+    const maxScroll = el.scrollWidth - el.clientWidth;
+    if (maxScroll <= 0) {
+      thumb.style.transform = "translateX(0px)";
+      return;
+    }
+    const progress = Math.min(Math.max(scrollLeft / maxScroll, 0), 1);
+    const track = thumb.parentElement;
+    const trackWidth = track ? track.clientWidth : 180;
+    const thumbWidth = thumb.clientWidth || 65;
+    const maxTranslate = Math.max(trackWidth - thumbWidth, 0);
+    thumb.style.transform = `translateX(${progress * maxTranslate}px)`;
+  }, []);
+
+  // Scroll listeners
+  useEffect(() => {
+    const carouselEl = carouselRef.current;
+    const categoryEl = categoryGridRef.current;
+
+    if (carouselEl) {
+      carouselEl.addEventListener("scroll", handleCarouselScroll, { passive: true });
+    }
+    if (categoryEl) {
+      categoryEl.addEventListener("scroll", handleCategoryScroll, { passive: true });
+    }
+
+    window.addEventListener("resize", handleCarouselScroll, { passive: true });
+    window.addEventListener("resize", handleCategoryScroll, { passive: true });
+
+    return () => {
+      if (carouselEl) carouselEl.removeEventListener("scroll", handleCarouselScroll);
+      if (categoryEl) categoryEl.removeEventListener("scroll", handleCategoryScroll);
+      window.removeEventListener("resize", handleCarouselScroll);
+      window.removeEventListener("resize", handleCategoryScroll);
+    };
+  }, [handleCarouselScroll, handleCategoryScroll]);
 
   // Drag-to-scroll on the carousel
   useEffect(() => {
@@ -142,7 +206,20 @@ export default function HomeClient({ featuredProducts = [] }) {
           <div className="category-header reveal">
             <h2 className="category-header__title">Shop by Category</h2>
           </div>
-          <div className="category-grid reveal reveal-delay-1">
+          <div className="category-grid reveal reveal-delay-1" ref={categoryGridRef}>
+            <Link href="/jewelry?category=Rings" className="category-card">
+              <div className="category-card__img">
+                <Image
+                  src="/images/products/emerald-drop-earrings.png"
+                  alt="Fine Rings"
+                  fill
+                  sizes="(max-width: 768px) 70vw, 20vw"
+                  style={{ objectFit: "cover" }}
+                />
+              </div>
+              <span className="category-card__label">Rings</span>
+            </Link>
+
             <Link href="/jewelry?category=Necklaces%20%26%20Pendants" className="category-card">
               <div className="category-card__img">
                 <Image
@@ -182,19 +259,6 @@ export default function HomeClient({ featuredProducts = [] }) {
               <span className="category-card__label">Earrings</span>
             </Link>
 
-            <Link href="/jewelry?category=Rings" className="category-card">
-              <div className="category-card__img">
-                <Image
-                  src="/images/products/emerald-drop-earrings.png"
-                  alt="Fine Rings"
-                  fill
-                  sizes="(max-width: 768px) 70vw, 20vw"
-                  style={{ objectFit: "cover" }}
-                />
-              </div>
-              <span className="category-card__label">Rings</span>
-            </Link>
-
             <Link href="/gemstones" className="category-card">
               <div className="category-card__img">
                 <Image
@@ -207,6 +271,13 @@ export default function HomeClient({ featuredProducts = [] }) {
               </div>
               <span className="category-card__label">Gemstones</span>
             </Link>
+          </div>
+
+          {/* Category Slider Progress Track */}
+          <div className="slider-track-wrap category-track-wrap reveal">
+            <div className="slider-track" aria-hidden="true">
+              <div className="slider-track__thumb" ref={categoryThumbRef} />
+            </div>
           </div>
         </div>
       </section>
@@ -261,10 +332,16 @@ export default function HomeClient({ featuredProducts = [] }) {
                   <div className="featured-card__info">
                     <span className="featured-card__category">{item.category}</span>
                     <h3 className="featured-card__name">{item.name}</h3>
-                    <span className="featured-card__price">Price on Inquiry</span>
                   </div>
                 </div>
               ))}
+            </div>
+
+            {/* Featured Carousel Slider Progress Track */}
+            <div className="slider-track-wrap featured-track-wrap reveal">
+              <div className="slider-track" aria-hidden="true">
+                <div className="slider-track__thumb" ref={featuredThumbRef} />
+              </div>
             </div>
 
             <div className="featured-cta reveal">
@@ -282,6 +359,7 @@ export default function HomeClient({ featuredProducts = [] }) {
       <section className="trust-section">
         <div className="container">
           <div className="trust-header reveal">
+            <span className="trust-header__eyebrow">Our Commitment</span>
             <h2 className="trust-header__title">The Jewel Exchange Promise</h2>
           </div>
           <div className="trust-grid">

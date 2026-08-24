@@ -1,35 +1,21 @@
 "use client";
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useWishlist } from "@/lib/WishlistContext";
 import "./SearchModal.css";
-
-const FILTER_PILLS = [
-  "All",
-  "Jewelry",
-  "Gemstones",
-  "Rings",
-  "Sapphires",
-  "Diamonds",
-  "Necklaces & Pendants",
-  "Earrings",
-  "Padparadscha",
-];
 
 const SUGGESTED_SEARCHES = [
   "Ceylon Sapphire",
   "Solitaire Diamond",
-  "Emerald Drop",
+  "Emerald Pendant",
   "Tennis Bracelet",
-  "Padparadscha Gem",
-  "Heirloom Pendant",
+  "Padparadscha",
+  "Eternity Ring",
 ];
 
 export default function SearchModal({ isOpen, onClose, initialQuery = "" }) {
   const [query, setQuery] = useState(initialQuery);
-  const [category, setCategory] = useState("All");
   const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(-1);
@@ -38,7 +24,6 @@ export default function SearchModal({ isOpen, onClose, initialQuery = "" }) {
   const inputRef = useRef(null);
   const resultsContainerRef = useRef(null);
   const router = useRouter();
-  const { toggleWishlist, isInWishlist } = useWishlist();
 
   // Reset and auto-focus when modal opens
   useEffect(() => {
@@ -76,7 +61,7 @@ export default function SearchModal({ isOpen, onClose, initialQuery = "" }) {
     if (!isOpen) return;
 
     const trimmed = query.trim();
-    if (!trimmed && category === "All") {
+    if (!trimmed) {
       setResults([]);
       setTotalCount(0);
       setLoading(false);
@@ -88,8 +73,7 @@ export default function SearchModal({ isOpen, onClose, initialQuery = "" }) {
     const timer = setTimeout(async () => {
       try {
         const params = new URLSearchParams();
-        if (trimmed) params.set("q", trimmed);
-        if (category && category !== "All") params.set("category", category);
+        params.set("q", trimmed);
         params.set("limit", "12");
 
         const res = await fetch(`/api/search?${params.toString()}`, {
@@ -98,7 +82,7 @@ export default function SearchModal({ isOpen, onClose, initialQuery = "" }) {
         if (res.ok) {
           const data = await res.json();
           setResults(data.products || []);
-          setTotalCount(data.total || 0);
+          setTotalCount(data.total || (data.products ? data.products.length : 0));
           setSelectedIndex(-1);
         }
       } catch (err) {
@@ -108,13 +92,13 @@ export default function SearchModal({ isOpen, onClose, initialQuery = "" }) {
       } finally {
         setLoading(false);
       }
-    }, 180);
+    }, 160);
 
     return () => {
       clearTimeout(timer);
       controller.abort();
     };
-  }, [query, category, isOpen]);
+  }, [query, isOpen]);
 
   // Keyboard navigation inside modal (ArrowUp, ArrowDown, Enter)
   const handleInputKeyDown = (e) => {
@@ -128,12 +112,12 @@ export default function SearchModal({ isOpen, onClose, initialQuery = "" }) {
       e.preventDefault();
       if (selectedIndex >= 0 && results[selectedIndex]) {
         const item = results[selectedIndex];
+        const itemUrl = item.url || (item.type === "Gemstones" ? `/gemstones/${item.slug}` : `/jewelry/${item.slug}`);
         onClose();
-        router.push(item.url || `/jewelry/${item.slug}`);
+        router.push(itemUrl);
       } else if (query.trim()) {
         onClose();
-        const catParam = category !== "All" ? `&category=${encodeURIComponent(category)}` : "";
-        router.push(`/search?q=${encodeURIComponent(query.trim())}${catParam}`);
+        router.push(`/search?q=${encodeURIComponent(query.trim())}`);
       }
     }
   };
@@ -150,20 +134,15 @@ export default function SearchModal({ isOpen, onClose, initialQuery = "" }) {
     if (inputRef.current) inputRef.current.focus();
   };
 
-  const handleCategoryClick = (cat) => {
-    setCategory(cat === category ? "All" : cat);
-    setSelectedIndex(-1);
-  };
-
   const handleViewAllResults = () => {
+    if (!query.trim()) return;
     onClose();
-    const catParam = category !== "All" ? `&category=${encodeURIComponent(category)}` : "";
-    router.push(`/search?q=${encodeURIComponent(query.trim())}${catParam}`);
+    router.push(`/search?q=${encodeURIComponent(query.trim())}`);
   };
 
   if (!isOpen) return null;
 
-  const hasSearchInput = query.trim().length > 0 || category !== "All";
+  const hasSearchInput = query.trim().length > 0;
 
   return (
     <div className="search-modal-backdrop" onClick={onClose} role="dialog" aria-modal="true">
@@ -171,7 +150,7 @@ export default function SearchModal({ isOpen, onClose, initialQuery = "" }) {
         className="search-modal-container"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Search Header Bar */}
+        {/* Clean Luxury Search Bar */}
         <div className="search-modal-header">
           <div className="search-input-wrapper">
             <svg
@@ -179,7 +158,7 @@ export default function SearchModal({ isOpen, onClose, initialQuery = "" }) {
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              strokeWidth="1.25"
+              strokeWidth="1.3"
             >
               <circle cx="10.5" cy="10.5" r="7" />
               <line x1="15.5" y1="15.5" x2="21" y2="21" strokeLinecap="round" />
@@ -189,7 +168,7 @@ export default function SearchModal({ isOpen, onClose, initialQuery = "" }) {
               ref={inputRef}
               type="text"
               className="search-input"
-              placeholder="Search sapphire rings, diamond pendants, gemstones..."
+              placeholder="Search fine jewelry & gemstones..."
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               onKeyDown={handleInputKeyDown}
@@ -198,7 +177,7 @@ export default function SearchModal({ isOpen, onClose, initialQuery = "" }) {
               spellCheck="false"
             />
 
-            {loading && <div className="search-spinner" aria-label="Loading" />}
+            {loading && <div className="search-spinner" aria-label="Searching..." />}
 
             {query && (
               <button
@@ -217,39 +196,25 @@ export default function SearchModal({ isOpen, onClose, initialQuery = "" }) {
               onClick={onClose}
               aria-label="Close search"
             >
-              <svg className="search-close-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" width="18" height="18">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.25" width="20" height="20">
                 <line x1="18" y1="6" x2="6" y2="18" strokeLinecap="round" />
                 <line x1="6" y1="6" x2="18" y2="18" strokeLinecap="round" />
               </svg>
             </button>
-          </div>
-
-          {/* Category Filter Pills */}
-          <div className="search-category-pills">
-            {FILTER_PILLS.map((cat) => (
-              <button
-                key={cat}
-                type="button"
-                className={`search-pill ${category === cat ? "search-pill--active" : ""}`}
-                onClick={() => handleCategoryClick(cat)}
-              >
-                {cat}
-              </button>
-            ))}
           </div>
         </div>
 
         {/* Search Body Content */}
         <div className="search-modal-body" ref={resultsContainerRef}>
           {hasSearchInput ? (
-            /* Live Results State */
+            /* Live Results List */
             <div className="search-results-section">
               <div className="search-results-meta">
                 <span className="search-results-count">
                   {loading
                     ? "Searching collection..."
                     : results.length > 0
-                    ? `Found ${totalCount || results.length} matching piece${results.length !== 1 ? "s" : ""}`
+                    ? `${totalCount || results.length} result${results.length !== 1 ? "s" : ""}`
                     : "No pieces found"}
                 </span>
                 {results.length > 0 && query.trim() && (
@@ -267,127 +232,71 @@ export default function SearchModal({ isOpen, onClose, initialQuery = "" }) {
                 <div className="search-results-list" role="listbox">
                   {results.map((item, idx) => {
                     const isSelected = selectedIndex === idx;
-                    const isSaved = isInWishlist(item.slug);
                     const itemUrl = item.url || (item.type === "Gemstones" ? `/gemstones/${item.slug}` : `/jewelry/${item.slug}`);
 
                     return (
-                      <div
+                      <Link
                         key={item._id || item.slug || idx}
-                        className={`search-item-card ${isSelected ? "search-item-card--selected" : ""}`}
+                        href={itemUrl}
+                        className={`search-item-row ${isSelected ? "search-item-row--selected" : ""}`}
                         role="option"
                         aria-selected={isSelected}
+                        onClick={onClose}
                         onMouseEnter={() => setSelectedIndex(idx)}
                       >
-                        <Link
-                          href={itemUrl}
-                          className="search-item-main-link"
-                          onClick={onClose}
-                        >
-                          <div className="search-item-thumb">
-                            <Image
-                              src={item.img || "/images/models_and_shots/20.png"}
-                              alt={item.name || "Product"}
-                              fill
-                              sizes="64px"
-                              className="search-item-img"
-                            />
-                          </div>
-
-                          <div className="search-item-details">
-                            <div className="search-item-tags">
-                              <span className="search-item-type">{item.type || "Fine Piece"}</span>
-                              {item.category && (
-                                <span className="search-item-cat">• {item.category}</span>
-                              )}
-                            </div>
-                            <h4 className="search-item-name">{item.name}</h4>
-                            <p className="search-item-price">
-                              {item.price && !item.price.includes("$") && !item.price.toLowerCase().includes("inquiry")
-                                ? item.price
-                                : "Price on Inquiry"}
-                            </p>
-                          </div>
-                        </Link>
-
-                        <div className="search-item-actions">
-                          <button
-                            type="button"
-                            className={`search-inquiry-btn ${isSaved ? "search-inquiry-btn--saved" : ""}`}
-                            onClick={(e) => {
-                              e.preventDefault();
-                              e.stopPropagation();
-                              toggleWishlist({ ...item, type: item.type || "Jewelry" });
-                            }}
-                            title={isSaved ? "In your inquiry cart" : "Add to inquiry cart"}
-                            aria-label={isSaved ? "Saved to inquiries" : "Add to inquiries"}
-                          >
-                            <svg viewBox="0 0 24 24" fill={isSaved ? "currentColor" : "none"} stroke="currentColor" strokeWidth="1.25" width="15" height="15">
-                              <path d="M5 8.5h14l-1.2 11.5a1.5 1.5 0 0 1-1.5 1.3H7.7a1.5 1.5 0 0 1-1.5-1.3L5 8.5z" />
-                              <path d="M9 8.5V6a3 3 0 0 1 6 0v2.5" strokeLinecap="round" />
-                            </svg>
-                            <span className="search-inquiry-text">{isSaved ? "Inquired" : "Inquire"}</span>
-                          </button>
-
-                          <Link
-                            href={itemUrl}
-                            className="search-item-arrow"
-                            onClick={onClose}
-                            aria-label="View piece"
-                          >
-                            →
-                          </Link>
+                        <div className="search-item-thumb">
+                          <Image
+                            src={item.img || "/images/models_and_shots/20.png"}
+                            alt={item.name || "Product"}
+                            fill
+                            sizes="56px"
+                            className="search-item-img"
+                          />
                         </div>
-                      </div>
+
+                        <div className="search-item-info">
+                          <h4 className="search-item-name">{item.name}</h4>
+                          <span className="search-item-meta-text">
+                            {item.type || "Fine Piece"}
+                            {item.category ? ` • ${item.category}` : ""}
+                          </span>
+                        </div>
+
+                        <div className="search-item-end">
+                          <span className="search-item-arrow">→</span>
+                        </div>
+                      </Link>
                     );
                   })}
                 </div>
               ) : !loading ? (
-                /* Empty Results */
+                /* Clean Empty State */
                 <div className="search-empty-state">
                   <p className="search-empty-text">
-                    No matches found for &ldquo;<strong>{query}</strong>&rdquo;{category !== "All" ? ` in ${category}` : ""}.
+                    No matches found for &ldquo;<strong>{query}</strong>&rdquo;
                   </p>
                 </div>
               ) : null}
             </div>
           ) : (
-            /* Zero State: Popular Searches */
+            /* Zero State: Clean Subtle Trending Searches */
             <div className="search-zero-state">
-              <div className="search-quick-section">
-                <h4 className="search-section-title">Popular Searches</h4>
-                <div className="search-suggestion-chips">
-                  {SUGGESTED_SEARCHES.map((sug) => (
-                    <button
-                      key={sug}
-                      type="button"
-                      className="search-chip"
-                      onClick={() => handleSelectSuggestion(sug)}
-                    >
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.25" width="11" height="11">
-                        <circle cx="10.5" cy="10.5" r="7" />
-                        <line x1="15.5" y1="15.5" x2="21" y2="21" strokeLinecap="round" />
-                      </svg>
-                      {sug}
-                    </button>
-                  ))}
-                </div>
+              <span className="search-section-label">Popular Searches</span>
+              <div className="search-suggestion-chips">
+                {SUGGESTED_SEARCHES.map((sug) => (
+                  <button
+                    key={sug}
+                    type="button"
+                    className="search-chip"
+                    onClick={() => handleSelectSuggestion(sug)}
+                  >
+                    {sug}
+                  </button>
+                ))}
               </div>
             </div>
           )}
         </div>
-
-        {/* Modal Footer (Clean, no keyboard shortcut hints) */}
-        {hasSearchInput && (
-          <div className="search-modal-footer">
-            <button
-              type="button"
-              className="search-footer-action-btn"
-              onClick={handleViewAllResults}
-            >
-              Open Full Catalog Search →
-            </button>
-          </div>
-        )}
       </div>
     </div>
   );

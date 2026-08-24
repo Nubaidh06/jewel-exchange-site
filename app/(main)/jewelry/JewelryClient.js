@@ -190,7 +190,6 @@ function JewelryCatalog({ initialItems }) {
                 <div className="product-card__info">
                   <span className="product-card__category">{item.category}</span>
                   <h3 className="product-card__title">{item.name}</h3>
-                  <p className="product-card__price">Price on Inquiry</p>
                 </div>
               </Link>
             ))}
