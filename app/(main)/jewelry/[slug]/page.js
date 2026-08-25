@@ -43,7 +43,11 @@ export default async function JewelryDetailPage({ params }) {
   const { slug } = await params;
   const product = await getProductBySlug(slug);
 
-  if (!product || product.type !== 'Jewelry') {
+  if (!product) {
+    notFound();
+  }
+
+  if (product.type === 'Gemstones' || product.type === 'Gemstone') {
     notFound();
   }
 

@@ -43,7 +43,11 @@ export default async function GemstoneDetailPage({ params }) {
   const { slug } = await params;
   const product = await getProductBySlug(slug);
 
-  if (!product || product.type !== 'Gemstones') {
+  if (!product) {
+    notFound();
+  }
+
+  if (product.type === 'Jewelry') {
     notFound();
   }
 
