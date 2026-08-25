@@ -69,16 +69,55 @@ export default function ProductDetail({ product, type, relatedProducts = [] }) {
     : [product.img || defaultImg];
   const galleryImages = rawImages.filter(Boolean);
 
+  /* ── Ultra-Smooth 60fps/120fps Direct-DOM Hover Zoom (Zero React Re-renders) ── */
+  const handleMouseMove = (e) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    if (!rect.width || !rect.height) return;
+    const x = Math.max(0, Math.min(100, ((e.clientX - rect.left) / rect.width) * 100));
+    const y = Math.max(0, Math.min(100, ((e.clientY - rect.top) / rect.height) * 100));
+    e.currentTarget.style.setProperty("--zoom-x", `${x.toFixed(2)}%`);
+    e.currentTarget.style.setProperty("--zoom-y", `${y.toFixed(2)}%`);
+  };
+
+  const handleMouseEnter = (e) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    if (!rect.width || !rect.height) return;
+    const x = Math.max(0, Math.min(100, ((e.clientX - rect.left) / rect.width) * 100));
+    const y = Math.max(0, Math.min(100, ((e.clientY - rect.top) / rect.height) * 100));
+    e.currentTarget.style.setProperty("--zoom-x", `${x.toFixed(2)}%`);
+    e.currentTarget.style.setProperty("--zoom-y", `${y.toFixed(2)}%`);
+    e.currentTarget.classList.add("is-zoomed");
+  };
+
+  const handleMouseLeave = (e) => {
+    e.currentTarget.classList.remove("is-zoomed");
+    e.currentTarget.style.setProperty("--zoom-x", "50%");
+    e.currentTarget.style.setProperty("--zoom-y", "50%");
+  };
+
+  const resetAllZoom = () => {
+    if (sliderRef.current) {
+      const slides = sliderRef.current.querySelectorAll(".product-gallery__slide");
+      slides.forEach((s) => {
+        s.classList.remove("is-zoomed");
+        s.style.setProperty("--zoom-x", "50%");
+        s.style.setProperty("--zoom-y", "50%");
+      });
+    }
+  };
+
   const handleSliderScroll = () => {
     if (!sliderRef.current) return;
     const index = Math.round(sliderRef.current.scrollLeft / sliderRef.current.clientWidth);
     if (index !== activeImageIndex) {
       setActiveImageIndex(index);
+      resetAllZoom();
     }
   };
 
   const scrollToIndex = (index) => {
     if (!sliderRef.current || index < 0 || index >= galleryImages.length) return;
+    resetAllZoom();
     sliderRef.current.scrollTo({
       left: index * sliderRef.current.clientWidth,
       behavior: "smooth",
@@ -95,12 +134,14 @@ export default function ProductDetail({ product, type, relatedProducts = [] }) {
 
   const nextImage = () => {
     if (galleryImages.length <= 1) return;
+    resetAllZoom();
     const nextIdx = (activeImageIndex + 1) % galleryImages.length;
     scrollToIndex(nextIdx);
   };
 
   const prevImage = () => {
     if (galleryImages.length <= 1) return;
+    resetAllZoom();
     const prevIdx = (activeImageIndex - 1 + galleryImages.length) % galleryImages.length;
     scrollToIndex(prevIdx);
   };
@@ -152,7 +193,13 @@ export default function ProductDetail({ product, type, relatedProducts = [] }) {
               onScroll={handleSliderScroll}
             >
               {galleryImages.map((img, i) => (
-                <div key={i} className="product-gallery__slide">
+                <div
+                  key={i}
+                  className="product-gallery__slide"
+                  onMouseMove={handleMouseMove}
+                  onMouseEnter={handleMouseEnter}
+                  onMouseLeave={handleMouseLeave}
+                >
                   <Image
                     src={img}
                     alt={`${product.name} - view ${i + 1}`}

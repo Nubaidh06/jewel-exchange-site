@@ -102,58 +102,43 @@ export default function HomeClient({ featuredProducts = [] }) {
   return (
     <div className="home">
 
-      {/* ══════════════════════
-          HERO — 3-Column Editorial Panel
-          Desktop: 3 portrait panels
-          Mobile: single center panel
-          ══════════════════════ */}
-      <section className="hero" aria-label="Hero">
-        {/* 3 portrait image panels */}
-        <div className="hero__panels">
-          {/* Left panel */}
-          <div className="hero__panel hero__panel--left">
+      {/* ══════════════════════════════════════
+          HERO — Clean Editorial Panorama (Inspired by Reference)
+          ══════════════════════════════════════ */}
+      <section className="hero hero--simple-banner" aria-label="Hero">
+        {/* Full-Bleed Panorama Background */}
+        <div className="hero__bg-wrap">
+          {/* Desktop Visual */}
+          <div className="hero__img-desktop">
             <Image
-              src="/images/models_and_shots/05.png"
-              alt="Fine jewelry, earrings and rings by Jewel Exchange"
+              src="/images/banners/hero-banner-desktop.png"
+              alt="Jewel Exchange | Handcrafted Fine Jewelry & Gemstones"
               fill
-              sizes="(max-width: 1024px) 0vw, 33vw"
-              style={{ objectFit: "cover" }}
+              sizes="(min-width: 1025px) 100vw, 0vw"
+              style={{ objectFit: "cover", objectPosition: "right 10%" }}
               priority
             />
           </div>
 
-          {/* Center panel (also used solo on mobile) */}
-          <div className="hero__panel hero__panel--center">
+          {/* Mobile Visual (Preserved exact version) */}
+          <div className="hero__img-mobile">
             <Image
-              src="/images/banners/banner 2.png"
-              alt="Jewel Exchange | Rare Gems & Bespoke Jewelry"
+              src="/images/banners/hero-banner.png"
+              alt="Jewel Exchange | Handcrafted Fine Jewelry & Gemstones"
               fill
-              sizes="(max-width: 1024px) 100vw, 40vw"
-              style={{ objectFit: "cover", objectPosition: "center top" }}
+              sizes="(max-width: 1024px) 100vw, 0vw"
+              style={{ objectFit: "cover", objectPosition: "74% center" }}
               priority
             />
           </div>
 
-          {/* Right panel */}
-          <div className="hero__panel hero__panel--right">
-            <Image
-              src="/images/models_and_shots/08.png"
-              alt="Fine necklaces by Jewel Exchange"
-              fill
-              sizes="(max-width: 1024px) 0vw, 33vw"
-              style={{ objectFit: "cover" }}
-              priority
-            />
-          </div>
+          {/* Subtle directional gradient overlay for flawless contrast */}
+          <div className="hero__gradient-overlay" aria-hidden="true" />
         </div>
 
-        {/* Directional gradient over text area */}
-        <div className="hero__text-bg" aria-hidden="true" />
-
-        {/* Text content */}
-        <div className="hero__content">
-          <div className="hero__content-inner">
-            <span className="hero__eyebrow">Jewel Exchange, Colombo</span>
+        {/* Content Container Left-Aligned */}
+        <div className="container hero__simple-container">
+          <div className="hero__simple-content">
             <h1 className="hero__title">
               Where Elegance<br />Meets Eternity
             </h1>
@@ -169,12 +154,6 @@ export default function HomeClient({ featuredProducts = [] }) {
               </Link>
             </div>
           </div>
-        </div>
-
-        {/* Scroll indicator */}
-        <div className="hero__scroll" aria-hidden="true">
-          <div className="hero__scroll-line" />
-          <span>Scroll</span>
         </div>
       </section>
 
