@@ -34,8 +34,9 @@ export default {
     },
     {
       name: 'category',
-      title: 'Category (e.g. Rings, Sapphires)',
+      title: 'Category (e.g. Rings, Bracelets, Sapphires)',
       type: 'string',
+      description: 'Enter category. For multi-piece items that should appear in multiple tabs, separate with a comma (e.g. "Rings, Bracelets").',
       validation: (Rule) => Rule.required(),
     },
     {

@@ -63,11 +63,14 @@ function JewelryCatalog({ initialItems }) {
   let filteredItems = activeFilter === "All"
     ? [...initialItems]
     : initialItems.filter((item) => {
+        if (!item.category) return false;
+        const catStr = String(item.category).toLowerCase();
         if (activeFilter === "Necklaces & Pendants") {
-          const cat = (item.category || "").toLowerCase();
-          return cat.includes("necklace") || cat.includes("pendant");
+          return catStr.includes("necklace") || catStr.includes("pendant");
         }
-        return item.category === activeFilter;
+        const target = activeFilter.toLowerCase().trim();
+        const parts = catStr.split(/[,/&]+/).map((s) => s.trim());
+        return parts.some((p) => p === target || p.includes(target) || target.includes(p)) || catStr === target;
       });
 
   if (activeSort === "Price: Low to High") {

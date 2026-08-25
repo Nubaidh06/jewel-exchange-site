@@ -56,7 +56,13 @@ function GemstoneCatalog({ initialItems }) {
 
   let filteredItems = activeFilter === "All"
     ? [...initialItems]
-    : initialItems.filter((item) => item.category === activeFilter);
+    : initialItems.filter((item) => {
+        if (!item.category) return false;
+        const catStr = String(item.category).toLowerCase();
+        const target = activeFilter.toLowerCase().trim();
+        const parts = catStr.split(/[,/&]+/).map((s) => s.trim());
+        return parts.some((p) => p === target || p.includes(target) || target.includes(p)) || catStr === target;
+      });
 
   if (activeSort === "Price: Low to High") {
     filteredItems.sort((a, b) => parsePrice(a.price) - parsePrice(b.price));

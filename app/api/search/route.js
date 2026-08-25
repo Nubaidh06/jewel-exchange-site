@@ -119,7 +119,12 @@ export async function GET(request) {
         if (category === 'Jewelry' || category === 'Gemstones') {
           filtered = filtered.filter(item => item.type === category);
         } else {
-          filtered = filtered.filter(item => item.category?.toLowerCase() === category.toLowerCase());
+          filtered = filtered.filter(item => {
+            const catStr = (item.category || '').toLowerCase();
+            const target = category.toLowerCase().trim();
+            const parts = catStr.split(/[,/&]+/).map(s => s.trim());
+            return parts.some(p => p === target || p.includes(target) || target.includes(p)) || catStr === target;
+          });
         }
       }
 
