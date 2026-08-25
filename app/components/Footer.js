@@ -34,15 +34,17 @@ export default function Footer() {
       {/* Main Footer */}
       <div className="container footer__grid">
         <div className="footer__brand">
-          <Image
-            src="/images/logo-transparent.png"
-            alt="Jewel Exchange"
-            width={130}
-            height={65}
-            style={{ objectFit: "contain" }}
-          />
+          <Link href="/" className="footer__logo-link" aria-label="Jewel Exchange Home">
+            <Image
+              src="/images/logo-transparent.png"
+              alt="Jewel Exchange"
+              width={125}
+              height={55}
+              style={{ objectFit: "contain", width: "auto", height: "46px" }}
+            />
+          </Link>
           <p className="footer__tagline">
-            Exquisite bespoke jewelry and premium gemstones, crafted in the heart of Sri Lanka.
+            Curated fine jewelry and rare natural gemstones. Colombo, Sri Lanka.
           </p>
         </div>
 
@@ -77,6 +79,7 @@ export default function Footer() {
           <h4 className="footer__heading">Connect</h4>
           <nav className="footer__nav">
             <a href="https://www.instagram.com/jewelexchange_sl/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="https://www.facebook.com/p/Jewel-Exchange-100063528752599/" target="_blank" rel="noopener noreferrer">Facebook</a>
             <a href="mailto:info@jewelexchange.lk">info@jewelexchange.lk</a>
           </nav>
         </div>

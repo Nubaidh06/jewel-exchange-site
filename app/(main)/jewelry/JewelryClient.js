@@ -130,7 +130,7 @@ function JewelryCatalog({ initialItems }) {
           <span className="catalog-hero__eyebrow">Jewel Exchange Collections</span>
           <h1 className="catalog-hero__title">{getCategoryTitle()}</h1>
           <p className="catalog-hero__subtitle">
-            Handcrafted in Sri Lanka with rare natural gemstones, brilliant diamonds, and timeless bespoke artistry.
+            Exquisite fine jewelry set with rare natural gemstones, brilliant diamonds, and artisanal gold finishing.
           </p>
         </div>
       </div>
@@ -254,10 +254,10 @@ function JewelryCatalog({ initialItems }) {
             <span className="catalog-bespoke-tag">Bespoke Commissions</span>
             <h2 className="catalog-bespoke-title">Looking for Something One-of-a-Kind?</h2>
             <p className="catalog-bespoke-desc">
-              In addition to our showroom collections, our master craftsmen create custom high jewelry tailored entirely to your personal vision.
+              Commission a custom heirloom piece tailored to your personal gemstone, metal, and design preferences.
             </p>
-            <Link href="/booking" className="btn btn--outline">
-              Book a Consultation →
+            <Link href="/bespoke" className="btn btn--outline">
+              Explore Bespoke →
             </Link>
           </div>
         </div>

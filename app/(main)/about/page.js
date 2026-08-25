@@ -44,17 +44,17 @@ export default function AboutPage() {
 
               <blockquote className="heritage-quote">
                 <span className="heritage-quote__mark">&ldquo;</span>
-                We believe true luxury lies in the details - in the purity of the metal, the brilliance of every diamond, and the natural story behind every gemstone.
+                We believe true luxury lies in the details: the purity of gold, the brilliance of fine diamonds, and the natural beauty of rare gemstones.
               </blockquote>
 
               <p>
-                Founded in 2008 in Colombo, Jewel Exchange was established with a dedication to timeless design and authentic craftsmanship. For over 18 years, our collections have spanned classic plain gold essentials, brilliant diamond jewelry, and rare Ceylon gemstone creations - all handcrafted with meticulous care.
+                Founded in Colombo in 2008, Jewel Exchange was born from a singular passion: creating timeless fine jewelry rooted in rare Ceylon gemstones and fine diamonds.
               </p>
               <p>
-                Every design is brought to life through rigorous attention to detail at every stage of making. Our jewelers carefully inspect each setting, hand-polish every contour, and ensure flawless symmetry - creating jewelry with an unmistakable feel of substance and finesse.
+                Whether selecting from our ready-to-wear showroom collections or commissioning a custom bespoke piece, every creation is hand-finished with meticulous attention to detail and lifelong substance.
               </p>
               <p>
-                Today, Jewel Exchange is trusted by collectors and clients worldwide. Every creation that leaves our hands represents a commitment to ethical integrity, masterful finishing, and beauty designed to last for generations.
+                Today, Jewel Exchange is trusted by collectors worldwide for natural certified gems, transparent guidance, and jewelry designed to be cherished for generations.
               </p>
             </div>
 
@@ -264,14 +264,14 @@ export default function AboutPage() {
           <div className="about-cta__overlay" />
         </div>
         <div className="container about-cta__content reveal">
-          <span className="about-cta__label">Begin Your Journey</span>
+          <span className="about-cta__label">Atelier &amp; Showroom</span>
           <h2 className="about-cta__title">Ready to Create Something Extraordinary?</h2>
           <p className="about-cta__subtitle">
-            Whether you&apos;re searching for the perfect piece or dreaming of something entirely your own, we&apos;re here to bring your vision to life.
+            Whether exploring our showroom collections or dreaming of a custom commission, we are here to guide you.
           </p>
           <div className="about-cta__actions">
             <Link href="/bespoke" className="btn btn--white">
-              Start Your Bespoke Journey <span className="btn-arrow">→</span>
+              Explore Bespoke <span className="btn-arrow">→</span>
             </Link>
             <Link href="/contact" className="btn btn--ghost">
               Get in Touch <span className="btn-arrow">→</span>

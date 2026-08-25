@@ -20,10 +20,10 @@ export default function BespokePage() {
               <em>Experience</em>
             </h1>
             <p className="bespoke-hero__subtitle">
-              From imagination to a timeless masterpiece. Your vision, brought to life through exceptional craftsmanship.
+              From imagination to a timeless heirloom. Your vision, brought to life through dedicated bench artistry.
             </p>
             <a href="#booking" className="btn btn--primary">
-              Begin Your Journey
+              Commission a Piece
             </a>
           </div>
         </div>
@@ -44,9 +44,9 @@ export default function BespokePage() {
         <div className="container">
           <div className="section-header">
             <span className="section-label">How It Works</span>
-            <h2 className="section-title">Your Journey, Step by Step</h2>
+            <h2 className="section-title">The Bespoke Process</h2>
             <p className="section-subtitle">
-              Every bespoke piece follows a meticulous process to ensure perfection at every stage.
+              Every custom creation follows a seamless three-stage path from concept to finished treasure.
             </p>
           </div>
 
@@ -59,7 +59,7 @@ export default function BespokePage() {
               </div>
               <h3 className="bespoke-timeline__heading">Consultation</h3>
               <p className="bespoke-timeline__text">
-                Meet with our designers to share your vision, inspirations, and personal style preferences.
+                Meet with our design team to share your inspirations, stone preferences, and budget goals.
               </p>
             </div>
 
@@ -67,9 +67,9 @@ export default function BespokePage() {
               <div className="bespoke-timeline__dot">
                 <span className="bespoke-timeline__number">02</span>
               </div>
-              <h3 className="bespoke-timeline__heading">Design</h3>
+              <h3 className="bespoke-timeline__heading">Design &amp; 3D Render</h3>
               <p className="bespoke-timeline__text">
-                We create detailed hand-drawn sketches and precise 3D renders for your approval.
+                We present custom sketches and photorealistic 3D CAD renders for your precise review.
               </p>
             </div>
 
@@ -77,9 +77,9 @@ export default function BespokePage() {
               <div className="bespoke-timeline__dot">
                 <span className="bespoke-timeline__number">03</span>
               </div>
-              <h3 className="bespoke-timeline__heading">Crafting</h3>
+              <h3 className="bespoke-timeline__heading">Bench Crafting</h3>
               <p className="bespoke-timeline__text">
-                Our master jewelers bring your design to life using the finest materials and rare gemstones.
+                Our in-house setters and goldsmiths cast, set, and hand-polish your piece to perfection.
               </p>
             </div>
           </div>

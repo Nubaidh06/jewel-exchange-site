@@ -6,28 +6,28 @@ import "./FAQAccordion.css";
 const DEFAULT_FAQS = [
   {
     id: "faq-timeline",
-    question: "How long does the bespoke jewelry creation process take?",
-    answer: "From initial design approval and 3D render confirmation to the final finished masterpiece, custom pieces typically take 2 to 4 weeks. If you have an impending wedding, milestone anniversary, or special occasion, expedited crafting can be arranged upon request."
+    question: "How long does bespoke jewelry creation take?",
+    answer: "Custom commissions typically take 2 to 4 weeks from 3D render approval to final finish. Expedited timelines are available for upcoming weddings and milestone dates upon request."
   },
   {
     id: "faq-certs",
-    question: "Are all gemstones and diamonds certified for authenticity?",
-    answer: "Yes, without exception. Every precious gemstone (including rare Ceylon Sapphires, Rubies, and Emeralds) is accompanied by authentic certification from recognized national and international gemological laboratories, including the National Gem & Jewellery Authority (NGJA) and GIA / GRS upon request."
+    question: "Are gemstones and diamonds certified for authenticity?",
+    answer: "Yes. Premium and high-value gemstones come accompanied by accredited laboratory certificates (such as NGJA, GIA, or GRS). For all other pieces, independent gemological certification can be arranged upon request."
   },
   {
     id: "faq-heirloom",
-    question: "Can I provide my own heirloom gemstones or gold for a custom design?",
-    answer: "Absolutely. We specialize in heirloom transformation and remodeling. During your private consultation, our master gemologists will inspect your stones, evaluate their setting integrity, and sketch fresh contemporary designs to breathe new life into your treasured family heirlooms."
+    question: "Can I use my own heirloom gemstones or gold for a custom design?",
+    answer: "Yes. We specialize in heirloom remodeling. Our gemologists will assess your stones, verify setting integrity, and sketch modern concepts to give family heirlooms a fresh new life."
   },
   {
     id: "faq-shipping",
     question: "Do you offer secure, fully insured international delivery?",
-    answer: "Yes. We safely deliver bespoke jewelry worldwide via expedited courier services (FedEx Express & DHL Express) with 100% full-value transit insurance. Each creation is housed in our signature luxury keepsake presentation box with tracking details provided upon dispatch."
+    answer: "Yes. We ship worldwide via expedited courier (FedEx & DHL Express) with 100% full-value transit insurance and signature luxury presentation packaging."
   },
   {
     id: "faq-aftercare",
-    question: "What aftercare, resizing, and warranty services are included?",
-    answer: "Every bespoke Jewel Exchange piece includes a complimentary initial ring resizing, lifetime professional ultrasonic cleaning, and complimentary annual prong and stone security inspections at our Colombo flagship atelier."
+    question: "What aftercare and maintenance services are included?",
+    answer: "Every Jewel Exchange creation includes a complimentary initial ring resizing, lifetime ultrasonic cleaning, and annual prong security inspections at our Colombo atelier."
   }
 ];
 

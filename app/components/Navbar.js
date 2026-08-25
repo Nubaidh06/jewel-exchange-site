@@ -92,7 +92,7 @@ export default function Navbar() {
           </div>
 
           {/* Center — Logo */}
-          <Link href="/" className="nav__logo" aria-label="Jewel Exchange – Home">
+          <Link href="/" className="nav__logo" aria-label="Jewel Exchange Home">
             <div className="nav__logo-img">
               <Image
                 src="/images/logo-transparent.png"

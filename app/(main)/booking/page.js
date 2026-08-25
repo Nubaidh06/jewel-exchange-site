@@ -77,7 +77,7 @@ export default function BookingPage() {
             Book Your <em>Experience</em>
           </h1>
           <p className="booking-hero__subtitle">
-            Schedule a private consultation with our jewelry experts, arrange a showroom viewing, or begin your bespoke journey. Every visit is a curated experience.
+            Schedule a private viewing of our showroom collections, inspect rare Ceylon gemstones, or discuss a custom commission with our atelier team.
           </p>
         </div>
       </section>
@@ -245,8 +245,8 @@ export default function BookingPage() {
       <section className="booking-expect">
         <div className="container">
           <div className="section-header" style={{ marginBottom: 'var(--space-2xl)' }}>
-            <span className="section-label">What to Expect</span>
-            <h2 className="section-title">Your Visit, Step by Step</h2>
+            <span className="section-label">Showroom Experience</span>
+            <h2 className="section-title">What to Expect</h2>
           </div>
 
           <div className="expect-timeline">
@@ -256,24 +256,24 @@ export default function BookingPage() {
               <div className="expect-step__dot">
                 <span className="expect-step__number">01</span>
               </div>
-              <h3 className="expect-step__title">Welcome</h3>
-              <p className="expect-step__desc">You&apos;ll be seated in our private viewing salon with refreshments.</p>
+              <h3 className="expect-step__title">Dedicated Welcome</h3>
+              <p className="expect-step__desc">Enjoy a relaxed, one-on-one appointment tailored to your pace and schedule.</p>
             </div>
 
             <div className="expect-step">
               <div className="expect-step__dot">
                 <span className="expect-step__number">02</span>
               </div>
-              <h3 className="expect-step__title">Discovery</h3>
-              <p className="expect-step__desc">A consultant will walk you through our collections or bespoke process.</p>
+              <h3 className="expect-step__title">Curated Selection</h3>
+              <p className="expect-step__desc">Explore finished jewelry or inspect loose certified gemstones up close.</p>
             </div>
 
             <div className="expect-step">
               <div className="expect-step__dot">
                 <span className="expect-step__number">03</span>
               </div>
-              <h3 className="expect-step__title">Consultation</h3>
-              <p className="expect-step__desc">Our experts will provide guidance and answer your questions.</p>
+              <h3 className="expect-step__title">Expert Advice</h3>
+              <p className="expect-step__desc">Receive tailored design and gemological advice without pressure.</p>
             </div>
           </div>
         </div>

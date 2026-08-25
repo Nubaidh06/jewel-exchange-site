@@ -120,7 +120,7 @@ function GemstoneCatalog({ initialItems }) {
           <span className="catalog-hero__eyebrow">Jewel Exchange Collections</span>
           <h1 className="catalog-hero__title">{getCategoryTitle()}</h1>
           <p className="catalog-hero__subtitle">
-            Direct from the legendary gem mines of Ceylon, certified for exceptional color, clarity, and investment provenance.
+            Natural Ceylon sapphires, rubies, and collector stones, evaluated for vivid saturation, clarity, and certified origin.
           </p>
         </div>
       </div>
@@ -242,9 +242,9 @@ function GemstoneCatalog({ initialItems }) {
         <div className="container">
           <div className="catalog-bespoke-card">
             <span className="catalog-bespoke-tag">Gemstone Sourcing</span>
-            <h2 className="catalog-bespoke-title">Searching for the Extraordinary?</h2>
+            <h2 className="catalog-bespoke-title">Searching for a Rare Stone?</h2>
             <p className="catalog-bespoke-desc">
-              We source certified, investment-grade Ceylon and global gemstones directly from historical mines. Inquire with our gemologists for bespoke sourcing.
+              Looking for a specific carat weight, rare cut, or unheated origin? Our gemologists provide direct sourcing upon request.
             </p>
             <Link href="/booking" className="btn btn--outline">
               Request Sourcing Consultation →

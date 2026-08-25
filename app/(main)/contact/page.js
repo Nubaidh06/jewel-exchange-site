@@ -29,7 +29,7 @@ export default function ContactPage() {
             We&apos;d Love to<br />Hear From You
           </h1>
           <p className="contact-hero__subtitle reveal reveal-delay-2">
-            Whether you have a question about our collections, need assistance with a bespoke piece, or simply want to say hello - we&apos;re here for you.
+            Have a question about our collections, need assistance with a bespoke piece, or want to arrange a consultation? We are here to help.
           </p>
         </div>
       </section>
@@ -98,7 +98,7 @@ export default function ContactPage() {
               <span className="section-label">Send a Message</span>
               <h2 className="contact-form-intro__title">Let&apos;s Start a Conversation</h2>
               <p className="contact-form-intro__text">
-                Whether it&apos;s a general question, support request, media inquiry, or the beginning of something bespoke - fill out the form and our team will get back to you within 24 hours.
+                For general questions, order assistance, or bespoke inquiries, send us a message and our team will respond within 24 hours.
               </p>
               <div className="contact-form-intro__divider" />
               <p className="contact-form-intro__note">
@@ -160,7 +160,7 @@ export default function ContactPage() {
                     name="message"
                     className="form-textarea"
                     rows="6"
-                    placeholder="Tell us how we can help you…"
+                    placeholder="Tell us how we can help you..."
                     required
                   ></textarea>
                 </div>

@@ -123,9 +123,7 @@ export default function ComingSoonPage() {
 
         {/* Subtext */}
         <p className="cs-subtext">
-          Our new website is being crafted with the same care we bring to
-          every jewel - with precision, beauty, and intention. We&apos;ll
-          be ready soon.
+          Our new digital flagship is being prepared with the same precision we bring to every gemstone. Opening soon.
         </p>
 
         {/* Ornament */}

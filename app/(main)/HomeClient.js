@@ -126,7 +126,7 @@ export default function HomeClient({ featuredProducts = [] }) {
           <div className="hero__panel hero__panel--center">
             <Image
               src="/images/banners/banner 2.png"
-              alt="Jewel Exchange — Rare Gems & Bespoke Jewelry"
+              alt="Jewel Exchange | Rare Gems & Bespoke Jewelry"
               fill
               sizes="(max-width: 1024px) 100vw, 40vw"
               style={{ objectFit: "cover", objectPosition: "center top" }}
@@ -153,12 +153,12 @@ export default function HomeClient({ featuredProducts = [] }) {
         {/* Text content */}
         <div className="hero__content">
           <div className="hero__content-inner">
-            <span className="hero__eyebrow">Jewel Exchange — Colombo</span>
+            <span className="hero__eyebrow">Jewel Exchange, Colombo</span>
             <h1 className="hero__title">
               Where Elegance<br />Meets Eternity
             </h1>
             <p className="hero__subtitle">
-              Curated fine jewelry, rare gemstones, and bespoke creations — handcrafted in Sri Lanka since 2008.
+              Curated fine jewelry, rare gemstones, and bespoke creations, handcrafted in Sri Lanka since 2008.
             </p>
             <div className="hero__actions">
               <Link href="/jewelry" className="hero__btn hero__btn--primary">
@@ -189,7 +189,7 @@ export default function HomeClient({ featuredProducts = [] }) {
               The Art of Fine Jewelry,<br />Rooted in Rare Beauty
             </h2>
             <p className="statement__body">
-              At Jewel Exchange, every piece begins with the rarest materials — ethically sourced Ceylon sapphires, Burmese rubies, and Colombian emeralds — brought to life by master craftsmen who honour both tradition and innovation.
+              From ready-to-wear showroom collections to custom bespoke commissions, brought to life with rare natural gemstones, fine diamonds, and artisanal bench craft in Colombo.
             </p>
             <Link href="/about" className="statement__link">
               Discover Our Story →
@@ -366,17 +366,17 @@ export default function HomeClient({ featuredProducts = [] }) {
             <div className="trust-item reveal">
               <span className="trust-item__number">01</span>
               <h3 className="trust-item__title">Certified Gemstones</h3>
-              <p className="trust-item__desc">Every stone certified by leading global gemological laboratories.</p>
+              <p className="trust-item__desc">Natural stones accompanied by recognized gemological reports.</p>
             </div>
             <div className="trust-item reveal reveal-delay-1">
               <span className="trust-item__number">02</span>
               <h3 className="trust-item__title">Bespoke Commissions</h3>
-              <p className="trust-item__desc">One-of-a-kind pieces crafted to your vision by master artisans.</p>
+              <p className="trust-item__desc">Custom fine jewelry tailored to your exact style and milestone.</p>
             </div>
             <div className="trust-item reveal reveal-delay-2">
               <span className="trust-item__number">03</span>
               <h3 className="trust-item__title">Ethical Sourcing</h3>
-              <p className="trust-item__desc">Responsibly sourced gems from trusted, vetted suppliers worldwide.</p>
+              <p className="trust-item__desc">Responsibly mined gems from trusted, vetted global origins.</p>
             </div>
             <div className="trust-item reveal reveal-delay-3">
               <span className="trust-item__number">04</span>

@@ -319,10 +319,10 @@ export default function ProductDetail({ product, type, relatedProducts = [] }) {
                   </svg>
                 </div>
                 <span className="product-craftsmanship__label">
-                  Certified Authenticity
+                  Authentic &amp; Certified
                 </span>
                 <span className="product-craftsmanship__desc">
-                  Verified &amp; certified by independent gemological labs
+                  Accompanied by recognized gemological reports
                 </span>
               </div>
 
@@ -344,10 +344,10 @@ export default function ProductDetail({ product, type, relatedProducts = [] }) {
                   </svg>
                 </div>
                 <span className="product-craftsmanship__label">
-                  Master Craftsmanship
+                  Artisanal Finishing
                 </span>
                 <span className="product-craftsmanship__desc">
-                  Handcrafted by artisans with decades of expertise
+                  Meticulously cast, set, and hand-polished
                 </span>
               </div>
 
@@ -369,10 +369,10 @@ export default function ProductDetail({ product, type, relatedProducts = [] }) {
                   </svg>
                 </div>
                 <span className="product-craftsmanship__label">
-                  Secure Global Delivery
+                  Insured Global Delivery
                 </span>
                 <span className="product-craftsmanship__desc">
-                  Fully insured shipping to your doorstep worldwide
+                  Doorstep delivery via FedEx &amp; DHL Express
                 </span>
               </div>
             </div>
