@@ -64,13 +64,18 @@ function JewelryCatalog({ initialItems }) {
     ? [...initialItems]
     : initialItems.filter((item) => {
         if (!item.category) return false;
-        const catStr = String(item.category).toLowerCase();
+        const catStr = String(item.category).toLowerCase().trim();
         if (activeFilter === "Necklaces & Pendants") {
           return catStr.includes("necklace") || catStr.includes("pendant");
         }
         const target = activeFilter.toLowerCase().trim();
-        const parts = catStr.split(/[,/&]+/).map((s) => s.trim());
-        return parts.some((p) => p === target || p.includes(target) || target.includes(p)) || catStr === target;
+        const parts = catStr.split(/[,/]+/).map((s) => s.trim());
+        return parts.some((p) => (
+          p === target ||
+          p === target.replace(/s$/, '') ||
+          p + 's' === target ||
+          p.replace(/s$/, '') === target.replace(/s$/, '')
+        ));
       });
 
   if (activeSort === "Price: Low to High") {

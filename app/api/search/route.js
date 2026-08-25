@@ -120,10 +120,18 @@ export async function GET(request) {
           filtered = filtered.filter(item => item.type === category);
         } else {
           filtered = filtered.filter(item => {
-            const catStr = (item.category || '').toLowerCase();
+            const catStr = String(item.category || '').toLowerCase().trim();
             const target = category.toLowerCase().trim();
-            const parts = catStr.split(/[,/&]+/).map(s => s.trim());
-            return parts.some(p => p === target || p.includes(target) || target.includes(p)) || catStr === target;
+            if (target === 'necklaces & pendants') {
+              return catStr.includes('necklace') || catStr.includes('pendant');
+            }
+            const parts = catStr.split(/[,/]+/).map(s => s.trim());
+            return parts.some(p => (
+              p === target ||
+              p === target.replace(/s$/, '') ||
+              p + 's' === target ||
+              p.replace(/s$/, '') === target.replace(/s$/, '')
+            ));
           });
         }
       }
