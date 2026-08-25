@@ -41,7 +41,10 @@ const localBusinessSchema = {
     'opens': '10:00',
     'closes': '18:00',
   }],
-  'sameAs': ['https://www.instagram.com/jewelexchange_sl/'],
+  'sameAs': [
+    'https://www.instagram.com/jewelexchange_sl/',
+    'https://www.facebook.com/p/Jewel-Exchange-100063528752599/'
+  ],
   'hasOfferCatalog': {
     '@type': 'OfferCatalog',
     'name': 'Jewelry & Gemstone Collections',

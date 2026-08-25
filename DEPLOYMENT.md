@@ -75,8 +75,10 @@ npm run start
 
 ## 5. Contact & Integrations Summary
 * **Inquiry Email Formspree:** `https://formspree.io/f/xwvrebqo` (Receives contact messages & consultation booking requests).
+* **Showroom Telephone:** `+94 11 250 5020`
 * **WhatsApp Concierge:** `+94773534538`
 * **Instagram:** `@jewelexchange_sl`
+* **Facebook:** `https://www.facebook.com/p/Jewel-Exchange-100063528752599/`
 * **Flagship Address:** `514A, R.A. De Mel Mawatha, Colombo 03, Sri Lanka`
 
 ---
