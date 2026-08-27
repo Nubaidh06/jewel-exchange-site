@@ -6,7 +6,7 @@ import './page.css';
 // ─── CONFIGURE YOUR LAUNCH DATE HERE ────────────────────────────────
 // Set this to your actual launch date (ISO format, local Sri Lanka time).
 // Example: '2026-09-15T10:00:00+05:30'
-const LAUNCH_DATE = new Date('2026-08-28T10:00:00+05:30');
+const LAUNCH_DATE = new Date('2026-09-02T10:00:00+05:30');
 // ─────────────────────────────────────────────────────────────────────
 
 function getTimeLeft() {
