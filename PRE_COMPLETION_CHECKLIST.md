@@ -9,9 +9,6 @@ This document tracks all completed and pending tasks prior to final handoff and 
 ### Section A: Sanity CMS & Catalog Management
 - [ ] **Product Specifications:** Update and finalize metal karat, stone weight, lab cert details, and pricing to each piece.
 
-- [ ] **Final Text & Story Tweaks:** Finalize and confirm of About page heritage copy, Bespoke process steps, and FAQs.
-
-- [ ] **Final Photography Swaps:** Replace any remaining placeholder model/craftsmanship photos, photo of showroom etc with finalized brand assets.
 
 ---
 
@@ -29,22 +26,13 @@ This document tracks all completed and pending tasks prior to final handoff and 
   - *Note on Indexing:* While `NEXT_PUBLIC_COMING_SOON=true` is active, Googlebot only indexes the root brand metadata (title, description, favicon) and the coming-soon banner.
   - *To Index Full Catalog (133 products):* When ready for public launch, set `NEXT_PUBLIC_COMING_SOON=false` in Vercel environment variables and redeploy so Googlebot can crawl and index all 22 routes, gemstone pages, and jewelry collections.
 - [ ] **Google Sitemap Submission:** After setting coming-soon to `false`, submit `https://www.jewelexchange.lk/sitemap.xml` in Google Search Console and click **Request Indexing** on `https://www.jewelexchange.lk`.
-- [ ] **Google Business Profile & Socials Sync:** Ensure Google Maps listing links to `https://www.jewelexchange.lk` and WhatsApp chat link (`https://wa.me/94773534538`).
+`
 - [ ] **Brand Protection (NIPO Sri Lanka):** File formal Trademark registration for "Jewel Exchange" under Class 14 & Class 35 with National Intellectual Property Office, Colombo for nationwide legal exclusivity against imitators.
 - [ ] **Mobile Device Smoke Test:** Final verification on physical iOS (Safari) and Android (Chrome) devices.
 
 ---
 
-## 2. Handoff & Packaging Instructions for Deployment Team
 
-### How to Create the Clean Deployment Zip
-Do **NOT** include `node_modules/` or `.next/` in the handoff archive (they will inflate the file size from ~25MB to 500MB+).
-
-To generate the clean zip via terminal:
-```bash
-cd website
-zip -r jewel_exchange_website.zip . -x "node_modules/*" ".next/*" ".git/*" ".DS_Store"
-```
 
 ### Environment Variables Template (`.env.production`)
 ```env
@@ -67,13 +55,6 @@ npm run start
 
 ---
 
-## 3. Coexisting with Existing Inventory System on Domain
-
-Because the `jewelexchange.lk` domain currently has an inventory system connected:
-* **Option A (Subdomain Routing — Recommended):** Host the Next.js website on the root apex domain (`jewelexchange.lk` and `www.jewelexchange.lk`), and route the inventory system to `inventory.jewelexchange.lk` or `pos.jewelexchange.lk`.
-* **Option B (Reverse Proxy Path):** If the inventory system lives on a specific subpath (e.g. `/inventory` or `/admin`), configure the reverse proxy (Nginx / Cloudflare / Vercel rewrites) to proxy that path while Next.js handles all public customer routes.
-
----
 
 ## 4. Key Integrations Summary
 * **Formspree Endpoint:** `https://formspree.io/f/xwvrebqo`
@@ -84,9 +65,6 @@ Because the `jewelexchange.lk` domain currently has an inventory system connecte
 
 ---
 
-## 5. Step-by-Step Instructions: Sending Files to Domain Team
-
-When you are ready to hand over the website to the team maintaining the domain and inventory system:
 
 ### Step 1: Create the Clean Archive
 Open your terminal in the `website` directory and run:
@@ -95,30 +73,4 @@ zip -r jewel_exchange_website.zip . -x "node_modules/*" ".next/*" ".git/*" ".DS_
 ```
 *(This produces a clean, lightweight zip file of ~25MB containing only the source code and static assets).*
 
-### Step 2: Share the File & Variables
-Send the `.zip` file over via Google Drive, WeTransfer, Email, or Slack to the team, along with:
-1. **The Zip File:** `jewel_exchange_website.zip`
-2. **The Environment Variables:**
-   ```env
-   NEXT_PUBLIC_SANITY_PROJECT_ID=rrsnwe4c
-   NEXT_PUBLIC_SANITY_DATASET=production
-   SANITY_API_TOKEN=<YOUR_SANITY_API_WRITE_TOKEN>
-   ```
-
-### Step 3: Message / Email Template to the Domain Team
-You can copy & paste this message when sending them the files:
-
-> **Subject:** Jewel Exchange — Next.js Website Files & Deployment Package
->
-> Hi Team,
->
-> Attached is the complete source code for the new **Jewel Exchange** web platform (`jewel_exchange_website.zip`).
->
-> **Key Details for Deployment:**
-> 1. **Framework:** Next.js (App Router, Node.js 18.18+ / 20.x).
-> 2. **Build Commands:** `npm install` followed by `npm run build` and `npm run start` (or deploy directly to your preferred hosting/Vercel/Docker setup).
-> 3. **Environment Variables:** Please set `NEXT_PUBLIC_SANITY_PROJECT_ID=rrsnwe4c` and `NEXT_PUBLIC_SANITY_DATASET=production`.
-> 4. **Domain & Routing:** Please refer to **`DEPLOYMENT.md`** inside the folder for routing details and how to point the root domain (`jewelexchange.lk`) to this website while keeping our existing inventory system mapped.
->
-> Let us know if you have any questions during setup!
 
