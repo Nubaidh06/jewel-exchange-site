@@ -49,7 +49,7 @@ export const metadata = {
     ],
   },
   alternates: {
-    canonical: 'https://www.jewelexchange.lk',
+    canonical: './',
   },
   verification: {
     google: 'e5gAbbpjDuKqyw2ruxtVgdfrvUgXlSwDhAmBghWtbE8',

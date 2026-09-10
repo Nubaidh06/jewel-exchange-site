@@ -5,6 +5,6 @@ export default function robots() {
       allow: '/',
       disallow: ['/studio/'],
     },
-    sitemap: 'https://jewelexchange.lk/sitemap.xml',
+    sitemap: 'https://www.jewelexchange.lk/sitemap.xml',
   }
 }

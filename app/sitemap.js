@@ -3,7 +3,7 @@ import { getJewelry, getGemstones } from "../lib/sanity";
 export const revalidate = 86400; // Revalidate sitemap every 24 hours
 
 export default async function sitemap() {
-  const baseUrl = "https://jewelexchange.lk";
+  const baseUrl = "https://www.jewelexchange.lk";
 
   // Get dynamic product routes
   const jewelry = await getJewelry();

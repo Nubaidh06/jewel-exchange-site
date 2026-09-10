@@ -17,10 +17,13 @@ export async function generateMetadata({ params }) {
   return {
     title: `${product.name} | Jewel Exchange`,
     description: product.description,
+    alternates: {
+      canonical: `/gemstones/${product.slug}`,
+    },
     openGraph: {
       title: `${product.name} | Jewel Exchange`,
       description: product.description,
-      url: `https://jewelexchange.lk/gemstones/${product.slug}`,
+      url: `https://www.jewelexchange.lk/gemstones/${product.slug}`,
       images: [
         {
           url: product.img,
