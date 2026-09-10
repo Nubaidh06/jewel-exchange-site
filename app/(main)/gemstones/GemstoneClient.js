@@ -10,9 +10,6 @@ const CATEGORIES = ["All", "Sapphires", "Padparadscha", "Rubies", "Emeralds", "D
 const SORT_OPTIONS = ["Default", "Price: Low to High", "Price: High to Low"];
 
 const ITEMS_PER_PAGE = 16;
-const STORAGE_KEY_FILTER = "jx_gemstones_active_filter";
-const STORAGE_KEY_SORT = "jx_gemstones_active_sort";
-const STORAGE_KEY_PAGE = "jx_gemstones_active_page";
 
 function GemstoneCatalog({ initialItems }) {
   const searchParams = useSearchParams();
@@ -25,42 +22,13 @@ function GemstoneCatalog({ initialItems }) {
 
   useEffect(() => {
     let initialFilter = "All";
-    let initialPage = 1;
-    let initialSort = "Default";
 
     if (categoryParam && CATEGORIES.includes(categoryParam)) {
       initialFilter = categoryParam;
-      try {
-        sessionStorage.setItem(STORAGE_KEY_FILTER, initialFilter);
-      } catch (e) {}
-    } else {
-      // Check session storage memory if returning from item detail page
-      try {
-        const savedFilter = sessionStorage.getItem(STORAGE_KEY_FILTER);
-        if (savedFilter && CATEGORIES.includes(savedFilter)) {
-          initialFilter = savedFilter;
-        }
-        const savedSort = sessionStorage.getItem(STORAGE_KEY_SORT);
-        if (savedSort && SORT_OPTIONS.includes(savedSort)) {
-          initialSort = savedSort;
-        }
-        const savedPage = parseInt(sessionStorage.getItem(STORAGE_KEY_PAGE), 10);
-        if (savedPage && savedPage > 0) {
-          initialPage = savedPage;
-        }
-      } catch (e) {}
     }
 
     setActiveFilter(initialFilter);
-    setActiveSort(initialSort);
-    setCurrentPage(initialPage);
-
-    // Sync URL if filter was restored from memory without query param
-    if (!categoryParam && initialFilter !== "All" && typeof window !== "undefined") {
-      const url = new URL(window.location.href);
-      url.searchParams.set("category", initialFilter);
-      window.history.replaceState({}, "", url.toString());
-    }
+    setCurrentPage(1);
   }, [categoryParam]);
 
   const handleFilter = (category) => {
@@ -70,12 +38,6 @@ function GemstoneCatalog({ initialItems }) {
       setActiveFilter(category);
       setCurrentPage(1);
       setIsTransitioning(false);
-
-      // Persist filter in memory
-      try {
-        sessionStorage.setItem(STORAGE_KEY_FILTER, category);
-        sessionStorage.setItem(STORAGE_KEY_PAGE, "1");
-      } catch (e) {}
 
       // Update URL query param smoothly
       if (typeof window !== "undefined") {
@@ -97,11 +59,6 @@ function GemstoneCatalog({ initialItems }) {
       setActiveSort(val);
       setCurrentPage(1);
       setIsTransitioning(false);
-
-      try {
-        sessionStorage.setItem(STORAGE_KEY_SORT, val);
-        sessionStorage.setItem(STORAGE_KEY_PAGE, "1");
-      } catch (e) {}
     }, 250);
   };
 
@@ -138,10 +95,6 @@ function GemstoneCatalog({ initialItems }) {
     setTimeout(() => {
       setCurrentPage(newPage);
       setIsTransitioning(false);
-
-      try {
-        sessionStorage.setItem(STORAGE_KEY_PAGE, String(newPage));
-      } catch (e) {}
 
       const section = document.getElementById("catalog-products");
       if (section) {

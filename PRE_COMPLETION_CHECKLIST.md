@@ -65,12 +65,3 @@ npm run start
 
 ---
 
-
-### Step 1: Create the Clean Archive
-Open your terminal in the `website` directory and run:
-```bash
-zip -r jewel_exchange_website.zip . -x "node_modules/*" ".next/*" ".git/*" ".DS_Store"
-```
-*(This produces a clean, lightweight zip file of ~25MB containing only the source code and static assets).*
-
-

@@ -10,9 +10,6 @@ const CATEGORIES = ["All", "Rings", "Necklaces & Pendants", "Earrings", "Bracele
 const SORT_OPTIONS = ["Default", "Price: Low to High", "Price: High to Low"];
 
 const ITEMS_PER_PAGE = 16;
-const STORAGE_KEY_FILTER = "jx_jewelry_active_filter";
-const STORAGE_KEY_SORT = "jx_jewelry_active_sort";
-const STORAGE_KEY_PAGE = "jx_jewelry_active_page";
 
 function JewelryCatalog({ initialItems }) {
   const searchParams = useSearchParams();
@@ -25,8 +22,6 @@ function JewelryCatalog({ initialItems }) {
 
   useEffect(() => {
     let initialFilter = "All";
-    let initialPage = 1;
-    let initialSort = "Default";
 
     if (categoryParam) {
       const normalizedParam = categoryParam.toLowerCase();
@@ -35,37 +30,10 @@ function JewelryCatalog({ initialItems }) {
       } else if (CATEGORIES.includes(categoryParam)) {
         initialFilter = categoryParam;
       }
-      try {
-        sessionStorage.setItem(STORAGE_KEY_FILTER, initialFilter);
-      } catch (e) {}
-    } else {
-      // Check session storage memory if returning from item detail page
-      try {
-        const savedFilter = sessionStorage.getItem(STORAGE_KEY_FILTER);
-        if (savedFilter && CATEGORIES.includes(savedFilter)) {
-          initialFilter = savedFilter;
-        }
-        const savedSort = sessionStorage.getItem(STORAGE_KEY_SORT);
-        if (savedSort && SORT_OPTIONS.includes(savedSort)) {
-          initialSort = savedSort;
-        }
-        const savedPage = parseInt(sessionStorage.getItem(STORAGE_KEY_PAGE), 10);
-        if (savedPage && savedPage > 0) {
-          initialPage = savedPage;
-        }
-      } catch (e) {}
     }
 
     setActiveFilter(initialFilter);
-    setActiveSort(initialSort);
-    setCurrentPage(initialPage);
-
-    // Sync URL if filter was restored from memory without query param
-    if (!categoryParam && initialFilter !== "All" && typeof window !== "undefined") {
-      const url = new URL(window.location.href);
-      url.searchParams.set("category", initialFilter);
-      window.history.replaceState({}, "", url.toString());
-    }
+    setCurrentPage(1);
   }, [categoryParam]);
 
   const handleFilter = (category) => {
@@ -75,12 +43,6 @@ function JewelryCatalog({ initialItems }) {
       setActiveFilter(category);
       setCurrentPage(1);
       setIsTransitioning(false);
-
-      // Persist filter in memory
-      try {
-        sessionStorage.setItem(STORAGE_KEY_FILTER, category);
-        sessionStorage.setItem(STORAGE_KEY_PAGE, "1");
-      } catch (e) {}
 
       // Update URL query param smoothly
       if (typeof window !== "undefined") {
@@ -102,11 +64,6 @@ function JewelryCatalog({ initialItems }) {
       setActiveSort(val);
       setCurrentPage(1);
       setIsTransitioning(false);
-
-      try {
-        sessionStorage.setItem(STORAGE_KEY_SORT, val);
-        sessionStorage.setItem(STORAGE_KEY_PAGE, "1");
-      } catch (e) {}
     }, 250);
   };
 
@@ -151,10 +108,6 @@ function JewelryCatalog({ initialItems }) {
     setTimeout(() => {
       setCurrentPage(newPage);
       setIsTransitioning(false);
-
-      try {
-        sessionStorage.setItem(STORAGE_KEY_PAGE, String(newPage));
-      } catch (e) {}
 
       const section = document.getElementById("catalog-products");
       if (section) {
