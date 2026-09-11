@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import BespokeGallery from './BespokeGallery';
 import './page.css';
 
 export const metadata = {
@@ -97,19 +98,7 @@ export default function BespokePage() {
             </p>
           </div>
 
-          <div className="bespoke-gallery">
-            {[19, 21, 23, 25].map((num) => (
-              <div key={num} className="bespoke-gallery__item">
-                <Image
-                  src={`/images/models_and_shots/${num}.png`}
-                  alt={`Bespoke creation ${num}`}
-                  fill
-                  sizes="(max-width: 768px) 50vw, 25vw"
-                  className="bespoke-gallery__image"
-                />
-              </div>
-            ))}
-          </div>
+          <BespokeGallery />
         </div>
       </section>
 
