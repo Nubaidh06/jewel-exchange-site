@@ -3,7 +3,7 @@ export default function robots() {
     rules: {
       userAgent: '*',
       allow: '/',
-      disallow: ['/studio/', '/sys/', '/api/'],
+      disallow: ['/studio/', '/sys/', '/api/', '/showroom', '/showroom/'],
     },
     sitemap: 'https://www.jewelexchange.lk/sitemap.xml',
   }
