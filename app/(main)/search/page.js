@@ -2,8 +2,8 @@ import { Suspense } from "react";
 import SearchClient from "./SearchClient";
 
 export const metadata = {
-  title: "Search Creations & Gemstones | Jewel Exchange",
-  description: "Search our fine jewelry catalog and certified Ceylon gemstone collections in real-time.",
+  title: "Search Creations & Gemstones",
+  description: "Search our fine jewelry and gemstone catalog at Jewel Exchange.",
 };
 
 export default function SearchPage() {

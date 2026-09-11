@@ -2,7 +2,7 @@ import JewelryClient from "./JewelryClient";
 import { getJewelry } from "@/lib/sanity";
 
 export const metadata = {
-  title: 'High Jewelry | Jewel Exchange',
+  title: 'High Jewelry',
   description: 'Explore our collection of high jewelry, featuring masterworks designed to be treasured across generations.',
 };
 

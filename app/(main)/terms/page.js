@@ -1,7 +1,7 @@
 import "@/app/legal.css";
 
 export const metadata = {
-  title: "Terms & Conditions | Jewel Exchange",
+  title: "Terms & Conditions",
   description: "Terms and conditions for using the Jewel Exchange website and purchasing our bespoke jewelry and gemstones.",
 };
 

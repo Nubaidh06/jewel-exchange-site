@@ -1,7 +1,7 @@
 import "@/app/legal.css";
 
 export const metadata = {
-  title: "Privacy Policy | Jewel Exchange",
+  title: "Privacy Policy",
   description: "How Jewel Exchange collects, uses, and protects your personal information.",
 };
 

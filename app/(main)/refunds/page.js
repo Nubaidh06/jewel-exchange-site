@@ -1,7 +1,7 @@
 import "@/app/legal.css";
 
 export const metadata = {
-  title: "Refunds & Returns | Jewel Exchange",
+  title: "Refunds & Returns",
   description: "Our policy regarding returns, refunds, and exchanges for jewelry and gemstones.",
 };
 

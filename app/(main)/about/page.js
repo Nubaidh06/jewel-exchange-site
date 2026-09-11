@@ -3,7 +3,7 @@ import Link from 'next/link';
 import './about.css';
 
 export const metadata = {
-  title: 'About Us | Jewel Exchange',
+  title: 'About Us',
   description: 'Discover the heritage, craftsmanship, and values behind Jewel Exchange - Sri Lanka\'s premier bespoke jewelry atelier.',
 };
 
@@ -14,7 +14,7 @@ export default function AboutPage() {
       <section className="about-hero">
         <div className="about-hero__bg">
           <Image
-            src="/images/models_and_shots/03.png"
+            src="/images/models_and_shots/03.webp"
             alt="Jewel Exchange heritage"
             fill
             priority
@@ -61,7 +61,7 @@ export default function AboutPage() {
             <div className="heritage-image reveal reveal-delay-2">
               <div className="heritage-image__wrapper">
                 <Image
-                  src="/images/models_and_shots/gem-sift.png"
+                  src="/images/models_and_shots/gem-sift.webp"
                   alt="Where Tradition Meets Innovation - Jewel Exchange Craftsmanship"
                   width={1080}
                   height={1350}
@@ -71,7 +71,7 @@ export default function AboutPage() {
               </div>
               <div className="heritage-image__wrapper">
                 <Image
-                  src="/images/models_and_shots/gem-setting.png"
+                  src="/images/models_and_shots/gem-setting.webp"
                   alt="Where Tradition Meets Innovation - Gem Setting"
                   width={1080}
                   height={1350}

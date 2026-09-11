@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useWishlist } from "../../lib/WishlistContext";
 import "./ProductDetail.css";
 
-const WHATSAPP_NUMBER = "+94773534538";
+const WHATSAPP_NUMBER = "94773534538";
 const INSTAGRAM_HANDLE = "jewel_exchange";
 
 export default function ProductDetail({ product, type, relatedProducts = [] }) {

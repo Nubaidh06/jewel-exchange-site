@@ -4,7 +4,7 @@ import BespokeGallery from './BespokeGallery';
 import './page.css';
 
 export const metadata = {
-  title: 'Bespoke Jewelry | Jewel Exchange',
+  title: 'Bespoke Jewelry',
   description: 'Create your dream custom jewelry piece with our master craftsmen at Jewel Exchange.',
 };
 
@@ -30,7 +30,7 @@ export default function BespokePage() {
         </div>
         <div className="bespoke-hero__image">
           <Image
-            src="/images/models_and_shots/gem-setting.png"
+            src="/images/models_and_shots/gem-setting.webp"
             alt="Master craftsman setting a gem"
             fill
             priority
@@ -108,7 +108,7 @@ export default function BespokePage() {
           <div className="bespoke-cta-box">
             <div className="bespoke-cta-box__image">
               <Image
-                src="/images/models_and_shots/15.png"
+                src="/images/models_and_shots/15.webp"
                 alt="Book a bespoke consultation"
                 fill
                 style={{ objectFit: 'cover' }}

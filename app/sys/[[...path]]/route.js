@@ -129,6 +129,9 @@ async function handleProxy(request, context) {
       }
     });
 
+    // Ensure search engines never index or follow internal system endpoints
+    responseHeaders.set('x-robots-tag', 'noindex, nofollow, noarchive');
+
     return new Response(responseBody, {
       status: backendResult.statusCode,
       statusText: backendResult.statusMessage,

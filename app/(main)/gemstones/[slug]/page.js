@@ -10,12 +10,12 @@ export async function generateMetadata({ params }) {
   
   if (!product) {
     return {
-      title: 'Product Not Found | Jewel Exchange',
+      title: 'Product Not Found',
     };
   }
 
   return {
-    title: `${product.name} | Jewel Exchange`,
+    title: product.name,
     description: product.description,
     alternates: {
       canonical: `/gemstones/${product.slug}`,

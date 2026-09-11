@@ -3,7 +3,7 @@ import Link from 'next/link';
 import './contact.css';
 
 export const metadata = {
-  title: 'Contact Us | Jewel Exchange',
+  title: 'Contact Us',
   description: 'Get in touch with Jewel Exchange for inquiries, appointments, and bespoke consultations in Colombo, Sri Lanka.',
 };
 
@@ -14,7 +14,7 @@ export default function ContactPage() {
       <section className="contact-hero">
         <div className="contact-hero__bg">
           <Image
-            src="/images/banners/contact-hero.png"
+            src="/images/banners/contact-hero.webp"
             alt="Jewel Exchange Showroom & Studio"
             fill
             sizes="100vw"

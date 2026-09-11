@@ -1,7 +1,7 @@
 import "@/app/legal.css";
 
 export const metadata = {
-  title: "Shipping & Delivery | Jewel Exchange",
+  title: "Shipping & Delivery",
   description: "Information on domestic and international shipping, delivery times, and import duties.",
 };
 

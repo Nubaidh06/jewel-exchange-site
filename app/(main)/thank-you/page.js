@@ -3,7 +3,7 @@ import ThankYouClient from "./ThankYouClient";
 import "./thank-you.css";
 
 export const metadata = {
-  title: "Thank You | Jewel Exchange",
+  title: "Thank You",
   description: "Thank you for reaching out to Jewel Exchange. Our atelier team will be in touch shortly.",
   robots: {
     index: false, // Don't index thank-you pages in search engines

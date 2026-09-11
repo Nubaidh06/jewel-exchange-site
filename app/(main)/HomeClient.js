@@ -72,25 +72,59 @@ export default function HomeClient({ featuredProducts = [] }) {
     };
   }, [handleCarouselScroll, handleCategoryScroll]);
 
-  // Drag-to-scroll on the carousel
+  // Drag-to-scroll on the carousel with click-threshold protection
   useEffect(() => {
     const el = carouselRef.current;
     if (!el) return;
     let isDown = false;
+    let isDragging = false;
     let startX;
     let scrollLeft;
-    const onDown = (e) => { isDown = true; startX = e.pageX - el.offsetLeft; scrollLeft = el.scrollLeft; };
-    const onLeave = () => { isDown = false; };
-    const onMove = (e) => { if (!isDown) return; e.preventDefault(); const x = e.pageX - el.offsetLeft; const walk = (x - startX) * 1.5; el.scrollLeft = scrollLeft - walk; };
+
+    const onDown = (e) => {
+      isDown = true;
+      isDragging = false;
+      startX = e.pageX - el.offsetLeft;
+      scrollLeft = el.scrollLeft;
+    };
+
+    const onLeave = () => {
+      isDown = false;
+      setTimeout(() => {
+        isDragging = false;
+      }, 50);
+    };
+
+    const onMove = (e) => {
+      if (!isDown) return;
+      const x = e.pageX - el.offsetLeft;
+      const walk = (x - startX) * 1.5;
+      if (Math.abs(x - startX) > 6) {
+        isDragging = true;
+        e.preventDefault();
+        el.scrollLeft = scrollLeft - walk;
+      }
+    };
+
+    const onClickCapture = (e) => {
+      if (isDragging) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+    };
+
     el.addEventListener("mousedown", onDown);
     el.addEventListener("mouseleave", onLeave);
     el.addEventListener("mouseup", onLeave);
     el.addEventListener("mousemove", onMove);
+    el.addEventListener("click", onClickCapture, true);
+
     return () => {
       el.removeEventListener("mousedown", onDown);
       el.removeEventListener("mouseleave", onLeave);
       el.removeEventListener("mouseup", onLeave);
       el.removeEventListener("mousemove", onMove);
+      el.removeEventListener("click", onClickCapture, true);
     };
   }, []);
 
@@ -111,7 +145,7 @@ export default function HomeClient({ featuredProducts = [] }) {
           {/* Desktop Visual */}
           <div className="hero__img-desktop">
             <Image
-              src="/images/banners/hero-banner-desktop.png"
+              src="/images/banners/hero-banner-desktop.webp"
               alt="Jewel Exchange | Handcrafted Fine Jewelry & Gemstones"
               fill
               sizes="(min-width: 1025px) 100vw, 0vw"
@@ -123,7 +157,7 @@ export default function HomeClient({ featuredProducts = [] }) {
           {/* Mobile Visual (Preserved exact version) */}
           <div className="hero__img-mobile">
             <Image
-              src="/images/banners/hero-banner.png"
+              src="/images/banners/hero-banner.webp"
               alt="Jewel Exchange | Handcrafted Fine Jewelry & Gemstones"
               fill
               sizes="(max-width: 1024px) 100vw, 0vw"
@@ -241,7 +275,7 @@ export default function HomeClient({ featuredProducts = [] }) {
             <Link href="/gemstones" className="category-card">
               <div className="category-card__img">
                 <Image
-                  src="/images/models_and_shots/gemstones-category-grid.png"
+                  src="/images/models_and_shots/gemstones-category-grid.webp"
                   alt="Ceylon Gemstones"
                   fill
                   sizes="(max-width: 768px) 70vw, 20vw"
@@ -291,29 +325,33 @@ export default function HomeClient({ featuredProducts = [] }) {
             </div>
 
             <div className="featured-carousel reveal reveal-delay-1" ref={carouselRef}>
-              {featuredProducts.map((item) => (
-                <div key={item._id || item.slug} className="featured-card">
-                  <div className="featured-card__img">
-                    <Image
-                      src={item.img || "/images/models_and_shots/20.png"}
-                      alt={item.name || "Featured Piece"}
-                      fill
-                      sizes="(max-width: 768px) 70vw, 300px"
-                      style={{ objectFit: "cover" }}
-                    />
-                    <Link
-                      href={`/${item.type ? item.type.toLowerCase() : "jewelry"}/${item.slug}`}
-                      className="featured-card__hover"
-                    >
-                      <span className="featured-card__hover-btn">View Piece</span>
-                    </Link>
+              {featuredProducts.map((item) => {
+                const itemUrl = `/${item.type ? item.type.toLowerCase() : "jewelry"}/${item.slug}`;
+                return (
+                  <div key={item._id || item.slug} className="featured-card">
+                    <div className="featured-card__img">
+                      <Image
+                        src={item.img || "/images/models_and_shots/20.png"}
+                        alt={item.name || "Featured Piece"}
+                        fill
+                        sizes="(max-width: 768px) 70vw, 300px"
+                        style={{ objectFit: "cover" }}
+                      />
+                      <Link href={itemUrl} className="featured-card__hover" aria-label={`View ${item.name}`}>
+                        <span className="featured-card__hover-btn">View Piece</span>
+                      </Link>
+                    </div>
+                    <div className="featured-card__info">
+                      <span className="featured-card__category">{item.category}</span>
+                      <h3 className="featured-card__name">
+                        <Link href={itemUrl} className="featured-card__name-link">
+                          {item.name}
+                        </Link>
+                      </h3>
+                    </div>
                   </div>
-                  <div className="featured-card__info">
-                    <span className="featured-card__category">{item.category}</span>
-                    <h3 className="featured-card__name">{item.name}</h3>
-                  </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
 
             {/* Featured Carousel Slider Progress Track */}

@@ -2,8 +2,8 @@ import GemstoneClient from "./GemstoneClient";
 import { getGemstones } from "@/lib/sanity";
 
 export const metadata = {
-  title: 'Rare Gemstones | Jewel Exchange',
-  description: 'Nature\'s most precious treasures, hand-selected for brilliance and clarity.',
+  title: 'Rare Gemstones',
+  description: 'Certified natural Ceylon sapphires, rubies, emeralds, and rare collector gems sourced directly from Sri Lanka.',
 };
 
 export const revalidate = 60;

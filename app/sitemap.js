@@ -9,19 +9,23 @@ export default async function sitemap() {
   const jewelry = await getJewelry();
   const gemstones = await getGemstones();
 
-  const jewelryUrls = jewelry.map((product) => ({
-    url: `${baseUrl}/jewelry/${product.slug}`,
-    lastModified: new Date(),
-    changeFrequency: 'weekly',
-    priority: 0.8,
-  }));
+  const jewelryUrls = (jewelry || [])
+    .filter((product) => product?.slug && typeof product.slug === 'string' && product.slug.trim().length > 0)
+    .map((product) => ({
+      url: `${baseUrl}/jewelry/${encodeURIComponent(product.slug.trim())}`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    }));
 
-  const gemstoneUrls = gemstones.map((product) => ({
-    url: `${baseUrl}/gemstones/${product.slug}`,
-    lastModified: new Date(),
-    changeFrequency: 'weekly',
-    priority: 0.8,
-  }));
+  const gemstoneUrls = (gemstones || [])
+    .filter((product) => product?.slug && typeof product.slug === 'string' && product.slug.trim().length > 0)
+    .map((product) => ({
+      url: `${baseUrl}/gemstones/${encodeURIComponent(product.slug.trim())}`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    }));
 
   // Define static routes
   const staticRoutes = [

@@ -67,8 +67,12 @@ function JewelryCatalog({ initialItems }) {
     }, 250);
   };
 
-  const parsePrice = (priceStr) => {
-    return Number(priceStr.replace(/[^0-9.-]+/g, ""));
+  const parsePrice = (priceVal) => {
+    if (priceVal === null || priceVal === undefined) return 0;
+    if (typeof priceVal === 'number') return priceVal;
+    const cleaned = String(priceVal).replace(/[^0-9.-]+/g, "");
+    const parsed = Number(cleaned);
+    return isNaN(parsed) ? 0 : parsed;
   };
 
   let filteredItems = activeFilter === "All"
