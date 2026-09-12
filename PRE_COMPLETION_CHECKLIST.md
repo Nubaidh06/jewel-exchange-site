@@ -22,6 +22,7 @@ This document tracks all completed and pending tasks prior to final handoff and 
 
 ### Section D: SEO, Google Indexing & Public Launch
 - [ ] **Google Search Console Verification:** HTML meta tag verified (`google-site-verification`).
+- [ ] **E-E-A-T & Blog Content:** Create a dedicated editorial/blog section (e.g., Guides on Ceylon Sapphires, Bespoke Process) or Gemological Credentials page to build authority and capture long-tail keywords before or shortly after launch.
 - [ ] **Coming Soon Gate Deactivation (Public Launch):**
   - *Note on Indexing:* While `NEXT_PUBLIC_COMING_SOON=true` is active, Googlebot only indexes the root brand metadata (title, description, favicon) and the coming-soon banner.
   - *To Index Full Catalog (133 products):* When ready for public launch, set `NEXT_PUBLIC_COMING_SOON=false` in Vercel environment variables and redeploy so Googlebot can crawl and index all 22 routes, gemstone pages, and jewelry collections.

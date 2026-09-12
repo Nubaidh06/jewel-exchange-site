@@ -5,7 +5,10 @@ import './page.css';
 
 export const metadata = {
   title: 'Bespoke Jewelry',
-  description: 'Create your dream custom jewelry piece with our master craftsmen at Jewel Exchange.',
+  description: 'Commission a one-of-a-kind piece with our master craftsmen in Colombo. Custom engagement rings, heirloom remodeling, and rare gemstone settings. Book a free consultation.',
+  alternates: {
+    canonical: '/bespoke',
+  },
 };
 
 export default function BespokePage() {

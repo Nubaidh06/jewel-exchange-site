@@ -3,8 +3,11 @@ import Link from 'next/link';
 import './about.css';
 
 export const metadata = {
-  title: 'About Us',
-  description: 'Discover the heritage, craftsmanship, and values behind Jewel Exchange - Sri Lanka\'s premier bespoke jewelry atelier.',
+  title: 'Our Heritage & Craft — Jewel Exchange, Colombo Sri Lanka',
+  description: 'Jewel Exchange has been crafting fine jewelry and curating rare Ceylon gemstones in Colombo since 2008. Discover our story, values, and bench craft philosophy.',
+  alternates: {
+    canonical: '/about',
+  },
 };
 
 export default function AboutPage() {

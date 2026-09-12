@@ -2,8 +2,11 @@ import JewelryClient from "./JewelryClient";
 import { getJewelry } from "@/lib/sanity";
 
 export const metadata = {
-  title: 'High Jewelry',
-  description: 'Explore our collection of high jewelry, featuring masterworks designed to be treasured across generations.',
+  title: 'Fine Jewelry Sri Lanka — Rings, Necklaces & Bracelets',
+  description: 'Shop handcrafted fine rings, necklaces, earrings, and bracelets at Jewel Exchange — Colombo\'s premier jewelry atelier since 2008. Bespoke commissions welcome.',
+  alternates: {
+    canonical: '/jewelry',
+  },
 };
 
 export const revalidate = 60; // Revalidate every 60 seconds

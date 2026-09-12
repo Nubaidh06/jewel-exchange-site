@@ -69,6 +69,14 @@ export default async function JewelryDetailPage({ params }) {
       '@type': 'Brand',
       name: 'Jewel Exchange',
     },
+    offers: {
+      '@type': 'Offer',
+      availability: 'https://schema.org/InStock',
+      priceCurrency: 'USD',
+      price: '0',
+      url: `https://www.jewelexchange.lk/jewelry/${product.slug}`,
+      seller: { '@type': 'Organization', name: 'Jewel Exchange' },
+    },
   };
 
   return (

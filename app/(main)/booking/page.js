@@ -2,7 +2,7 @@ import BookingClient from "./BookingClient";
 
 export const metadata = {
   title: "Book a Consultation",
-  description: "Schedule a private consultation, showroom viewing, or bespoke design session at Jewel Exchange in Colombo, Sri Lanka.",
+  description: "Schedule a private consultation, showroom viewing, or bespoke design session at Jewel Exchange's Colombo atelier. Let's create your perfect piece.",
   alternates: {
     canonical: "/booking",
   },

@@ -27,7 +27,6 @@ export default async function sitemap() {
       priority: 0.8,
     }));
 
-  // Define static routes
   const staticRoutes = [
     '',
     '/about',
@@ -36,10 +35,6 @@ export default async function sitemap() {
     '/contact',
     '/gemstones',
     '/jewelry',
-    '/shipping',
-    '/refunds',
-    '/terms',
-    '/privacy',
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),

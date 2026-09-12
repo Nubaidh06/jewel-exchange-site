@@ -3,8 +3,11 @@ import Link from 'next/link';
 import './contact.css';
 
 export const metadata = {
-  title: 'Contact Us',
-  description: 'Get in touch with Jewel Exchange for inquiries, appointments, and bespoke consultations in Colombo, Sri Lanka.',
+  title: 'Contact Jewel Exchange — Colombo Atelier & Gemstone Inquiries',
+  description: 'Reach our Colombo atelier for bespoke consultations, gemstone inquiries, and appointment bookings. Call, WhatsApp, or visit us at 514A, R.A. De Mel Mawatha.',
+  alternates: {
+    canonical: '/contact',
+  },
 };
 
 export default function ContactPage() {
