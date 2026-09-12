@@ -262,7 +262,7 @@ export default function HomeClient({ featuredProducts = [] }) {
             <Link href="/jewelry?category=Earrings" className="category-card">
               <div className="category-card__img">
                 <Image
-                  src="/images/models_and_shots/01.png"
+                  src="https://cdn.sanity.io/images/rrsnwe4c/production/0fa405a8a094a210437ebf8b316596156d323ca6-1080x1350.png"
                   alt="Fine Earrings"
                   fill
                   sizes="(max-width: 768px) 70vw, 20vw"
