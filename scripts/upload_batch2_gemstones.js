@@ -20,7 +20,7 @@ const client = createClient({
 const batch2Gems = [
   {
     sku: "GEM-009",
-    name: "Royal Ceylon Crown — 5.82ct Cushion Cut",
+    name: "Ceylon Royal Blue Sapphire - 5.82ct Cushion Cut",
     slug: "royal-ceylon-crown-blue-sapphire-5-82ct",
     type: "Gemstones",
     catalog_type: "Gemstones",
@@ -39,7 +39,7 @@ const batch2Gems = [
   },
   {
     sku: "GEM-010",
-    name: "Lotus Dawn — 4.15ct Cushion Cut",
+    name: "Ceylon Padparadscha Sapphire - 4.15ct Cushion Cut",
     slug: "lotus-dawn-padparadscha-sapphire-4-15ct",
     type: "Gemstones",
     catalog_type: "Gemstones",
@@ -58,7 +58,7 @@ const batch2Gems = [
   },
   {
     sku: "GEM-011",
-    name: "Golden Ceylon Sun — 6.24ct Cushion Cut",
+    name: "Ceylon Vivid Yellow Sapphire - 6.24ct Cushion Cut",
     slug: "golden-ceylon-sun-yellow-sapphire-6-24ct",
     type: "Gemstones",
     catalog_type: "Gemstones",
@@ -77,7 +77,7 @@ const batch2Gems = [
   },
   {
     sku: "GEM-012",
-    name: "Blush Ceylon Rose — 3.88ct Cushion Cut",
+    name: "Ceylon Vivid Pink Sapphire - 3.88ct Cushion Cut",
     slug: "blush-ceylon-rose-pink-sapphire-3-88ct",
     type: "Gemstones",
     catalog_type: "Gemstones",
@@ -96,7 +96,7 @@ const batch2Gems = [
   },
   {
     sku: "GEM-013",
-    name: "Honey Ceylon Eye — 8.10ct Cabochon",
+    name: "Ceylon Honey Cat's Eye Chrysoberyl - 8.10ct Cabochon",
     slug: "honey-ceylon-eye-cats-eye-chrysoberyl-8-10ct",
     type: "Gemstones",
     catalog_type: "Gemstones",
@@ -115,7 +115,7 @@ const batch2Gems = [
   },
   {
     sku: "GEM-014",
-    name: "Cobalt Ceylon Flame — 4.72ct Cushion Cut",
+    name: "Ceylon Cobalt Blue Spinel - 4.72ct Cushion Cut",
     slug: "cobalt-ceylon-flame-blue-spinel-4-72ct",
     type: "Gemstones",
     catalog_type: "Gemstones",
@@ -134,7 +134,7 @@ const batch2Gems = [
   },
   {
     sku: "GEM-015",
-    name: "Ceylon Chameleon — 2.95ct Cushion Cut",
+    name: "Ceylon Color-Change Alexandrite - 2.95ct Cushion Cut",
     slug: "ceylon-chameleon-alexandrite-2-95ct",
     type: "Gemstones",
     catalog_type: "Gemstones",
@@ -153,7 +153,7 @@ const batch2Gems = [
   },
   {
     sku: "GEM-016",
-    name: "Ceylon Cinnamon — 7.35ct Cushion Cut",
+    name: "Ceylon Hessonite Garnet - 7.35ct Cushion Cut",
     slug: "ceylon-cinnamon-hessonite-garnet-7-35ct",
     type: "Gemstones",
     catalog_type: "Gemstones",

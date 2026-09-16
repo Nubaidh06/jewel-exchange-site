@@ -20,7 +20,7 @@ const client = createClient({
 const gemstonesData = [
   {
     sku: "GEM-001",
-    name: "Royal Velvet Ceylon Blue Sapphire — 4.80ct Cushion Brilliant",
+    name: "Ceylon Royal Blue Sapphire - 4.80ct Cushion Brilliant",
     slug: "ceylon-royal-blue-sapphire-cushion-4-80ct",
     catalog_type: "Gemstone",
     category: "Sapphires",
@@ -38,7 +38,7 @@ const gemstonesData = [
   },
   {
     sku: "GEM-002",
-    name: "Sunset Lotus Ceylon Padparadscha Sapphire — 4.50ct Pear Cut",
+    name: "Ceylon Padparadscha Sapphire - 4.50ct Pear Cut",
     slug: "ceylon-padparadscha-sapphire-pear-4-50ct",
     catalog_type: "Gemstone",
     category: "Padparadscha",
@@ -56,7 +56,7 @@ const gemstonesData = [
   },
   {
     sku: "GEM-003",
-    name: "Celestial Azure Ceylon Cornflower Sapphire — 3.90ct Round Brilliant",
+    name: "Ceylon Cornflower Blue Sapphire - 3.90ct Round Brilliant",
     slug: "ceylon-cornflower-blue-sapphire-round-3-90ct",
     catalog_type: "Gemstone",
     category: "Sapphires",
@@ -74,7 +74,7 @@ const gemstonesData = [
   },
   {
     sku: "GEM-004",
-    name: "Imperial Blossom Ceylon Pink Sapphire — 3.60ct Radiant Cut",
+    name: "Ceylon Vivid Pink Sapphire - 3.60ct Radiant Cut",
     slug: "ceylon-vivid-pink-sapphire-radiant-3-60ct",
     catalog_type: "Gemstone",
     category: "Sapphires",
@@ -92,7 +92,7 @@ const gemstonesData = [
   },
   {
     sku: "GEM-005",
-    name: "Crimson Sovereign Pigeon Blood Ruby — 3.50ct Oval Brilliant",
+    name: "Pigeon Blood Ruby - 3.50ct Oval Brilliant",
     slug: "crimson-sovereign-pigeon-blood-ruby-oval-3-50ct",
     catalog_type: "Gemstone",
     category: "Rubies",
@@ -110,7 +110,7 @@ const gemstonesData = [
   },
   {
     sku: "GEM-006",
-    name: "Verdant Muzo Colombian Emerald — 4.10ct Classic Step Cut",
+    name: "Muzo Colombian Emerald - 4.10ct Emerald Cut",
     slug: "verdant-muzo-colombian-emerald-step-4-10ct",
     catalog_type: "Gemstone",
     category: "Emeralds",
@@ -128,7 +128,7 @@ const gemstonesData = [
   },
   {
     sku: "GEM-007",
-    name: "Solaris Golden Ceylon Yellow Sapphire (Pushparaga) — 5.10ct Oval",
+    name: "Ceylon Vivid Yellow Sapphire - 5.10ct Oval Brilliant",
     slug: "ceylon-yellow-sapphire-pushparaga-oval-5-10ct",
     catalog_type: "Gemstone",
     category: "Sapphires",
@@ -146,7 +146,7 @@ const gemstonesData = [
   },
   {
     sku: "GEM-008",
-    name: "Electric Verdure Tsavorite Garnet — 3.80ct Cushion Brilliant",
+    name: "Vivid Green Tsavorite Garnet - 3.80ct Cushion Brilliant",
     slug: "electric-verdure-tsavorite-garnet-cushion-3-80ct",
     catalog_type: "Gemstone",
     category: "Rare Gems",

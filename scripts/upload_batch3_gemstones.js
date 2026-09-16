@@ -20,7 +20,7 @@ const client = createClient({
 const batch3Gems = [
   {
     sku: "GEM-017",
-    name: "Ceylon Crimson Crown — 4.68ct Cushion Cut",
+    name: "Ceylon Vivid Red Ruby - 4.68ct Cushion Cut",
     slug: "ceylon-crimson-crown-ruby-4-68ct",
     type: "Gemstones",
     catalog_type: "Gemstones",
@@ -39,7 +39,7 @@ const batch3Gems = [
   },
   {
     sku: "GEM-018",
-    name: "Ceylon Neon — 5.10ct Cushion Cut",
+    name: "Ceylon Vivid Blue Zircon - 5.10ct Cushion Cut",
     slug: "ceylon-neon-blue-zircon-5-10ct",
     type: "Gemstones",
     catalog_type: "Gemstones",
@@ -58,7 +58,7 @@ const batch3Gems = [
   },
   {
     sku: "GEM-019",
-    name: "Ceylon Flame Spinel — 3.92ct Cushion Cut",
+    name: "Ceylon Vivid Red Spinel - 3.92ct Cushion Cut",
     slug: "ceylon-flame-red-spinel-3-92ct",
     type: "Gemstones",
     catalog_type: "Gemstones",
@@ -77,7 +77,7 @@ const batch3Gems = [
   },
   {
     sku: "GEM-020",
-    name: "Ceylon Violet — 3.55ct Cushion Cut",
+    name: "Ceylon Vivid Violet Sapphire - 3.55ct Cushion Cut",
     slug: "ceylon-violet-purple-sapphire-3-55ct",
     type: "Gemstones",
     catalog_type: "Gemstones",
@@ -96,7 +96,7 @@ const batch3Gems = [
   },
   {
     sku: "GEM-021",
-    name: "Ceylon Ice — 4.20ct Cushion Cut",
+    name: "Ceylon White Sapphire - 4.20ct Cushion Cut",
     slug: "ceylon-ice-white-sapphire-4-20ct",
     type: "Gemstones",
     catalog_type: "Gemstones",
@@ -115,7 +115,7 @@ const batch3Gems = [
   },
   {
     sku: "GEM-022",
-    name: "The Northern Star — 2.15ct Round Brilliant",
+    name: "Round Brilliant Diamond - 2.15ct (VS1)",
     slug: "the-northern-star-diamond-round-2-15ct",
     type: "Gemstones",
     catalog_type: "Gemstones",
@@ -134,7 +134,7 @@ const batch3Gems = [
   },
   {
     sku: "GEM-023",
-    name: "The Manor Cushion — 3.02ct Cushion Cut",
+    name: "Cushion-Cut Diamond - 3.02ct (VS2)",
     slug: "the-manor-cushion-diamond-3-02ct",
     type: "Gemstones",
     catalog_type: "Gemstones",
@@ -153,7 +153,7 @@ const batch3Gems = [
   },
   {
     sku: "GEM-024",
-    name: "The East–West Oval — 1.71ct Oval Brilliant",
+    name: "Oval Brilliant Diamond - 1.71ct (VS1)",
     slug: "the-east-west-oval-diamond-1-71ct",
     type: "Gemstones",
     catalog_type: "Gemstones",
