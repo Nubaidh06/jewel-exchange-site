@@ -4,7 +4,7 @@ import './about.css';
 
 export const metadata = {
   title: 'Our Heritage & Craft — Jewel Exchange, Colombo Sri Lanka',
-  description: 'Jewel Exchange has been crafting fine jewelry and curating rare Ceylon gemstones in Colombo since 2008. Discover our story, values, and bench craft philosophy.',
+  description: 'Since 1969, three generations of the Ahamed family have been crafting fine jewelry and curating rare Ceylon gemstones. Discover the Jewel Exchange story.',
   alternates: {
     canonical: '/about',
   },
@@ -27,23 +27,23 @@ export default function AboutPage() {
           <div className="about-hero__overlay" />
         </div>
         <div className="container about-hero__content">
-          <span className="about-hero__label reveal">Our Story</span>
+          <span className="about-hero__label reveal">Est. 1969</span>
           <h1 className="about-hero__title reveal reveal-delay-1">
-            A Legacy of<br />Elegance
+            Three Generations<br />of Fine Craft
           </h1>
           <p className="about-hero__subtitle reveal reveal-delay-2">
-            Crafted in the heart of Sri Lanka, rooted in generations of artistry, and guided by an unwavering pursuit of perfection.
+            What began as a singular passion in 1969 has grown across three generations into one of Sri Lanka&apos;s most trusted names in fine jewelry and natural gemstones.
           </p>
         </div>
       </section>
 
-      {/* ── Heritage Section ── */}
+      {/* ── Heritage / Our Story ── */}
       <section className="about-heritage">
         <div className="container">
           <div className="heritage-layout">
             <div className="heritage-text reveal">
-              <span className="section-label">Heritage</span>
-              <h2 className="heritage-text__title">Where Tradition Meets Innovation</h2>
+              <span className="section-label">Our Story</span>
+              <h2 className="heritage-text__title">Where It All Began</h2>
 
               <blockquote className="heritage-quote">
                 <span className="heritage-quote__mark">&ldquo;</span>
@@ -51,13 +51,13 @@ export default function AboutPage() {
               </blockquote>
 
               <p>
-                Founded in Colombo in 2008, Jewel Exchange was born from a singular passion: creating timeless fine jewelry rooted in rare Ceylon gemstones and fine diamonds.
+                Our journey began in 1969 with our founder, Hussain Ahamed Udayar, and a singular conviction — to craft fine jewelry of exceptional beauty paired with uncompromising service. What started as a small atelier grew into an international operation, with a workshop employing over 40 skilled craftsmen and becoming a preferred manufacturing partner for renowned jewelry retailers across California, backed by the National Gem and Jewellery Authority.
               </p>
               <p>
-                Whether selecting from our ready-to-wear showroom collections or commissioning a custom bespoke piece, every creation is hand-finished with meticulous attention to detail and lifelong substance.
+                As global appreciation for Ceylon&apos;s exceptional gemstone heritage expanded, the company represented Sri Lankan craftsmanship on the world stage — exhibiting at the 1990 Gem and Jewelry Trade Show in Munich, Germany, and participating in the inaugural FACETS Sri Lanka exhibition, the country&apos;s first international gem showcase.
               </p>
               <p>
-                Today, Jewel Exchange is trusted by collectors worldwide for natural certified gems, transparent guidance, and jewelry designed to be cherished for generations.
+                In 1992, his son Nusrath Ahamed joined the business, steering operations and carrying its foundational values into a new era. In 2008, this legacy took its next definitive step with the establishment of the Jewel Exchange flagship showroom on Duplication Road, Colombo-03.
               </p>
             </div>
 
@@ -65,7 +65,7 @@ export default function AboutPage() {
               <div className="heritage-image__wrapper">
                 <Image
                   src="/images/models_and_shots/gem-sift.webp"
-                  alt="Where Tradition Meets Innovation - Jewel Exchange Craftsmanship"
+                  alt="Hand-selecting natural gemstones at Jewel Exchange"
                   width={1080}
                   height={1350}
                   sizes="(max-width: 768px) 100vw, 45vw"
@@ -75,7 +75,7 @@ export default function AboutPage() {
               <div className="heritage-image__wrapper">
                 <Image
                   src="/images/models_and_shots/gem-setting.webp"
-                  alt="Where Tradition Meets Innovation - Gem Setting"
+                  alt="Master craftsman setting a gemstone"
                   width={1080}
                   height={1350}
                   sizes="(max-width: 768px) 100vw, 45vw"
@@ -87,25 +87,130 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* ── Milestones Timeline ── */}
+      <section className="about-milestones">
+        <div className="container">
+          <div className="milestones-header reveal">
+            <span className="section-label" style={{ display: 'block', textAlign: 'center', marginBottom: '1rem' }}>Milestones</span>
+            <h2 className="section-title">A Legacy in the Making</h2>
+            <div className="ornament">
+              <span className="ornament__diamond" />
+            </div>
+          </div>
+
+          <div className="milestones-track reveal reveal-delay-1">
+            <div className="milestones-line" />
+
+            <div className="milestone">
+              <span className="milestone__year">1969</span>
+              <div className="milestone__dot" />
+              <div className="milestone__content">
+                <h3 className="milestone__title">The Beginning</h3>
+                <p className="milestone__text">
+                  Hussain Ahamed Udayar founds the family business with a vision of fine jewelry and exceptional service, growing a workshop of over 40 master craftsmen.
+                </p>
+              </div>
+            </div>
+
+            <div className="milestone">
+              <span className="milestone__year">1990</span>
+              <div className="milestone__dot" />
+              <div className="milestone__content">
+                <h3 className="milestone__title">The World Stage</h3>
+                <p className="milestone__text">
+                  Exhibits at the Gem and Jewelry Trade Show in Munich, Germany, and participates in Sri Lanka&apos;s inaugural FACETS exhibition.
+                </p>
+              </div>
+            </div>
+
+            <div className="milestone">
+              <span className="milestone__year">1992</span>
+              <div className="milestone__dot" />
+              <div className="milestone__content">
+                <h3 className="milestone__title">Second Generation</h3>
+                <p className="milestone__text">
+                  Nusrath Ahamed joins the family business, steering operations and carrying the founding values forward into a new era.
+                </p>
+              </div>
+            </div>
+
+            <div className="milestone">
+              <span className="milestone__year">2008</span>
+              <div className="milestone__dot" />
+              <div className="milestone__content">
+                <h3 className="milestone__title">Jewel Exchange, Colombo</h3>
+                <p className="milestone__text">
+                  The flagship Jewel Exchange showroom opens on Duplication Road, Colombo-03 — a dedicated atelier for Ceylon sapphires and bespoke fine jewelry.
+                </p>
+              </div>
+            </div>
+
+            <div className="milestone">
+              <span className="milestone__year">Today</span>
+              <div className="milestone__dot" />
+              <div className="milestone__content">
+                <h3 className="milestone__title">Three Generations Strong</h3>
+                <p className="milestone__text">
+                  Now welcoming its third generation, Jewel Exchange remains a family maison — where eras change, but devotion to the craft remains timeless.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Promise & Trust ── */}
+      <section className="about-promise">
+        <div className="container">
+          <div className="promise-layout">
+            <div className="promise-image reveal">
+              <div className="promise-image__wrapper">
+                <Image
+                  src="/images/models_and_shots/11.png"
+                  alt="Jewel Exchange fine craftsmanship"
+                  width={1080}
+                  height={1350}
+                  sizes="(max-width: 768px) 100vw, 45vw"
+                  style={{ width: '100%', height: 'auto', display: 'block', objectFit: 'cover' }}
+                />
+              </div>
+            </div>
+            <div className="promise-text reveal reveal-delay-1">
+              <span className="section-label">Our Promise</span>
+              <h2 className="heritage-text__title">Honesty Runs Deep</h2>
+              <p>
+                Today, Jewel Exchange specializes in rare natural Ceylon sapphires, fine diamonds, and bespoke colored gemstone jewelry. Every commission is approached with reverence for the individual — marrying traditional bench goldsmithing with modern design sensibility, creating pieces meant to be treasured for generations.
+              </p>
+              <p>
+                Honesty and trust have been our compass for over half a century. Every creation features hallmarked precious metals and independently certified, ethically sourced gemstones, giving our clients absolute peace of mind.
+              </p>
+              <p>
+                We stand behind every single piece we create. As testimony to our confidence in our craft, every Jewel Exchange purchase is backed by our lifetime guarantee.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── Stats / Numbers ── */}
       <section className="about-stats">
         <div className="container">
           <div className="stats-grid reveal">
             <div className="stat-item">
-              <span className="stat-item__number">18+</span>
-              <span className="stat-item__label">Years of Craft</span>
+              <span className="stat-item__number">55+</span>
+              <span className="stat-item__label">Years of Heritage</span>
             </div>
             <div className="stat-item">
-              <span className="stat-item__number">5,000+</span>
-              <span className="stat-item__label">Pieces Created</span>
+              <span className="stat-item__number">3</span>
+              <span className="stat-item__label">Generations of Craft</span>
             </div>
             <div className="stat-item">
-              <span className="stat-item__number">30+</span>
-              <span className="stat-item__label">Countries Served</span>
+              <span className="stat-item__number">40+</span>
+              <span className="stat-item__label">Master Artisans</span>
             </div>
             <div className="stat-item">
               <span className="stat-item__number">100%</span>
-              <span className="stat-item__label">Ethically Sourced</span>
+              <span className="stat-item__label">Certified &amp; Ethical</span>
             </div>
           </div>
         </div>
@@ -131,7 +236,7 @@ export default function AboutPage() {
 
             <div className="value-card reveal reveal-delay-1">
               <span className="value-card__number">02</span>
-              <h3 className="value-card__title">Curated & Custom</h3>
+              <h3 className="value-card__title">Curated &amp; Custom</h3>
               <p className="value-card__desc">
                 Whether discovering a finished signature set in our showroom or commissioning a one-of-a-kind bespoke piece, our artisans work closely with you to deliver an unforgettable experience.
               </p>
@@ -148,61 +253,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ── Behind the Scenes Gallery ── */}
-      <section className="about-gallery">
-        <div className="container">
-          <div className="about-gallery__header reveal">
-            <span className="section-label" style={{ display: 'block', textAlign: 'center', marginBottom: '1rem' }}>Our Workshop</span>
-            <h2 className="section-title">Behind the Scenes</h2>
-            <p className="section-subtitle">
-              A glimpse into the artistry, precision, and passion that shape every creation.
-            </p>
-          </div>
 
-          <div className="gallery-masonry">
-            <div className="gallery-item gallery-item--left reveal reveal-delay-1">
-              <Image
-                src="/images/models_and_shots/04.png"
-                alt="Craftsmanship detail"
-                fill
-                sizes="(max-width: 768px) 100vw, 33vw"
-                style={{ objectFit: 'cover' }}
-                className="gallery-item__img"
-              />
-            </div>
-            <div className="gallery-item gallery-item--mid-top reveal reveal-delay-2">
-              <Image
-                src="/images/models_and_shots/05.png"
-                alt="Workshop artistry"
-                fill
-                sizes="(max-width: 768px) 100vw, 33vw"
-                style={{ objectFit: 'cover' }}
-                className="gallery-item__img"
-              />
-            </div>
-            <div className="gallery-item gallery-item--mid-bottom reveal reveal-delay-3">
-              <Image
-                src="/images/models_and_shots/06.png"
-                alt="Gemstone selection"
-                fill
-                sizes="(max-width: 768px) 100vw, 33vw"
-                style={{ objectFit: 'cover' }}
-                className="gallery-item__img"
-              />
-            </div>
-            <div className="gallery-item gallery-item--right reveal reveal-delay-1">
-              <Image
-                src="/images/models_and_shots/09.png"
-                alt="Final masterpiece"
-                fill
-                sizes="(max-width: 768px) 100vw, 33vw"
-                style={{ objectFit: 'cover' }}
-                className="gallery-item__img"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* ── Client Testimonials / Patron Stories ── */}
       <section className="about-testimonials section bg-alt">

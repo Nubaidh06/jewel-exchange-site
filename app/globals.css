@@ -8,6 +8,7 @@
   --color-bg: #ffffff;
   --color-bg-alt: #f7f6f4;
   --color-bg-warm: #faf9f7;
+  --color-bg-gold-light: #E6E1D6;
   --color-surface: #ffffff;
   --color-text: #111111;
   --color-text-secondary: #6a6a6a;
@@ -143,6 +144,14 @@ button {
 
 .bg-surface {
   background-color: var(--color-surface);
+}
+
+.bg-gold-light {
+  background-color: var(--color-bg-gold-light);
+}
+
+.bg-silver {
+  background: linear-gradient(135deg, #f4f6f9 0%, #ebedf2 50%, #e2e6ec 100%);
 }
 
 .pt-nav {

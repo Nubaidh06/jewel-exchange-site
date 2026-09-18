@@ -6,8 +6,8 @@
 .hero--simple-banner {
   position: relative;
   width: 100%;
-  height: calc(100vh - 75px);
-  min-height: 640px;
+  height: 100vh;
+  min-height: 850px;
   background: #2a1711;
   padding-top: var(--nav-height);
   display: flex;

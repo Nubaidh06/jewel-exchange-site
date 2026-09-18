@@ -91,7 +91,7 @@ export default function BespokePage() {
       </section>
 
       {/* ── Past Bespoke Creations Gallery ── */}
-      <section className="section bg-warm">
+      <section className="section bg-surface">
         <div className="container">
           <div className="section-header">
             <span className="section-label">Portfolio</span>

@@ -1,5 +1,5 @@
 /* ============================================
-   ABOUT PAGE - Redesigned
+   ABOUT PAGE - Heritage & Craft
    ============================================ */
 
 /* ---------- Cinematic Hero ---------- */
@@ -137,6 +137,159 @@
 
 .heritage-image__wrapper:hover img {
   transform: scale(1.03);
+}
+
+/* ---------- Milestones Timeline ---------- */
+
+.about-milestones {
+  padding: var(--space-2xl) 0;
+  background: var(--color-bg-alt);
+  border-top: 1px solid var(--color-border-light);
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.milestones-header {
+  margin-bottom: var(--space-2xl);
+}
+
+.milestones-track {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--space-md);
+  padding-top: 2.5rem;
+}
+
+.milestones-line {
+  position: absolute;
+  top: calc(2.5rem + 2.25rem); /* Aligned with the center of the dots, below the year */
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--color-border);
+}
+
+.milestones-line::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    var(--color-gold-light) 0%,
+    var(--color-gold) 50%,
+    var(--color-gold-light) 100%
+  );
+  opacity: 0.5;
+}
+
+.milestone {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+.milestone__year {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 1.125rem;
+  color: var(--color-gold);
+  letter-spacing: 1px;
+  margin-bottom: var(--space-sm);
+  font-weight: 400;
+}
+
+.milestone__dot {
+  width: 9px;
+  height: 9px;
+  background: var(--color-gold);
+  border-radius: 50%;
+  margin-bottom: var(--space-md);
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+}
+
+.milestone__dot::before {
+  content: '';
+  position: absolute;
+  inset: -5px;
+  border-radius: 50%;
+  border: 1px solid var(--color-gold-light);
+  opacity: 0.35;
+}
+
+.milestone__content {
+  max-width: 220px;
+}
+
+.milestone__title {
+  font-family: var(--font-serif);
+  font-size: 1.125rem;
+  color: var(--color-text);
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.01em;
+}
+
+.milestone__text {
+  font-size: 0.9375rem;
+  color: var(--color-text-secondary);
+  line-height: 1.75;
+}
+
+/* ---------- Promise & Trust ---------- */
+
+.about-promise {
+  padding: var(--space-2xl) 0;
+  background: var(--color-bg);
+}
+
+.promise-layout {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: var(--space-2xl);
+  align-items: start;
+}
+
+.promise-image {
+  display: flex;
+  justify-content: flex-end; /* Align the image towards the text for better connection */
+  padding: 0 var(--space-lg);
+}
+
+.promise-image__wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  max-width: 460px;
+  width: 100%;
+  aspect-ratio: 3/4;
+}
+
+.promise-image__wrapper img {
+  transition: transform var(--duration-slow) var(--ease-out);
+}
+
+.promise-image__wrapper:hover img {
+  transform: scale(1.03);
+}
+
+.promise-text p {
+  font-size: 1.0625rem;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-md);
+  line-height: 1.85;
+}
+
+.promise-text p:last-child {
+  margin-bottom: 0;
 }
 
 /* ---------- Stats Bar ---------- */
@@ -396,7 +549,7 @@
   flex-wrap: wrap;
 }
 
-/* ---------- Testimonials Section (Clean Luxury Editorial) ---------- */
+/* ---------- Testimonials Section ---------- */
 
 .about-testimonials {
   padding: var(--space-2xl) 0;
@@ -525,6 +678,10 @@
     gap: var(--space-xl);
   }
 
+  .promise-layout {
+    gap: var(--space-xl);
+  }
+
   .values-grid {
     gap: var(--space-md);
   }
@@ -535,6 +692,14 @@
 
   .testimonials-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .milestone__content {
+    max-width: 180px;
+  }
+
+  .milestone__text {
+    font-size: 0.875rem;
   }
 }
 
@@ -562,6 +727,79 @@
 
   .heritage-image__wrapper {
     border-radius: var(--radius-md);
+  }
+
+  /* Milestones: switch to vertical on mobile */
+  .milestones-track {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    padding-top: 0;
+    padding-left: 0;
+  }
+
+  .milestones-line {
+    top: 0;
+    bottom: 0;
+    left: 4.5rem;
+    right: auto;
+    width: 1px;
+    height: auto;
+  }
+
+  .milestones-line::before {
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(
+      180deg,
+      var(--color-gold-light) 0%,
+      var(--color-gold) 50%,
+      var(--color-gold-light) 100%
+    );
+  }
+
+  .milestone {
+    width: 100%;
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: left;
+    gap: var(--space-md);
+    padding-bottom: var(--space-lg);
+    padding-left: 5.5rem;
+  }
+
+  .milestone__year {
+    position: absolute;
+    left: 0;
+    width: 3.5rem;
+    text-align: right;
+    margin-bottom: 0;
+    padding-top: 0.15rem;
+    font-size: 1rem;
+    transform: none;
+  }
+
+  .milestone__dot {
+    position: absolute;
+    left: 4.5rem;
+    transform: translateX(-50%);
+    margin-bottom: 0;
+    margin-top: 0.35rem;
+    flex-shrink: 0;
+  }
+
+  .milestone__content {
+    max-width: none;
+  }
+
+  /* Promise section */
+  .promise-layout {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  .promise-image {
+    order: 2;
   }
 
   .stats-grid {
@@ -622,6 +860,37 @@
 @media (max-width: 480px) {
   .about-hero {
     min-height: 40vh;
+  }
+
+  .milestones-track {
+    padding-left: 0;
+  }
+
+  .milestones-line {
+    left: 1rem;
+  }
+
+  .milestone__year {
+    position: relative;
+    left: auto;
+    transform: none;
+    text-align: left;
+    min-width: auto;
+    width: auto;
+    margin-bottom: 0.25rem;
+    padding-top: 0;
+  }
+
+  .milestone {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 2.5rem;
+  }
+
+  .milestone__dot {
+    left: 1rem;
+    transform: translateX(-50%);
+    margin-top: 0.25rem;
   }
 
   .stats-grid {
