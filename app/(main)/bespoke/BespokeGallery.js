@@ -8,7 +8,7 @@ const BESPOKE_PIECES = [
     id: 1,
     number: '01',
     image: 'https://cdn.sanity.io/images/rrsnwe4c/production/d7306889c45ebbe9decf222eb6112ffe7b337a33-1080x1350.png',
-    title: 'Swiss Blue Topaz Statement Pendant & Ring Duo',
+    title: 'Blue Topaz Statement Pendant & Ring Duo',
     category: 'Pendant & Ring Suite',
     specs: '8.50ct tw Swiss Blue Topaz · 18K Gold',
     description:
@@ -18,7 +18,7 @@ const BESPOKE_PIECES = [
     id: 2,
     number: '02',
     image: 'https://cdn.sanity.io/images/rrsnwe4c/production/018db205a9865bc78f8c2cb1b896645f3dfbe297-1080x1350.png',
-    title: 'Imperial Pear Cut Emerald Starburst Pendant',
+    title: 'Pear Cut Emerald Starburst Pendant',
     category: 'Bespoke Pendant',
     specs: '2.60ct Vivid Emerald · 18K White Gold',
     description:
@@ -28,7 +28,7 @@ const BESPOKE_PIECES = [
     id: 3,
     number: '03',
     image: 'https://cdn.sanity.io/images/rrsnwe4c/production/a717f45ef4cc67c78ce37213f1cf6c18b2fe27bb-1080x1350.png',
-    title: 'Concentric Double Halo Royal Blue Sapphire Stud Earrings',
+    title: 'Concentric Double Halo Royal Blue Sapphire Earrings',
     category: 'Bespoke Earrings',
     specs: '2.10ct tw Royal Blue Sapphires · 18K White Gold',
     description:

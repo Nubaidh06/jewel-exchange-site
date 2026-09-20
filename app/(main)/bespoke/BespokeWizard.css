@@ -1,0 +1,815 @@
+/* ==============================================
+   BESPOKE WIZARD — Luxury UI
+   ============================================== */
+
+.bwiz {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+/* ── Header / Step Progress ── */
+.bwiz__header {
+  padding: 2rem 2.5rem 0;
+  background: var(--color-bg);
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.bwiz__step-labels {
+  display: flex;
+  gap: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding-bottom: 1.25rem;
+}
+
+.bwiz__step-labels::-webkit-scrollbar {
+  display: none;
+}
+
+.bwiz__step-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: none;
+  border: none;
+  cursor: default;
+  padding: 0 1.25rem 0 0;
+  white-space: nowrap;
+  opacity: 0.38;
+  transition: opacity 0.25s ease;
+  position: relative;
+}
+
+.bwiz__step-label:first-child {
+  padding-left: 0;
+}
+
+.bwiz__step-label.done {
+  opacity: 0.65;
+  cursor: pointer;
+}
+
+.bwiz__step-label.done:hover {
+  opacity: 1;
+}
+
+.bwiz__step-label.active {
+  opacity: 1;
+  cursor: default;
+}
+
+.bwiz__step-num {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  font-weight: 500;
+  font-family: var(--font-sans);
+  flex-shrink: 0;
+  transition: all 0.25s ease;
+  color: var(--color-text-secondary);
+}
+
+.bwiz__step-label.active .bwiz__step-num {
+  background: var(--color-text);
+  border-color: var(--color-text);
+  color: var(--color-bg);
+}
+
+.bwiz__step-label.done .bwiz__step-num {
+  background: var(--color-gold);
+  border-color: var(--color-gold);
+  color: var(--color-bg);
+  font-size: 0.7rem;
+}
+
+.bwiz__step-name {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--color-text);
+}
+
+.bwiz__progress-bar {
+  height: 2px;
+  background: var(--color-border-light);
+  margin: 0 -2.5rem;
+  position: relative;
+}
+
+.bwiz__progress-fill {
+  position: absolute;
+  inset: 0 auto 0 0;
+  background: var(--color-gold);
+  transition: width 0.5s var(--ease-out);
+}
+
+/* ── Body ── */
+.bwiz__body {
+  padding: 2.5rem;
+  min-height: 380px;
+}
+
+.bwiz__step {
+  animation: bwiz-fade-up 0.35s var(--ease-out) both;
+}
+
+@keyframes bwiz-fade-up {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.bwiz__step-heading {
+  margin-bottom: 2rem;
+}
+
+.bwiz__title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: 400;
+  color: var(--color-text);
+  letter-spacing: -0.01em;
+  margin-bottom: 0.4rem;
+}
+
+.bwiz__subtitle {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ── Grid Layouts ── */
+.bwiz__grid {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.bwiz__grid--3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.bwiz__grid--5 {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.bwiz__grid--4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.bwiz__grid--2-col {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* ── Tiles (Step 1, 2) ── */
+.bwiz__tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 1.4rem 1rem;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all 0.22s var(--ease-out);
+  text-align: center;
+}
+
+.bwiz__tile:hover {
+  border-color: var(--color-gold-light);
+  background: var(--color-bg-warm);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.bwiz__tile.selected {
+  border-color: var(--color-gold);
+  background: #fdf8f0;
+  box-shadow: 0 0 0 3px rgba(184, 150, 90, 0.12);
+}
+
+.bwiz__tile-icon {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.bwiz__tile-label {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--color-text);
+}
+
+/* Metal tile swatch */
+.bwiz__swatch {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid rgba(0,0,0,0.08);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bwiz__swatch--question {
+  background: var(--color-bg-alt);
+  border: 1px dashed var(--color-border);
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+  font-style: italic;
+}
+
+/* ── Pill Buttons (Step 3 gems/shapes, Step 5 timelines) ── */
+.bwiz__pill {
+  padding: 0.6rem 1rem;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: var(--color-text);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.bwiz__pill:hover {
+  border-color: var(--color-gold-light);
+  background: var(--color-bg-warm);
+}
+
+.bwiz__pill.selected {
+  background: var(--color-text);
+  border-color: var(--color-text);
+  color: var(--color-bg);
+}
+
+/* ── Setting Tiles (Step 4) ── */
+.bwiz__setting-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.35rem;
+  padding: 1.25rem 1.4rem;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all 0.22s var(--ease-out);
+  text-align: left;
+}
+
+.bwiz__setting-tile:hover {
+  border-color: var(--color-gold-light);
+  background: var(--color-bg-warm);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.bwiz__setting-tile.selected {
+  border-color: var(--color-gold);
+  background: #fdf8f0;
+  box-shadow: 0 0 0 3px rgba(184, 150, 90, 0.12);
+}
+
+.bwiz__setting-name {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  color: var(--color-text);
+  font-weight: 400;
+}
+
+.bwiz__setting-desc {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+
+/* ── Budget Tiles (Step 5) ── */
+.bwiz__budget-tile {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 1rem 1.25rem;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all 0.22s var(--ease-out);
+  text-align: left;
+}
+
+.bwiz__budget-tile:hover {
+  border-color: var(--color-gold-light);
+  background: var(--color-bg-warm);
+}
+
+.bwiz__budget-tile.selected {
+  border-color: var(--color-gold);
+  background: #fdf8f0;
+  box-shadow: 0 0 0 3px rgba(184, 150, 90, 0.12);
+}
+
+.bwiz__budget-label {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.bwiz__budget-sub {
+  font-size: 0.72rem;
+  color: var(--color-text-secondary);
+}
+
+/* ── Subsection ── */
+.bwiz__subsection {
+  margin-top: 2rem;
+}
+
+.bwiz__subsection-label {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--color-text-secondary);
+  margin-bottom: 0.85rem;
+}
+
+.bwiz__subsection-label span {
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 0.72rem;
+}
+
+/* ── Form (Step 6) ── */
+.bwiz__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.bwiz__form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.bwiz__form-row--2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.bwiz__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.bwiz__label {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--color-text-secondary);
+}
+
+.bwiz__label span {
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 0.72rem;
+}
+
+.bwiz__input {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  color: var(--color-text);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.bwiz__input::placeholder {
+  color: var(--color-text-light);
+}
+
+.bwiz__input:focus {
+  border-color: var(--color-gold);
+  box-shadow: 0 0 0 3px rgba(184, 150, 90, 0.1);
+}
+
+.bwiz__textarea {
+  resize: vertical;
+  min-height: 100px;
+  line-height: 1.6;
+}
+
+/* Summary pill strip */
+.bwiz__summary {
+  padding: 1.1rem 1.25rem;
+  background: var(--color-bg-alt);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border-light);
+}
+
+.bwiz__summary-label {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--color-gold);
+  margin-bottom: 0.6rem;
+}
+
+.bwiz__summary-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.bwiz__summary-pill {
+  padding: 0.25rem 0.7rem;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  color: var(--color-text-secondary);
+}
+
+/* ── Nav Footer ── */
+.bwiz__nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 2.5rem;
+  border-top: 1px solid var(--color-border-light);
+  background: var(--color-bg-warm);
+}
+
+.bwiz__nav-back {
+  background: none;
+  border: none;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  padding: 0.5rem 0;
+  transition: color 0.2s ease;
+}
+
+.bwiz__nav-back:hover {
+  color: var(--color-text);
+}
+
+.bwiz__nav-right {
+  margin-left: auto;
+}
+
+.bwiz__nav-next {
+  min-width: 180px;
+}
+
+.bwiz__nav-next--disabled {
+  opacity: 0.38;
+  pointer-events: none;
+}
+
+.bwiz__submit-group {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.bwiz__nav-wa {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.75rem 1.25rem;
+  background: none;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  letter-spacing: 0.5px;
+}
+
+.bwiz__nav-wa:hover {
+  border-color: #25D366;
+  color: #25D366;
+  background: rgba(37, 211, 102, 0.05);
+}
+
+/* ── Success State ── */
+.bwiz__success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 4rem 2.5rem;
+  gap: 1rem;
+}
+
+.bwiz__success-icon {
+  margin-bottom: 0.5rem;
+  animation: bwiz-pop 0.5s var(--ease-out) both;
+}
+
+@keyframes bwiz-pop {
+  from { opacity: 0; transform: scale(0.7); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.bwiz__success-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 400;
+  color: var(--color-text);
+}
+
+.bwiz__success-text {
+  max-width: 420px;
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  line-height: 1.75;
+}
+
+.bwiz__success-wa {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  padding: 0.7rem 1.4rem;
+  background: none;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.bwiz__success-wa:hover {
+  border-color: #25D366;
+  color: #25D366;
+  background: rgba(37, 211, 102, 0.04);
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .bwiz__grid--3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .bwiz__grid--5 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .bwiz__grid--4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .bwiz__grid--2-col {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .bwiz__header {
+    padding: 1.5rem 1.25rem 0;
+  }
+  .bwiz__body {
+    padding: 1.75rem 1.25rem;
+    min-height: 300px;
+  }
+  .bwiz__nav {
+    padding: 1.25rem;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+  .bwiz__nav-right {
+    margin-left: 0;
+    width: 100%;
+  }
+  .bwiz__nav-next {
+    width: 100%;
+    min-width: unset;
+  }
+  .bwiz__submit-group {
+    flex-direction: column;
+    width: 100%;
+  }
+  .bwiz__nav-wa {
+    width: 100%;
+    justify-content: center;
+  }
+  .bwiz__grid--3,
+  .bwiz__grid--5,
+  .bwiz__grid--4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .bwiz__form-row--2 {
+    grid-template-columns: 1fr;
+  }
+  .bwiz__step-labels {
+    gap: 0;
+    padding-bottom: 1rem;
+  }
+  .bwiz__step-label {
+    padding-right: 0.85rem;
+  }
+  .bwiz__step-name {
+    display: none;
+  }
+  .bwiz__progress-bar {
+    margin: 0 -1.25rem;
+  }
+}
+
+/* ── Launcher (CTA) ── */
+.bwiz-launcher {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+  padding: 3rem 2rem;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  text-align: center;
+}
+
+.bwiz-launcher__features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.bwiz-launcher__feature {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.bwiz-launcher__feature-num {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--color-gold);
+  color: var(--color-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+}
+
+.bwiz-launcher__feature-text {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+
+@media (max-width: 640px) {
+  .bwiz-launcher__features {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+/* ── Modal Overlay ── */
+.bwiz-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  animation: bwiz-fade-in 0.3s ease-out;
+}
+
+@keyframes bwiz-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.bwiz-modal-container {
+  position: relative;
+  width: 100%;
+  max-width: 860px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-bg);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xl);
+  border: 1px solid var(--color-border);
+  animation: bwiz-slide-up 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes bwiz-slide-up {
+  from { opacity: 0; transform: translateY(30px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.bwiz-modal-close {
+  position: absolute;
+  top: -3.5rem;
+  right: 0;
+  background: none;
+  border: none;
+  color: var(--color-text);
+  cursor: pointer;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.6;
+  transition: opacity 0.2s ease;
+}
+
+.bwiz-modal-close:hover {
+  opacity: 1;
+}
+
+@media (max-width: 640px) {
+  .bwiz-modal-overlay {
+    padding: 1rem;
+  }
+  .bwiz-modal-close {
+    top: -2.5rem;
+    right: -0.5rem;
+  }
+}
+
+/* Ensure the body of wizard scrolls inside modal */
+.bwiz {
+  display: flex;
+  flex-direction: column;
+  max-height: 90vh; /* max height of container */
+  border: none;
+  box-shadow: none;
+}
+
+.bwiz__body-scroll {
+  overflow-y: auto;
+  flex: 1;
+  /* Scrollbar styling */
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border) transparent;
+}
+
+.bwiz__body-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+.bwiz__body-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.bwiz__body-scroll::-webkit-scrollbar-thumb {
+  background-color: var(--color-border);
+  border-radius: 10px;
+}

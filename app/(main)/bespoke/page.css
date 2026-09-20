@@ -2,6 +2,16 @@
    BESPOKE PAGE — Luxury Aesthetic
    ============================================ */
 
+/* ── Wizard Section Wrapper ── */
+.bespoke-wizard-section {
+  background: var(--color-bg-alt);
+}
+
+.bespoke-wizard-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
 /* ── Hero (Editorial Split) ── */
 .bespoke-hero {
   position: relative;

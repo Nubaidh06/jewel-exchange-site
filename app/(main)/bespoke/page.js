@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import BespokeGallery from './BespokeGallery';
+import BespokeWizard from './BespokeWizard';
 import './page.css';
 
 export const metadata = {
@@ -26,7 +27,7 @@ export default function BespokePage() {
             <p className="bespoke-hero__subtitle">
               From imagination to a timeless heirloom. Your vision, brought to life through dedicated bench artistry.
             </p>
-            <a href="#booking" className="btn btn--primary">
+            <a href="#wizard" className="btn btn--primary">
               Commission a Piece
             </a>
           </div>
@@ -90,6 +91,22 @@ export default function BespokePage() {
         </div>
       </section>
 
+      {/* ── Interactive Wizard ── */}
+      <section className="section bespoke-wizard-section" id="wizard">
+        <div className="container">
+          <div className="section-header">
+            <span className="section-label">Design Your Piece</span>
+            <h2 className="section-title">Commission a Bespoke Creation</h2>
+            <p className="section-subtitle">
+              Tell us your vision in a few steps. Our design team will reach out within one business day to begin your journey.
+            </p>
+          </div>
+          <div className="bespoke-wizard-wrap">
+            <BespokeWizard />
+          </div>
+        </div>
+      </section>
+
       {/* ── Past Bespoke Creations Gallery ── */}
       <section className="section bg-surface">
         <div className="container">
@@ -118,13 +135,13 @@ export default function BespokePage() {
               />
             </div>
             <div className="bespoke-cta-box__content">
-              <span className="section-label">Get Started</span>
-              <h2 className="bespoke-cta-box__title">Ready to Begin?</h2>
+              <span className="section-label">The Showroom</span>
+              <h2 className="bespoke-cta-box__title">Want to visit us?</h2>
               <p className="bespoke-cta-box__text">
-                We invite you to sit down with our design experts in a private consultation. Together, we will sketch, refine, and plan the creation of your perfect bespoke piece.
+                We invite you to our Colombo showroom for a deeply personal bespoke experience. Sit down with our design experts to view our curated gemstone collection, sketch out your ideas, and begin the creation of your timeless heirloom.
               </p>
               <Link href="/booking" className="btn btn--primary">
-                Book a Consultation
+                Book a Showroom Visit
               </Link>
             </div>
           </div>
